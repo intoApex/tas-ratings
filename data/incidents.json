@@ -1,0 +1,33 @@
+{
+ "meta": {
+  "name": "Agent incident tracker",
+  "tracker": "https://tradingagentstack.com/incidents/",
+  "license": "CC BY 4.0",
+  "rule": "Only incidents with an official source: the vendor's disclosure, a security advisory, or a named researcher's report marked as such.",
+  "generated": "2026-10-23",
+  "count": 3
+ },
+ "incidents": [
+  {
+   "date": "2026-10-21",
+   "title": "Railway disclosed that an unauthorized third party may have accessed encrypted environment variables and obtained the decrypted contents of some of them; it told users to immediately roll all environment variables and API keys stored in Railway and paused all deployments while it investigates.",
+   "tools": [],
+   "source": "https://blog.railway.com/p/security-disclosure-wednesday-october-21st",
+   "resolved": false
+  },
+  {
+   "date": "2026-10-21",
+   "title": "Microsoft reported that the China-state aligned actor Storm-0940 used ARTEX, an open-source multi-agent LLM penetration-testing framework, to automate scanning, password spraying and OAuth app abuse in a ConnectWise cloud backup supply-chain compromise aimed at hundreds of organizations.",
+   "tools": [],
+   "source": "https://www.microsoft.com/en-us/security/blog/2026/10/21/storm-0940-uses-artex-agentic-ai-connectwise-supply-chain-compromise/",
+   "resolved": false
+  },
+  {
+   "date": "2026-10-21",
+   "title": "Node.js security releases v22.23.4, v24.22.1 and v26.12.1 fix ten vulnerabilities, including a high-severity Brotli decoder out-of-bounds write that permits remote code execution (CVE-2026-111497) in the 22.x, 24.x and 26.x lines.",
+   "tools": [],
+   "source": "https://nodejs.org/en/blog/vulnerability/october-2026-security-releases",
+   "resolved": true
+  }
+ ]
+}

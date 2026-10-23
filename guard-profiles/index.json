@@ -1,0 +1,33 @@
+{
+  "schema": "https://tradingagentstack.com/schema/connector-profile.v1.json",
+  "guard": "https://github.com/intoApex/tas-guard",
+  "profiles": [
+    {
+      "slug": "alpaca-mcp-server",
+      "name": "Alpaca MCP Server",
+      "last_checked": "2026-10-20",
+      "source": "https://github.com/alpacahq/alpaca-mcp-server",
+      "verified_against": "tests/test_server_construction.py EXPECTED_TOOLS and src/alpaca_mcp_server/overrides.py at commit 2a973a0 (2026-10-12)",
+      "url": "https://tradingagentstack.com/data/profiles/alpaca-mcp-server.json",
+      "tool_count": 22
+    },
+    {
+      "slug": "ccxt-mcp-server",
+      "name": "CCXT MCP Server",
+      "last_checked": "2026-10-20",
+      "source": "https://github.com/ccxt/ccxt/tree/master/mcp",
+      "verified_against": "mcp/ts/tools/*.ts registerTool calls at ccxt commit 310bf4b (2026-10-19)",
+      "url": "https://tradingagentstack.com/data/profiles/ccxt-mcp-server.json",
+      "tool_count": 24
+    },
+    {
+      "slug": "robinhood-trading-mcp",
+      "name": "Robinhood Trading MCP",
+      "last_checked": "2026-10-21",
+      "source": "https://robinhood.com/us/en/support/articles/trading-with-your-agent/",
+      "verified_against": "Robinhood support article 'Trading with your agent' (robinhood.com/us/en/support/articles/trading-with-your-agent/), tool table of 94 tools, read 2026-10-21; endpoint from 'Agentic trading overview' (robinhood.com/us/en/support/articles/agentic-trading-overview/). The server is hosted and closed source; Robinhood publishes tool names but no argument schemas.",
+      "url": "https://tradingagentstack.com/data/profiles/robinhood-trading-mcp.json",
+      "tool_count": 94
+    }
+  ]
+}
