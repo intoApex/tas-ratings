@@ -3,7 +3,7 @@
 Open data from [TradingAgentStack](https://tradingagentstack.com). One question drives every score: **if the agent is wrong, hacked or prompt-injected, how much money can it lose?**
 
 - **35 Agent Risk Scores** for agent wallets, exchanges for bots, on-chain and DeFi agents, agent payment rails, AI trading agents and agent tokens with a real product
-- **133 tools** in the full directory, with sources and last-checked dates
+- **134 tools** in the full directory, with sources and last-checked dates
 - **3 incidents** from official disclosures
 
 Generated 2026-10-23 from the live site. Updated automatically on every site release; do not edit by hand.
