@@ -4,7 +4,7 @@ Open data from [TradingAgentStack](https://tradingagentstack.com). One question 
 
 - **35 Agent Risk Scores** for agent wallets, exchanges for bots, on-chain and DeFi agents, agent payment rails, AI trading agents and agent tokens with a real product
 - **134 tools** in the full directory, with sources and last-checked dates
-- **3 incidents** from official disclosures
+- **6 incidents** from official disclosures
 
 Generated 2026-10-25 from the live site. Updated automatically on every site release; do not edit by hand.
 

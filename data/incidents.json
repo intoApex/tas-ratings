@@ -5,9 +5,30 @@
   "license": "CC BY 4.0",
   "rule": "Only incidents with an official source: the vendor's disclosure, a security advisory, or a named researcher's report marked as such.",
   "generated": "2026-10-25",
-  "count": 3
+  "count": 6
  },
  "incidents": [
+  {
+   "date": "2026-10-24",
+   "title": "Initia said a bug in MoveVM script caching let an attacker credit themselves unbacked WETH, iUSD and USDC and bridge about $2.7M out (via LayerZero and CCTP, swapped to 1,135.52 ETH) before it halted the L1 and its rollups; it said no native INIT was minted and that a fix was being written and audited.",
+   "tools": [],
+   "source": "https://x.com/initia/status/2113915002008612945",
+   "resolved": false
+  },
+  {
+   "date": "2026-10-24",
+   "title": "Keystone said a third party pulled customer shipping data (names, contact details, shipping addresses, items bought and prices) from its website store via the Shopify API, detected October 20 and confirmed October 23; it said payment details, recovery phrases, private keys and wallet passwords were not exposed, and warned of scammers posing as Keystone with refunds or replacement devices.",
+   "tools": [],
+   "source": "https://x.com/KeystoneWallet/status/2114054080754770137",
+   "resolved": false
+  },
+  {
+   "date": "2026-10-23",
+   "title": "Electrum released 4.8.3 as a security update; press reports of its advisory say earlier versions let a malicious Electrum server plant a fake pending payment so that a later fee bump (RBF) paid the attacker, and that users of trusted servers were not exposed. Update to 4.8.3 or later.",
+   "tools": [],
+   "source": "https://github.com/spesmilo/electrum/blob/4.8.3/RELEASE-NOTES",
+   "resolved": false
+  },
   {
    "date": "2026-10-21",
    "title": "Railway disclosed that an unauthorized third party may have accessed encrypted environment variables and obtained the decrypted contents of some of them; it told users to immediately roll all environment variables and API keys stored in Railway and paused all deployments while it investigates.",
