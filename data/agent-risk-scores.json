@@ -5,7 +5,7 @@
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "TradingAgentStack (tradingagentstack.com)",
-  "generated": "2026-10-23",
+  "generated": "2026-10-25",
   "count": 35,
   "safety_formula": "https://tradingagentstack.com/safety-score/",
   "risk_v2_method": "https://tradingagentstack.com/methodology/#agent-risk-score",
@@ -1346,7 +1346,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/okx/#agent-risk-score",
-   "last_checked": "2026-10-19"
+   "last_checked": "2026-10-24"
   },
   {
    "slug": "bitget",
@@ -1406,7 +1406,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/bitget/#agent-risk-score",
-   "last_checked": "2026-10-19"
+   "last_checked": "2026-10-24"
   },
   {
    "slug": "kraken",
@@ -1464,7 +1464,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/kraken/#agent-risk-score",
-   "last_checked": "2026-10-19"
+   "last_checked": "2026-10-24"
   },
   {
    "slug": "coinbase-advanced",
@@ -1524,7 +1524,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/coinbase-advanced/#agent-risk-score",
-   "last_checked": "2026-10-19"
+   "last_checked": "2026-10-24"
   },
   {
    "slug": "gemini",
@@ -1584,7 +1584,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/gemini/#agent-risk-score",
-   "last_checked": "2026-10-19"
+   "last_checked": "2026-10-24"
   },
   {
    "slug": "hyperliquid",
@@ -1645,7 +1645,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/hyperliquid/#agent-risk-score",
-   "last_checked": "2026-10-19"
+   "last_checked": "2026-10-24"
   },
   {
    "slug": "0x-swap-api",
@@ -1708,7 +1708,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/0x-swap-api/#agent-risk-score",
-   "last_checked": "2026-10-19"
+   "last_checked": "2026-10-25"
   },
   {
    "slug": "jupiter-api",
@@ -1771,7 +1771,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/jupiter-api/#agent-risk-score",
-   "last_checked": "2026-10-19"
+   "last_checked": "2026-10-25"
   },
   {
    "slug": "1inch-swap-api",
@@ -1833,7 +1833,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/1inch-swap-api/#agent-risk-score",
-   "last_checked": "2026-10-19"
+   "last_checked": "2026-10-25"
   },
   {
    "slug": "bonkbot",
@@ -1897,7 +1897,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/bonkbot/#agent-risk-score",
-   "last_checked": "2026-10-19"
+   "last_checked": "2026-10-25"
   },
   {
    "slug": "banana-gun",
@@ -1961,7 +1961,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/banana-gun/#agent-risk-score",
-   "last_checked": "2026-10-19"
+   "last_checked": "2026-10-25"
   },
   {
    "slug": "solana-agent-kit",
