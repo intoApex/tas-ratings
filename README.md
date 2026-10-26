@@ -2,8 +2,8 @@
 
 Open data from [TradingAgentStack](https://tradingagentstack.com). One question drives every score: **if the agent is wrong, hacked or prompt-injected, how much money can it lose?**
 
-- **35 Agent Risk Scores** for agent wallets, exchanges for bots, on-chain and DeFi agents, agent payment rails, AI trading agents and agent tokens with a real product
-- **140 tools** in the full directory, with sources and last-checked dates
+- **36 Agent Risk Scores** for agent wallets, exchanges for bots, on-chain and DeFi agents, agent payment rails, AI trading agents and agent tokens with a real product
+- **143 tools** in the full directory, with sources and last-checked dates
 - **6 incidents** from official disclosures
 
 Generated 2026-10-26 from the live site. Updated automatically on every site release; do not edit by hand.
@@ -79,6 +79,7 @@ Seven inputs, 100 points: custody (20), limits enforced outside the model (20), 
 
 | Tool | Agent Risk Score | Missing inputs |
 |---|---|---|
+| [Craic Hub Exchange](https://tradingagentstack.com/tool/craic-hub-exchange/#agent-risk-score) | 81% (partial) | limits |
 | [0x Swap API](https://tradingagentstack.com/tool/0x-swap-api/#agent-risk-score) | 75% (partial) | limits, approval, withdraw, preview |
 | [Jupiter API](https://tradingagentstack.com/tool/jupiter-api/#agent-risk-score) | 75% (partial) | limits, approval, withdraw, preview |
 | [1inch Swap API](https://tradingagentstack.com/tool/1inch-swap-api/#agent-risk-score) | 69% (partial) | limits, withdraw, preview |

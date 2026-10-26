@@ -6,7 +6,7 @@
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "TradingAgentStack (tradingagentstack.com)",
   "generated": "2026-10-26",
-  "count": 35,
+  "count": 36,
   "safety_formula": "https://tradingagentstack.com/safety-score/",
   "risk_v2_method": "https://tradingagentstack.com/methodology/#agent-risk-score",
   "incidents": "https://tradingagentstack.com/incidents/",
@@ -1645,6 +1645,66 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/hyperliquid/#agent-risk-score",
+   "last_checked": "2026-10-26"
+  },
+  {
+   "slug": "craic-hub-exchange",
+   "name": "Craic Hub Exchange",
+   "category": "defi_agent",
+   "category_label": "On-chain & DeFi trading agents",
+   "agent_risk_score_pct": 81,
+   "points": 65,
+   "max": 80,
+   "partial": true,
+   "missing_inputs": [
+    "limits"
+   ],
+   "inputs": {
+    "custody": {
+     "points": 20,
+     "max": 20,
+     "note": "Non-custodial: you sign in your own wallet, and the site never asks for, sees or stores a seed phrase or private key",
+     "source": "https://thehubexchange.com/security.html"
+    },
+    "limits": {
+     "points": null,
+     "max": 20,
+     "note": "Missing: no official source found yet",
+     "source": null
+    },
+    "approval": {
+     "points": 15,
+     "max": 15,
+     "note": "Every trade, order and launch needs your wallet signature; the Craic Bot (coming soon) reads each request back and gives you one tap to sign",
+     "source": "https://thehubexchange.com/craicbot"
+    },
+    "withdraw": {
+     "points": 15,
+     "max": 15,
+     "note": "The site and bot hold no keys, so they can't send your funds anywhere without your signature",
+     "source": "https://thehubexchange.com/security.html"
+    },
+    "preview": {
+     "points": 5,
+     "max": 10,
+     "note": "Auto Trade only: before your wallet opens, the site decodes the transaction and blocks unknown programs, unlimited approvals and authority changes",
+     "source": "https://thehubexchange.com/security.html"
+    },
+    "open": {
+     "points": 0,
+     "max": 10,
+     "note": "Closed: no public source code; the security page is the team's own self-review, not an independent audit",
+     "source": "https://thehubexchange.com/security.html"
+    },
+    "record": {
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
+     "source": "https://tradingagentstack.com/incidents/"
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/craic-hub-exchange/#agent-risk-score",
    "last_checked": "2026-10-26"
   },
   {
