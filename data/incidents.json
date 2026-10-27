@@ -5,9 +5,30 @@
   "license": "CC BY 4.0",
   "rule": "Only incidents with an official source: the vendor's disclosure, a security advisory, or a named researcher's report marked as such.",
   "generated": "2026-10-26",
-  "count": 6
+  "count": 11
  },
  "incidents": [
+  {
+   "date": "2026-10-26",
+   "title": "Bloom said an attacker exploited a remote code execution vulnerability in a third-party module and drained 49 wallet addresses belonging to 9 users, about 9,408 SOL ($947,000); it says no private keys were compromised and took all systems offline as a precaution. Later the same day Bloom said all 9,408 SOL had been refunded to the 9 users. No detailed post-mortem yet.",
+   "tools": [],
+   "source": "https://x.com/BloomTrading/status/2114646392010359238",
+   "resolved": false
+  },
+  {
+   "date": "2026-10-26",
+   "title": "Keystone's full statement: an attacker used a vulnerability in a third-party monitoring tool on its website (detected October 20) to take 25,964 buyer records, 12,873 unpaid checkout records and the WebAuth key used to check that a device is genuine. Keystone says recovery phrases and private keys were not involved; the risk is counterfeit devices passing the authenticity check. It is destroying 18,835 inventory devices with the old key and asks anyone who received a device after October 20 to follow its verification guidance.",
+   "tools": [],
+   "source": "https://x.com/KeystoneWallet/status/2114719318722404578",
+   "resolved": false
+  },
+  {
+   "date": "2026-10-26",
+   "title": "Foundation (Passport hardware wallet) said phishing emails were sent from its own domains after attackers got into part of its backend through a vulnerability in a self-hosted application and likely accessed its customer support inbox; some emails included customers' mailing addresses or phone numbers. Foundation says Passport devices and funds are not compromised, it cut off the attackers' email access within about 10 minutes and revoked all API keys. Never enter seed words anywhere except on the Passport itself.",
+   "tools": [],
+   "source": "https://community.foundation.xyz/t/important-security-notice-emails-that-appeared-to-come-from-foundation/1296",
+   "resolved": false
+  },
   {
    "date": "2026-10-24",
    "title": "Initia said a bug in MoveVM script caching let an attacker credit themselves unbacked WETH, iUSD and USDC and bridge about $2.7M out (via LayerZero and CCTP, swapped to 1,135.52 ETH) before it halted the L1 and its rollups; it said no native INIT was minted and that a fix was being written and audited.",
@@ -31,6 +52,13 @@
   },
   {
    "date": "2026-10-21",
+   "title": "GMO Internet shut down its Onamae.com Desktop Cloud Windows VPS service (popular for running FX trading bots on MT4/MT5) after finding programs planted by a third party on customer servers on October 20; up to 26,739 servers may be affected, customers reported unauthorized trades from trading logins stored on the servers, and GMO says it refused a ransom demand. It is paying every customer ¥5,000 and will compensate confirmed losses from unauthorized trades. From a device you don't trade on, change your broker and platform passwords, end sessions and turn on 2FA.",
+   "tools": [],
+   "source": "https://internet.gmo/en/news/article/253",
+   "resolved": false
+  },
+  {
+   "date": "2026-10-21",
    "title": "Railway disclosed that an unauthorized third party may have accessed encrypted environment variables and obtained the decrypted contents of some of them; it told users to immediately roll all environment variables and API keys stored in Railway and paused all deployments while it investigates.",
    "tools": [],
    "source": "https://blog.railway.com/p/security-disclosure-wednesday-october-21st",
@@ -49,6 +77,13 @@
    "tools": [],
    "source": "https://nodejs.org/en/blog/vulnerability/october-2026-security-releases",
    "resolved": true
+  },
+  {
+   "date": "2026-10-18",
+   "title": "Qubic said an attacker drained 1,404 Qubic wallets (about 2.94 trillion QU) between 23:42 UTC on October 17 and 01:26 UTC on October 18 because some wallet seeds were generated with insufficient randomness (seeds made on iPhone or iPad browsers or Mac Safari before October 18, 2026, or in the Qubic iOS app before July 2025); it says the protocol itself was not at fault. Computors halted the network; on October 20 Qubic said the recovery was approved and opened a reclaim platform (weak-seed-reclaim.qubic.org, claims until May 1, 2027).",
+   "tools": [],
+   "source": "https://x.com/_Qubic_/status/2111796725677715474",
+   "resolved": false
   }
  ]
 }
