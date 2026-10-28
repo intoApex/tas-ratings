@@ -4,10 +4,17 @@
   "tracker": "https://tradingagentstack.com/incidents/",
   "license": "CC BY 4.0",
   "rule": "Only incidents with an official source: the vendor's disclosure, a security advisory, or a named researcher's report marked as such.",
-  "generated": "2026-10-26",
-  "count": 11
+  "generated": "2026-10-28",
+  "count": 12
  },
  "incidents": [
+  {
+   "date": "2026-10-27",
+   "title": "Predict.fun said a small number of users had unauthorized transfers from their wallets totaling about 400,000 USDT. Its preliminary investigation points to its API documentation site, hosted by a third-party provider, being compromised; the docs site is offline until the investigation ends. Predict.fun says it will fully reimburse affected users and publish a post-mortem.",
+   "tools": [],
+   "source": "https://x.com/predictdotfun/status/2115089547528950108",
+   "resolved": false
+  },
   {
    "date": "2026-10-26",
    "title": "Bloom said an attacker exploited a remote code execution vulnerability in a third-party module and drained 49 wallet addresses belonging to 9 users, about 9,408 SOL ($947,000); it says no private keys were compromised and took all systems offline as a precaution. Later the same day Bloom said all 9,408 SOL had been refunded to the 9 users. No detailed post-mortem yet.",
