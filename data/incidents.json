@@ -5,7 +5,7 @@
   "license": "CC BY 4.0",
   "rule": "Only incidents with an official source: the vendor's disclosure, a security advisory, or a named researcher's report marked as such.",
   "generated": "2026-10-28",
-  "count": 12
+  "count": 16
  },
  "incidents": [
   {
@@ -13,6 +13,13 @@
    "title": "Predict.fun said a small number of users had unauthorized transfers from their wallets totaling about 400,000 USDT. Its preliminary investigation points to its API documentation site, hosted by a third-party provider, being compromised; the docs site is offline until the investigation ends. Predict.fun says it will fully reimburse affected users and publish a post-mortem.",
    "tools": [],
    "source": "https://x.com/predictdotfun/status/2115089547528950108",
+   "resolved": false
+  },
+  {
+   "date": "2026-10-27",
+   "title": "Coinbase said a security incident at its third-party analytics vendor Amplitude exposed contact information for a 'small subset' of customers. It said its systems showed no unauthorized access and customer funds remain safe.",
+   "tools": [],
+   "source": "https://www.coindesk.com/tech/2026/10/28/coinbase-says-customer-funds-are-safe-after-third-party-vendor-exposes-customer-contact-info",
    "resolved": false
   },
   {
@@ -90,6 +97,27 @@
    "title": "Qubic said an attacker drained 1,404 Qubic wallets (about 2.94 trillion QU) between 23:42 UTC on October 17 and 01:26 UTC on October 18 because some wallet seeds were generated with insufficient randomness (seeds made on iPhone or iPad browsers or Mac Safari before October 18, 2026, or in the Qubic iOS app before July 2025); it says the protocol itself was not at fault. Computors halted the network; on October 20 Qubic said the recovery was approved and opened a reclaim platform (weak-seed-reclaim.qubic.org, claims until May 1, 2027).",
    "tools": [],
    "source": "https://x.com/_Qubic_/status/2111796725677715474",
+   "resolved": false
+  },
+  {
+   "date": "2026-10-09",
+   "title": "Ledger said hardware wallets sold through the Southeast Asian reseller CryptoBilis contained hidden implants that read the screen during setup, captured the 24-word recovery phrase and sent it out over LTE through an embedded eSIM; attackers then drained funds (drains on October 9, disclosed October 13). Ledger says the implant leaves the Secure Element intact, so tampered devices may still pass its authenticity check, and that all confirmed thefts involve CryptoBilis devices.",
+   "tools": [],
+   "source": "https://therecord.media/ledger-cryptocurrency-wallet-implant-theft",
+   "resolved": false
+  },
+  {
+   "date": "2026-09-30",
+   "title": "MetaMask said it was responding to a security incident in part of its infrastructure, in its non-custodial staking operations, and exited affected Ethereum staking validators (including its Lido validators) as a precaution. It said it found no immediate threat to MetaMask wallets and did not disclose the cause.",
+   "tools": [],
+   "source": "https://cointelegraph.com/news/metamask-exits-lido-validators-as-it-investigates-security-incident",
+   "resolved": false
+  },
+  {
+   "date": "2026-09-10",
+   "title": "An intruder at Brevo, Trezor's newsletter provider, exported 347,149 marketing email contacts and sent Trezor subscribers a fake 'STM32 entropy vulnerability' email asking for wallet backups. Trezor said no Trezor product, wallet or account system was affected.",
+   "tools": [],
+   "source": "https://trezor.io/blog/news/security-incident-at-brevo-our-third-party-email-provider",
    "resolved": false
   }
  ]
