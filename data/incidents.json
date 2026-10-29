@@ -4,7 +4,7 @@
   "tracker": "https://tradingagentstack.com/incidents/",
   "license": "CC BY 4.0",
   "rule": "Only incidents with an official source: the vendor's disclosure, a security advisory, or a named researcher's report marked as such.",
-  "generated": "2026-10-28",
+  "generated": "2026-10-29",
   "count": 16
  },
  "incidents": [
