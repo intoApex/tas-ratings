@@ -2,8 +2,8 @@
 
 Open data from [TradingAgentStack](https://tradingagentstack.com). One question drives every score: **if the agent is wrong, hacked or prompt-injected, how much money can it lose?**
 
-- **37 Agent Risk Scores** for agent wallets, exchanges for bots, on-chain and DeFi agents, agent payment rails, AI trading agents and agent tokens with a real product
-- **147 tools** in the full directory, with sources and last-checked dates
+- **45 Agent Risk Scores** for agent wallets, exchanges for bots, on-chain and DeFi agents, agent payment rails, AI trading agents and agent tokens with a real product
+- **155 tools** in the full directory, with sources and last-checked dates
 - **18 incidents** from official disclosures
 
 Generated 2026-10-30 from the live site. Updated automatically on every site release; do not edit by hand.
@@ -71,10 +71,18 @@ Seven inputs, 100 points: custody (20), limits enforced outside the model (20), 
 | [OKX](https://tradingagentstack.com/tool/okx/#agent-risk-score) | 84% (partial) | limits, preview |
 | [Veranta MCP (formerly Avantis)](https://tradingagentstack.com/tool/veranta-mcp-formerly-avantis/#agent-risk-score) | 83% | none |
 | [Bitget](https://tradingagentstack.com/tool/bitget/#agent-risk-score) | 80% (partial) | limits |
+| [dYdX](https://tradingagentstack.com/tool/dydx/#agent-risk-score) | 79% (partial) | limits, preview |
+| [GMX](https://tradingagentstack.com/tool/gmx/#agent-risk-score) | 75% (partial) | limits |
 | [Coinbase Advanced](https://tradingagentstack.com/tool/coinbase-advanced/#agent-risk-score) | 72% (partial) | limits |
 | [Binance](https://tradingagentstack.com/tool/binance/#agent-risk-score) | 71% (partial) | limits, preview |
 | [Gemini](https://tradingagentstack.com/tool/gemini/#agent-risk-score) | 70% (partial) | limits |
+| [Aster](https://tradingagentstack.com/tool/aster/#agent-risk-score) | 64% (partial) | limits, preview |
 | [Hyperliquid](https://tradingagentstack.com/tool/hyperliquid/#agent-risk-score) | 64% (partial) | limits, preview |
+| [Lighter](https://tradingagentstack.com/tool/lighter/#agent-risk-score) | 64% (partial) | limits, preview |
+| [Paradex](https://tradingagentstack.com/tool/paradex/#agent-risk-score) | 64% (partial) | limits, preview |
+| [Pacifica](https://tradingagentstack.com/tool/pacifica/#agent-risk-score) | 29% (partial) | custody, limits, withdraw, preview |
+| [edgeX](https://tradingagentstack.com/tool/edgex/#agent-risk-score) | 29% (partial) | custody, limits, withdraw, preview |
+| [Extended](https://tradingagentstack.com/tool/extended/#agent-risk-score) | 18% (partial) | limits, withdraw, preview |
 
 ### On-chain & DeFi trading agents
 

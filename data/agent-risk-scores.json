@@ -6,7 +6,7 @@
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "TradingAgentStack (tradingagentstack.com)",
   "generated": "2026-10-30",
-  "count": 37,
+  "count": 45,
   "safety_formula": "https://tradingagentstack.com/safety-score/",
   "risk_v2_method": "https://tradingagentstack.com/methodology/#agent-risk-score",
   "incidents": "https://tradingagentstack.com/incidents/",
@@ -1464,6 +1464,127 @@
    "last_checked": "2026-10-30"
   },
   {
+   "slug": "dydx",
+   "name": "dYdX",
+   "category": "bot_exchange",
+   "category_label": "Exchanges & brokers for bots",
+   "agent_risk_score_pct": 79,
+   "points": 55,
+   "max": 70,
+   "partial": true,
+   "missing_inputs": [
+    "limits",
+    "preview"
+   ],
+   "inputs": {
+    "custody": {
+     "points": 20,
+     "max": 20,
+     "note": "A permissioned key can be limited to placing orders, with withdrawals and transfers blocked",
+     "source": "https://docs.dydx.xyz/concepts/trading/authenticators"
+    },
+    "limits": {
+     "points": null,
+     "max": 20,
+     "note": "Missing: no official source found yet",
+     "source": null
+    },
+    "approval": {
+     "points": 0,
+     "max": 15,
+     "note": "API orders execute with no approval step",
+     "source": "https://docs.dydx.xyz/concepts/trading/authenticators"
+    },
+    "withdraw": {
+     "points": 15,
+     "max": 15,
+     "note": "Permissioned trading keys can be barred from withdrawals and transfers",
+     "source": "https://docs.dydx.xyz/concepts/trading/authenticators"
+    },
+    "preview": {
+     "points": null,
+     "max": 10,
+     "note": "Missing: no official source found yet",
+     "source": null
+    },
+    "open": {
+     "points": 10,
+     "max": 10,
+     "note": "Open-source chain, indexer and clients with audit reports in the v4-chain repo",
+     "source": "https://github.com/dydxprotocol/v4-chain/tree/main/audits"
+    },
+    "record": {
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
+     "source": "https://tradingagentstack.com/incidents/"
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/dydx/#agent-risk-score",
+   "last_checked": "2026-10-30"
+  },
+  {
+   "slug": "gmx",
+   "name": "GMX",
+   "category": "bot_exchange",
+   "category_label": "Exchanges & brokers for bots",
+   "agent_risk_score_pct": 75,
+   "points": 60,
+   "max": 80,
+   "partial": true,
+   "missing_inputs": [
+    "limits"
+   ],
+   "inputs": {
+    "custody": {
+     "points": 20,
+     "max": 20,
+     "note": "A delegated signer trades with the owner's collateral but can't withdraw; proceeds return to the main account",
+     "source": "https://docs.gmx.io/docs/api/contracts/delegated-trading"
+    },
+    "limits": {
+     "points": null,
+     "max": 20,
+     "note": "Missing: no official source found yet",
+     "source": null
+    },
+    "approval": {
+     "points": 0,
+     "max": 15,
+     "note": "Orders execute with no approval step",
+     "source": "https://docs.gmx.io/docs/api/contracts/delegated-trading"
+    },
+    "withdraw": {
+     "points": 15,
+     "max": 15,
+     "note": "Withdrawals aren't delegated to subaccount signers",
+     "source": "https://docs.gmx.io/docs/api/contracts/delegated-trading"
+    },
+    "preview": {
+     "points": 5,
+     "max": 10,
+     "note": "SimulationRouter can dry-run a request before a keeper executes it (optional)",
+     "source": "https://docs.gmx.io/docs/api/contracts/simulations"
+    },
+    "open": {
+     "points": 10,
+     "max": 10,
+     "note": "V2 contracts public on GitHub with audits by Guardian, Certora, ABDK, Dedaub and Sherlock",
+     "source": "https://docs.gmx.io/docs/security"
+    },
+    "record": {
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
+     "source": "https://tradingagentstack.com/incidents/"
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/gmx/#agent-risk-score",
+   "last_checked": "2026-10-30"
+  },
+  {
    "slug": "coinbase-advanced",
    "name": "Coinbase Advanced",
    "category": "bot_exchange",
@@ -1652,6 +1773,67 @@
    "last_checked": "2026-10-30"
   },
   {
+   "slug": "aster",
+   "name": "Aster",
+   "category": "bot_exchange",
+   "category_label": "Exchanges & brokers for bots",
+   "agent_risk_score_pct": 64,
+   "points": 45,
+   "max": 70,
+   "partial": true,
+   "missing_inputs": [
+    "limits",
+    "preview"
+   ],
+   "inputs": {
+    "custody": {
+     "points": 20,
+     "max": 20,
+     "note": "With the withdraw permission off, an agent wallet can only trade and move funds between the owner's sub-accounts",
+     "source": "https://github.com/asterdex/api-docs/blob/master/V3(Recommended)/EN/aster-finance-futures-api-v3.md"
+    },
+    "limits": {
+     "points": null,
+     "max": 20,
+     "note": "Missing: no official source found yet",
+     "source": null
+    },
+    "approval": {
+     "points": 0,
+     "max": 15,
+     "note": "API orders execute with no approval step",
+     "source": "https://github.com/asterdex/api-docs/blob/master/V3(Recommended)/EN/aster-finance-futures-api-v3.md"
+    },
+    "withdraw": {
+     "points": 15,
+     "max": 15,
+     "note": "Withdraw is a separate agent permission that requires an IP whitelist",
+     "source": "https://github.com/asterdex/api-docs/blob/master/V3(Recommended)/EN/aster-finance-futures-api-v3.md"
+    },
+    "preview": {
+     "points": null,
+     "max": 10,
+     "note": "Missing: no official source found yet",
+     "source": null
+    },
+    "open": {
+     "points": 0,
+     "max": 10,
+     "note": "Closed: no public source code in our listing",
+     "source": "https://www.asterdex.com/"
+    },
+    "record": {
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
+     "source": "https://tradingagentstack.com/incidents/"
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/aster/#agent-risk-score",
+   "last_checked": "2026-10-30"
+  },
+  {
    "slug": "hyperliquid",
    "name": "Hyperliquid",
    "category": "bot_exchange",
@@ -1710,6 +1892,316 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/hyperliquid/#agent-risk-score",
+   "last_checked": "2026-10-30"
+  },
+  {
+   "slug": "lighter",
+   "name": "Lighter",
+   "category": "bot_exchange",
+   "category_label": "Exchanges & brokers for bots",
+   "agent_risk_score_pct": 64,
+   "points": 45,
+   "max": 70,
+   "partial": true,
+   "missing_inputs": [
+    "limits",
+    "preview"
+   ],
+   "inputs": {
+    "custody": {
+     "points": 10,
+     "max": 20,
+     "note": "Keys can move funds between your own accounts and withdraw back to your own Ethereum address, but can't send to anyone else",
+     "source": "https://docs.lighter.xyz/developers/integration-guides/api-keys"
+    },
+    "limits": {
+     "points": null,
+     "max": 20,
+     "note": "Missing: no official source found yet",
+     "source": null
+    },
+    "approval": {
+     "points": 0,
+     "max": 15,
+     "note": "API orders execute with no approval step",
+     "source": "https://docs.lighter.xyz/developers/integration-guides/api-keys"
+    },
+    "withdraw": {
+     "points": 15,
+     "max": 15,
+     "note": "Sending to a different owner or a fast withdrawal to any address needs the wallet's signature",
+     "source": "https://docs.lighter.xyz/developers/integration-guides/api-keys"
+    },
+    "preview": {
+     "points": null,
+     "max": 10,
+     "note": "Missing: no official source found yet",
+     "source": null
+    },
+    "open": {
+     "points": 10,
+     "max": 10,
+     "note": "Public circuits and contracts (source-available licence) with 9 audit reports linked in the docs",
+     "source": "https://docs.lighter.xyz/security/security-audits"
+    },
+    "record": {
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
+     "source": "https://tradingagentstack.com/incidents/"
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/lighter/#agent-risk-score",
+   "last_checked": "2026-10-30"
+  },
+  {
+   "slug": "paradex",
+   "name": "Paradex",
+   "category": "bot_exchange",
+   "category_label": "Exchanges & brokers for bots",
+   "agent_risk_score_pct": 64,
+   "points": 45,
+   "max": 70,
+   "partial": true,
+   "missing_inputs": [
+    "limits",
+    "preview"
+   ],
+   "inputs": {
+    "custody": {
+     "points": 20,
+     "max": 20,
+     "note": "Trading subkeys can place and cancel orders but can't withdraw, transfer or change settings",
+     "source": "https://docs.paradex.trade/api/general-information/api-authentication"
+    },
+    "limits": {
+     "points": null,
+     "max": 20,
+     "note": "Missing: no official source found yet",
+     "source": null
+    },
+    "approval": {
+     "points": 0,
+     "max": 15,
+     "note": "API orders execute with no approval step",
+     "source": "https://docs.paradex.trade/api/general-information/api-authentication"
+    },
+    "withdraw": {
+     "points": 15,
+     "max": 15,
+     "note": "Subkeys can't withdraw or transfer",
+     "source": "https://docs.paradex.trade/api/general-information/api-authentication"
+    },
+    "preview": {
+     "points": null,
+     "max": 10,
+     "note": "Missing: no official source found yet",
+     "source": null
+    },
+    "open": {
+     "points": 0,
+     "max": 10,
+     "note": "Closed: no public source code in our listing",
+     "source": "https://www.paradex.trade/"
+    },
+    "record": {
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
+     "source": "https://tradingagentstack.com/incidents/"
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/paradex/#agent-risk-score",
+   "last_checked": "2026-10-30"
+  },
+  {
+   "slug": "pacifica",
+   "name": "Pacifica",
+   "category": "bot_exchange",
+   "category_label": "Exchanges & brokers for bots",
+   "agent_risk_score_pct": 29,
+   "points": 10,
+   "max": 35,
+   "partial": true,
+   "missing_inputs": [
+    "custody",
+    "limits",
+    "withdraw",
+    "preview"
+   ],
+   "inputs": {
+    "custody": {
+     "points": null,
+     "max": 20,
+     "note": "Missing: no official source found yet",
+     "source": null
+    },
+    "limits": {
+     "points": null,
+     "max": 20,
+     "note": "Missing: no official source found yet",
+     "source": null
+    },
+    "approval": {
+     "points": 0,
+     "max": 15,
+     "note": "API orders execute with no approval step",
+     "source": "https://docs.pacifica.fi/api-documentation/api/signing/api-agent-keys"
+    },
+    "withdraw": {
+     "points": null,
+     "max": 15,
+     "note": "Missing: no official source found yet",
+     "source": null
+    },
+    "preview": {
+     "points": null,
+     "max": 10,
+     "note": "Missing: no official source found yet",
+     "source": null
+    },
+    "open": {
+     "points": 0,
+     "max": 10,
+     "note": "Closed: no public source code in our listing",
+     "source": "https://pacifica.fi/"
+    },
+    "record": {
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
+     "source": "https://tradingagentstack.com/incidents/"
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/pacifica/#agent-risk-score",
+   "last_checked": "2026-10-30"
+  },
+  {
+   "slug": "edgex",
+   "name": "edgeX",
+   "category": "bot_exchange",
+   "category_label": "Exchanges & brokers for bots",
+   "agent_risk_score_pct": 29,
+   "points": 10,
+   "max": 35,
+   "partial": true,
+   "missing_inputs": [
+    "custody",
+    "limits",
+    "withdraw",
+    "preview"
+   ],
+   "inputs": {
+    "custody": {
+     "points": null,
+     "max": 20,
+     "note": "Missing: no official source found yet",
+     "source": null
+    },
+    "limits": {
+     "points": null,
+     "max": 20,
+     "note": "Missing: no official source found yet",
+     "source": null
+    },
+    "approval": {
+     "points": 0,
+     "max": 15,
+     "note": "API orders execute with no approval step",
+     "source": "https://edgex-1.gitbook.io/edgeX-documentation/api-v2/private-api/order-api"
+    },
+    "withdraw": {
+     "points": null,
+     "max": 15,
+     "note": "Missing: no official source found yet",
+     "source": null
+    },
+    "preview": {
+     "points": null,
+     "max": 10,
+     "note": "Missing: no official source found yet",
+     "source": null
+    },
+    "open": {
+     "points": 0,
+     "max": 10,
+     "note": "Closed: no public source code in our listing",
+     "source": "https://www.edgex.exchange/"
+    },
+    "record": {
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
+     "source": "https://tradingagentstack.com/incidents/"
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/edgex/#agent-risk-score",
+   "last_checked": "2026-10-30"
+  },
+  {
+   "slug": "extended",
+   "name": "Extended",
+   "category": "bot_exchange",
+   "category_label": "Exchanges & brokers for bots",
+   "agent_risk_score_pct": 18,
+   "points": 10,
+   "max": 55,
+   "partial": true,
+   "missing_inputs": [
+    "limits",
+    "withdraw",
+    "preview"
+   ],
+   "inputs": {
+    "custody": {
+     "points": 0,
+     "max": 20,
+     "note": "The Stark key every order needs can also withdraw and transfer funds",
+     "source": "https://api.docs.extended.exchange/"
+    },
+    "limits": {
+     "points": null,
+     "max": 20,
+     "note": "Missing: no official source found yet",
+     "source": null
+    },
+    "approval": {
+     "points": 0,
+     "max": 15,
+     "note": "API orders execute with no approval step",
+     "source": "https://api.docs.extended.exchange/"
+    },
+    "withdraw": {
+     "points": null,
+     "max": 15,
+     "note": "Missing: no official source found yet",
+     "source": null
+    },
+    "preview": {
+     "points": null,
+     "max": 10,
+     "note": "Missing: no official source found yet",
+     "source": null
+    },
+    "open": {
+     "points": 0,
+     "max": 10,
+     "note": "Closed: no public source code in our listing",
+     "source": "https://extended.exchange/"
+    },
+    "record": {
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
+     "source": "https://tradingagentstack.com/incidents/"
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/extended/#agent-risk-score",
    "last_checked": "2026-10-30"
   },
   {
