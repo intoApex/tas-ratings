@@ -73,7 +73,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/link-agent-wallet/#agent-risk-score",
-   "last_checked": "2026-10-26"
+   "last_checked": "2026-10-30"
   },
   {
    "slug": "agent-payments-protocol-ap2",
@@ -136,7 +136,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/agent-payments-protocol-ap2/#agent-risk-score",
-   "last_checked": "2026-10-26"
+   "last_checked": "2026-10-30"
   },
   {
    "slug": "stripe-issuing-for-agents",
@@ -196,7 +196,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/stripe-issuing-for-agents/#agent-risk-score",
-   "last_checked": "2026-10-26"
+   "last_checked": "2026-10-30"
   },
   {
    "slug": "lightning-agent-tools",
@@ -258,7 +258,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/lightning-agent-tools/#agent-risk-score",
-   "last_checked": "2026-10-26"
+   "last_checked": "2026-10-30"
   },
   {
    "slug": "x402",
@@ -321,7 +321,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/x402/#agent-risk-score",
-   "last_checked": "2026-10-26"
+   "last_checked": "2026-10-30"
   },
   {
    "slug": "coinbase-agentic-wallet",
@@ -381,7 +381,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/coinbase-agentic-wallet/#agent-risk-score",
-   "last_checked": "2026-10-26"
+   "last_checked": "2026-10-30"
   },
   {
    "slug": "safe-smart-account",
@@ -441,7 +441,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/safe-smart-account/#agent-risk-score",
-   "last_checked": "2026-10-26"
+   "last_checked": "2026-10-30"
   },
   {
    "slug": "zerodev",
@@ -502,7 +502,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/zerodev/#agent-risk-score",
-   "last_checked": "2026-10-26"
+   "last_checked": "2026-10-30"
   },
   {
    "slug": "crossmint-agent-wallets",
@@ -562,7 +562,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/crossmint-agent-wallets/#agent-risk-score",
-   "last_checked": "2026-10-26"
+   "last_checked": "2026-10-30"
   },
   {
    "slug": "turnkey",
@@ -622,7 +622,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/turnkey/#agent-risk-score",
-   "last_checked": "2026-10-26"
+   "last_checked": "2026-10-30"
   },
   {
    "slug": "privy-server-wallets",
@@ -680,7 +680,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/privy-server-wallets/#agent-risk-score",
-   "last_checked": "2026-10-26"
+   "last_checked": "2026-10-30"
   },
   {
    "slug": "coinbase-cdp-server-wallets",
@@ -740,7 +740,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/coinbase-cdp-server-wallets/#agent-risk-score",
-   "last_checked": "2026-10-26"
+   "last_checked": "2026-10-30"
   },
   {
    "slug": "coinbase-agentkit",
@@ -800,7 +800,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/coinbase-agentkit/#agent-risk-score",
-   "last_checked": "2026-10-26"
+   "last_checked": "2026-10-30"
   },
   {
    "slug": "binance-agentic-wallet",
@@ -919,7 +919,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/bitget-wallet-skill/#agent-risk-score",
-   "last_checked": "2026-10-26"
+   "last_checked": "2026-10-30"
   },
   {
    "slug": "heyanon",
@@ -980,7 +980,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/heyanon/#agent-risk-score",
-   "last_checked": "2026-10-26"
+   "last_checked": "2026-10-30"
   },
   {
    "slug": "okx-agentic-wallet",
@@ -1041,7 +1041,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/okx-agentic-wallet/#agent-risk-score",
-   "last_checked": "2026-10-26"
+   "last_checked": "2026-10-30"
   },
   {
    "slug": "virtuals-acp-acp-cli",
@@ -1101,7 +1101,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/virtuals-acp-acp-cli/#agent-risk-score",
-   "last_checked": "2026-10-26"
+   "last_checked": "2026-10-30"
   },
   {
    "slug": "olas-pearl",
@@ -1164,7 +1164,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/olas-pearl/#agent-risk-score",
-   "last_checked": "2026-10-26"
+   "last_checked": "2026-10-30"
   },
   {
    "slug": "bybit",
@@ -1224,7 +1224,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/bybit/#agent-risk-score",
-   "last_checked": "2026-10-26"
+   "last_checked": "2026-10-30"
   },
   {
    "slug": "okx",
@@ -1285,7 +1285,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/okx/#agent-risk-score",
-   "last_checked": "2026-10-26"
+   "last_checked": "2026-10-30"
   },
   {
    "slug": "bitget",
@@ -1345,7 +1345,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/bitget/#agent-risk-score",
-   "last_checked": "2026-10-26"
+   "last_checked": "2026-10-30"
   },
   {
    "slug": "kraken",
@@ -1403,7 +1403,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/kraken/#agent-risk-score",
-   "last_checked": "2026-10-26"
+   "last_checked": "2026-10-30"
   },
   {
    "slug": "coinbase-advanced",
@@ -1463,7 +1463,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/coinbase-advanced/#agent-risk-score",
-   "last_checked": "2026-10-26"
+   "last_checked": "2026-10-30"
   },
   {
    "slug": "binance",
@@ -1531,7 +1531,7 @@
     }
    ],
    "page": "https://tradingagentstack.com/tool/binance/#agent-risk-score",
-   "last_checked": "2026-10-26"
+   "last_checked": "2026-10-29"
   },
   {
    "slug": "gemini",
@@ -1591,7 +1591,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/gemini/#agent-risk-score",
-   "last_checked": "2026-10-26"
+   "last_checked": "2026-10-30"
   },
   {
    "slug": "hyperliquid",
@@ -1652,7 +1652,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/hyperliquid/#agent-risk-score",
-   "last_checked": "2026-10-26"
+   "last_checked": "2026-10-30"
   },
   {
    "slug": "craic-hub-exchange",
@@ -1712,7 +1712,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/craic-hub-exchange/#agent-risk-score",
-   "last_checked": "2026-10-26"
+   "last_checked": "2026-10-30"
   },
   {
    "slug": "0x-swap-api",
@@ -1775,7 +1775,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/0x-swap-api/#agent-risk-score",
-   "last_checked": "2026-10-26"
+   "last_checked": "2026-10-30"
   },
   {
    "slug": "jupiter-api",
@@ -1838,7 +1838,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/jupiter-api/#agent-risk-score",
-   "last_checked": "2026-10-26"
+   "last_checked": "2026-10-30"
   },
   {
    "slug": "1inch-swap-api",
@@ -1900,7 +1900,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/1inch-swap-api/#agent-risk-score",
-   "last_checked": "2026-10-26"
+   "last_checked": "2026-10-30"
   },
   {
    "slug": "bonkbot",
@@ -1964,7 +1964,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/bonkbot/#agent-risk-score",
-   "last_checked": "2026-10-26"
+   "last_checked": "2026-10-30"
   },
   {
    "slug": "banana-gun",
@@ -2028,7 +2028,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/banana-gun/#agent-risk-score",
-   "last_checked": "2026-10-26"
+   "last_checked": "2026-10-30"
   },
   {
    "slug": "solana-agent-kit",
@@ -2091,7 +2091,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/solana-agent-kit/#agent-risk-score",
-   "last_checked": "2026-10-26"
+   "last_checked": "2026-10-30"
   },
   {
    "slug": "maestro",
@@ -2153,7 +2153,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/maestro/#agent-risk-score",
-   "last_checked": "2026-10-26"
+   "last_checked": "2026-10-30"
   },
   {
    "slug": "trojan",
@@ -2215,7 +2215,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/trojan/#agent-risk-score",
-   "last_checked": "2026-10-26"
+   "last_checked": "2026-10-30"
   }
  ]
 }

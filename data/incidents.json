@@ -5,7 +5,7 @@
   "license": "CC BY 4.0",
   "rule": "Only incidents with an official source: the vendor's disclosure, a security advisory, or a named researcher's report marked as such.",
   "generated": "2026-10-30",
-  "count": 17
+  "count": 18
  },
  "incidents": [
   {
@@ -16,6 +16,15 @@
    ],
    "source": "https://x.com/binance/status/2115993361517891592",
    "resolved": false
+  },
+  {
+   "date": "2026-10-29",
+   "title": "Polymarket said one of its third-party providers was compromised, affecting users of its international platform Polymarket.com; it put the exchange in cancel-only mode, paused relayer actions and halted trading for about an hour (18:05-19:05 UTC, Trading API included), fixed the issue, referred it to law enforcement and says anyone impacted will be made whole.",
+   "tools": [
+    "Polymarket API"
+   ],
+   "source": "https://status.polymarket.com/cmvtuswgi00221bkzps7w21pt",
+   "resolved": true
   },
   {
    "date": "2026-10-27",
