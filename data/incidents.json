@@ -4,10 +4,19 @@
   "tracker": "https://tradingagentstack.com/incidents/",
   "license": "CC BY 4.0",
   "rule": "Only incidents with an official source: the vendor's disclosure, a security advisory, or a named researcher's report marked as such.",
-  "generated": "2026-10-29",
-  "count": 16
+  "generated": "2026-10-30",
+  "count": 17
  },
  "incidents": [
+  {
+   "date": "2026-10-29",
+   "title": "Binance said its initial investigation suggests an attacker used a compromised DevOps engineer's laptop to reach a service container and submit unauthorized withdrawal transactions, and that it found no evidence of a wallet private key compromise. It suspended all deposits and withdrawals as a precaution, is working with law enforcement, says it will cover all losses and will publish a full post-mortem once the investigation is complete.",
+   "tools": [
+    "Binance"
+   ],
+   "source": "https://x.com/binance/status/2115993361517891592",
+   "resolved": false
+  },
   {
    "date": "2026-10-27",
    "title": "Predict.fun said a small number of users had unauthorized transfers from their wallets totaling about 400,000 USDT. Its preliminary investigation points to its API documentation site, hosted by a third-party provider, being compromised; the docs site is offline until the investigation ends. Predict.fun says it will fully reimburse affected users and publish a post-mortem.",

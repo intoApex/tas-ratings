@@ -5,7 +5,7 @@
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "TradingAgentStack (tradingagentstack.com)",
-  "generated": "2026-10-29",
+  "generated": "2026-10-30",
   "count": 36,
   "safety_formula": "https://tradingagentstack.com/safety-score/",
   "risk_v2_method": "https://tradingagentstack.com/methodology/#agent-risk-score",
@@ -1227,67 +1227,6 @@
    "last_checked": "2026-10-26"
   },
   {
-   "slug": "binance",
-   "name": "Binance",
-   "category": "bot_exchange",
-   "category_label": "Exchanges & brokers for bots",
-   "agent_risk_score_pct": 86,
-   "points": 60,
-   "max": 70,
-   "partial": true,
-   "missing_inputs": [
-    "limits",
-    "preview"
-   ],
-   "inputs": {
-    "custody": {
-     "points": 20,
-     "max": 20,
-     "note": "The official MCP trades in a dedicated Agentic sub-account you fund yourself; there is no withdrawal scope, so the agent can never move funds out of it",
-     "source": "https://developers.binance.com/en/docs/agent-native/mcp-server/agentic"
-    },
-    "limits": {
-     "points": null,
-     "max": 20,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "approval": {
-     "points": 15,
-     "max": 15,
-     "note": "Confirm-first: every non-read action (orders, cancels, sub-account transfers) waits for your yes before it is sent",
-     "source": "https://developers.binance.com/en/docs/agent-native/mcp-server/agentic"
-    },
-    "withdraw": {
-     "points": 15,
-     "max": 15,
-     "note": "No withdrawal scope: the agent can't send funds to an external address (and a plain API key needs a separate withdrawal permission)",
-     "source": "https://developers.binance.com/en/docs/agent-native/mcp-server/agentic"
-    },
-    "preview": {
-     "points": null,
-     "max": 10,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "open": {
-     "points": 0,
-     "max": 10,
-     "note": "Closed: no public source code in our listing",
-     "source": "https://www.binance.com/"
-    },
-    "record": {
-     "points": 10,
-     "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
-     "source": "https://tradingagentstack.com/incidents/"
-    }
-   },
-   "incidents": [],
-   "page": "https://tradingagentstack.com/tool/binance/#agent-risk-score",
-   "last_checked": "2026-10-26"
-  },
-  {
    "slug": "okx",
    "name": "OKX",
    "category": "bot_exchange",
@@ -1524,6 +1463,74 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/coinbase-advanced/#agent-risk-score",
+   "last_checked": "2026-10-26"
+  },
+  {
+   "slug": "binance",
+   "name": "Binance",
+   "category": "bot_exchange",
+   "category_label": "Exchanges & brokers for bots",
+   "agent_risk_score_pct": 71,
+   "points": 50,
+   "max": 70,
+   "partial": true,
+   "missing_inputs": [
+    "limits",
+    "preview"
+   ],
+   "inputs": {
+    "custody": {
+     "points": 20,
+     "max": 20,
+     "note": "The official MCP trades in a dedicated Agentic sub-account you fund yourself; there is no withdrawal scope, so the agent can never move funds out of it",
+     "source": "https://developers.binance.com/en/docs/agent-native/mcp-server/agentic"
+    },
+    "limits": {
+     "points": null,
+     "max": 20,
+     "note": "Missing: no official source found yet",
+     "source": null
+    },
+    "approval": {
+     "points": 15,
+     "max": 15,
+     "note": "Confirm-first: every non-read action (orders, cancels, sub-account transfers) waits for your yes before it is sent",
+     "source": "https://developers.binance.com/en/docs/agent-native/mcp-server/agentic"
+    },
+    "withdraw": {
+     "points": 15,
+     "max": 15,
+     "note": "No withdrawal scope: the agent can't send funds to an external address (and a plain API key needs a separate withdrawal permission)",
+     "source": "https://developers.binance.com/en/docs/agent-native/mcp-server/agentic"
+    },
+    "preview": {
+     "points": null,
+     "max": 10,
+     "note": "Missing: no official source found yet",
+     "source": null
+    },
+    "open": {
+     "points": 0,
+     "max": 10,
+     "note": "Closed: no public source code in our listing",
+     "source": "https://www.binance.com/"
+    },
+    "record": {
+     "points": 0,
+     "max": 10,
+     "note": "Unresolved incident: Binance said its initial investigation suggests an attacker used a compromised DevOps engineer's laptop to reach a service container and submit unauthorized withdrawal transactions, and that it found no evidence of a wallet private key compromise. It suspended all deposits and withdrawals as a precaution, is working with law enforcement, says it will cover all losses and will publish a full post-mortem once the investigation is complete.",
+     "source": "https://x.com/binance/status/2115993361517891592"
+    }
+   },
+   "incidents": [
+    {
+     "date": "2026-10-29",
+     "title": "Binance said its initial investigation suggests an attacker used a compromised DevOps engineer's laptop to reach a service container and submit unauthorized withdrawal transactions, and that it found no evidence of a wallet private key compromise. It suspended all deposits and withdrawals as a precaution, is working with law enforcement, says it will cover all losses and will publish a full post-mortem once the investigation is complete.",
+     "source": "https://x.com/binance/status/2115993361517891592",
+     "resolved": false
+    }
+   ],
+   "page": "https://tradingagentstack.com/tool/binance/#agent-risk-score",
    "last_checked": "2026-10-26"
   },
   {

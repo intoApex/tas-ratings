@@ -4,9 +4,9 @@ Open data from [TradingAgentStack](https://tradingagentstack.com). One question 
 
 - **36 Agent Risk Scores** for agent wallets, exchanges for bots, on-chain and DeFi agents, agent payment rails, AI trading agents and agent tokens with a real product
 - **143 tools** in the full directory, with sources and last-checked dates
-- **16 incidents** from official disclosures
+- **17 incidents** from official disclosures
 
-Generated 2026-10-29 from the live site. Updated automatically on every site release; do not edit by hand.
+Generated 2026-10-30 from the live site. Updated automatically on every site release; do not edit by hand.
 
 ## Files
 
@@ -67,11 +67,11 @@ Seven inputs, 100 points: custody (20), limits enforced outside the model (20), 
 | Tool | Agent Risk Score | Missing inputs |
 |---|---|---|
 | [Bybit](https://tradingagentstack.com/tool/bybit/#agent-risk-score) | 89% (partial) | limits |
-| [Binance](https://tradingagentstack.com/tool/binance/#agent-risk-score) | 86% (partial) | limits, preview |
 | [OKX](https://tradingagentstack.com/tool/okx/#agent-risk-score) | 84% (partial) | limits, preview |
 | [Bitget](https://tradingagentstack.com/tool/bitget/#agent-risk-score) | 80% (partial) | limits |
 | [Kraken](https://tradingagentstack.com/tool/kraken/#agent-risk-score) | 76% | none |
 | [Coinbase Advanced](https://tradingagentstack.com/tool/coinbase-advanced/#agent-risk-score) | 72% (partial) | limits |
+| [Binance](https://tradingagentstack.com/tool/binance/#agent-risk-score) | 71% (partial) | limits, preview |
 | [Gemini](https://tradingagentstack.com/tool/gemini/#agent-risk-score) | 70% (partial) | limits |
 | [Hyperliquid](https://tradingagentstack.com/tool/hyperliquid/#agent-risk-score) | 64% (partial) | limits, preview |
 
