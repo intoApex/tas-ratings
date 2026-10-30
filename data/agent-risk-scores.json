@@ -6,7 +6,7 @@
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "TradingAgentStack (tradingagentstack.com)",
   "generated": "2026-10-30",
-  "count": 36,
+  "count": 37,
   "safety_formula": "https://tradingagentstack.com/safety-score/",
   "risk_v2_method": "https://tradingagentstack.com/methodology/#agent-risk-score",
   "incidents": "https://tradingagentstack.com/incidents/",
@@ -1227,6 +1227,64 @@
    "last_checked": "2026-10-30"
   },
   {
+   "slug": "kraken",
+   "name": "Kraken",
+   "category": "bot_exchange",
+   "category_label": "Exchanges & brokers for bots",
+   "agent_risk_score_pct": 84,
+   "points": 84,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
+   "inputs": {
+    "custody": {
+     "points": 20,
+     "max": 20,
+     "note": "Granular key permissions; without Withdraw Funds a key can't move funds off Kraken",
+     "source": "https://docs.kraken.com/exchange/guides/rest/api-keys"
+    },
+    "limits": {
+     "points": 20,
+     "max": 20,
+     "note": "Kraken's MCP docs: set position size limits and pair allowlists at the API key level on Kraken's settings page",
+     "source": "https://docs.kraken.com/home/mcp"
+    },
+    "approval": {
+     "points": 8,
+     "max": 15,
+     "note": "Optional, client-dependent: since kraken-cli 0.5.0 each dangerous MCP call (trading, funding) goes to you through MCP elicitation; on clients that can't show that prompt the agent itself passes acknowledged=true, and --allow-dangerous turns the check off",
+     "source": "https://github.com/krakenfx/kraken-cli/blob/v0.5.0/CHANGELOG.md"
+    },
+    "withdraw": {
+     "points": 15,
+     "max": 15,
+     "note": "Withdraw Funds is a separate key permission (the MCP's funding service can withdraw only if you grant it)",
+     "source": "https://docs.kraken.com/exchange/guides/rest/api-keys"
+    },
+    "preview": {
+     "points": 5,
+     "max": 10,
+     "note": "AddOrder has validate=true: the order is checked but not sent to the matching engine (optional, per order)",
+     "source": "https://docs.kraken.com/api/docs/rest-api/add-order"
+    },
+    "open": {
+     "points": 6,
+     "max": 10,
+     "note": "Open source (official repository); no audit report found in the official docs",
+     "source": "https://github.com/krakenfx/kraken-cli"
+    },
+    "record": {
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
+     "source": "https://tradingagentstack.com/incidents/"
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/kraken/#agent-risk-score",
+   "last_checked": "2026-10-30"
+  },
+  {
    "slug": "okx",
    "name": "OKX",
    "category": "bot_exchange",
@@ -1288,6 +1346,64 @@
    "last_checked": "2026-10-30"
   },
   {
+   "slug": "veranta-mcp-formerly-avantis",
+   "name": "Veranta MCP (formerly Avantis)",
+   "category": "bot_exchange",
+   "category_label": "Exchanges & brokers for bots",
+   "agent_risk_score_pct": 83,
+   "points": 83,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
+   "inputs": {
+    "custody": {
+     "points": 20,
+     "max": 20,
+     "note": "The agent trades with a session key your wallet registers as a delegate; it can open, close and modify positions but can't withdraw USDC from your account, grant allowances or add delegates, and you can revoke it any time",
+     "source": "https://sdk.veranta.xyz/ai/session-keys"
+    },
+    "limits": {
+     "points": 20,
+     "max": 20,
+     "note": "A policy enforced inside every trading tool caps leverage, collateral and size per trade, daily notional, open positions and daily loss; the AI can't edit it, and on the hosted connector you set it by signing with your wallet (default preset: 3x, $250 per trade, $100 daily loss)",
+     "source": "https://sdk.veranta.xyz/ai/safety"
+    },
+    "approval": {
+     "points": 8,
+     "max": 15,
+     "note": "Optional: a confirmation is required only above a notional you set (off by default), for bulk closes and for vault moves; otherwise it depends on your AI client asking before tools run",
+     "source": "https://sdk.veranta.xyz/ai/safety"
+    },
+    "withdraw": {
+     "points": 15,
+     "max": 15,
+     "note": "The session key can't send USDC out of your account; margin withdrawals always pay your own wallet",
+     "source": "https://sdk.veranta.xyz/ai/safety"
+    },
+    "preview": {
+     "points": 10,
+     "max": 10,
+     "note": "Every trade is quoted before it executes (entry with spread, fees, liquidation price and the policy verdict); a quote expires after 30 seconds and executes once",
+     "source": "https://sdk.veranta.xyz/ai/safety"
+    },
+    "open": {
+     "points": 0,
+     "max": 10,
+     "note": "Closed: no public source code in our listing",
+     "source": "https://sdk.veranta.xyz/ai/overview"
+    },
+    "record": {
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
+     "source": "https://tradingagentstack.com/incidents/"
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/veranta-mcp-formerly-avantis/#agent-risk-score",
+   "last_checked": "2026-10-30"
+  },
+  {
    "slug": "bitget",
    "name": "Bitget",
    "category": "bot_exchange",
@@ -1345,64 +1461,6 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/bitget/#agent-risk-score",
-   "last_checked": "2026-10-30"
-  },
-  {
-   "slug": "kraken",
-   "name": "Kraken",
-   "category": "bot_exchange",
-   "category_label": "Exchanges & brokers for bots",
-   "agent_risk_score_pct": 76,
-   "points": 76,
-   "max": 100,
-   "partial": false,
-   "missing_inputs": [],
-   "inputs": {
-    "custody": {
-     "points": 20,
-     "max": 20,
-     "note": "Granular key permissions; without Withdraw Funds a key can't move funds off Kraken",
-     "source": "https://docs.kraken.com/exchange/guides/rest/api-keys"
-    },
-    "limits": {
-     "points": 20,
-     "max": 20,
-     "note": "Kraken's MCP docs: set position size limits and pair allowlists at the API key level on Kraken's settings page",
-     "source": "https://docs.kraken.com/home/mcp"
-    },
-    "approval": {
-     "points": 0,
-     "max": 15,
-     "note": "Dangerous tools need acknowledged=true, which the agent itself passes; no human confirmation step",
-     "source": "https://docs.kraken.com/home/mcp"
-    },
-    "withdraw": {
-     "points": 15,
-     "max": 15,
-     "note": "Withdraw Funds is a separate key permission (the MCP's funding service can withdraw only if you grant it)",
-     "source": "https://docs.kraken.com/exchange/guides/rest/api-keys"
-    },
-    "preview": {
-     "points": 5,
-     "max": 10,
-     "note": "AddOrder has validate=true: the order is checked but not sent to the matching engine (optional, per order)",
-     "source": "https://docs.kraken.com/api/docs/rest-api/add-order"
-    },
-    "open": {
-     "points": 6,
-     "max": 10,
-     "note": "Open source (official repository); no audit report found in the official docs",
-     "source": "https://github.com/krakenfx/kraken-cli"
-    },
-    "record": {
-     "points": 10,
-     "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
-     "source": "https://tradingagentstack.com/incidents/"
-    }
-   },
-   "incidents": [],
-   "page": "https://tradingagentstack.com/tool/kraken/#agent-risk-score",
    "last_checked": "2026-10-30"
   },
   {

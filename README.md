@@ -2,8 +2,8 @@
 
 Open data from [TradingAgentStack](https://tradingagentstack.com). One question drives every score: **if the agent is wrong, hacked or prompt-injected, how much money can it lose?**
 
-- **36 Agent Risk Scores** for agent wallets, exchanges for bots, on-chain and DeFi agents, agent payment rails, AI trading agents and agent tokens with a real product
-- **145 tools** in the full directory, with sources and last-checked dates
+- **37 Agent Risk Scores** for agent wallets, exchanges for bots, on-chain and DeFi agents, agent payment rails, AI trading agents and agent tokens with a real product
+- **147 tools** in the full directory, with sources and last-checked dates
 - **18 incidents** from official disclosures
 
 Generated 2026-10-30 from the live site. Updated automatically on every site release; do not edit by hand.
@@ -67,9 +67,10 @@ Seven inputs, 100 points: custody (20), limits enforced outside the model (20), 
 | Tool | Agent Risk Score | Missing inputs |
 |---|---|---|
 | [Bybit](https://tradingagentstack.com/tool/bybit/#agent-risk-score) | 89% (partial) | limits |
+| [Kraken](https://tradingagentstack.com/tool/kraken/#agent-risk-score) | 84% | none |
 | [OKX](https://tradingagentstack.com/tool/okx/#agent-risk-score) | 84% (partial) | limits, preview |
+| [Veranta MCP (formerly Avantis)](https://tradingagentstack.com/tool/veranta-mcp-formerly-avantis/#agent-risk-score) | 83% | none |
 | [Bitget](https://tradingagentstack.com/tool/bitget/#agent-risk-score) | 80% (partial) | limits |
-| [Kraken](https://tradingagentstack.com/tool/kraken/#agent-risk-score) | 76% | none |
 | [Coinbase Advanced](https://tradingagentstack.com/tool/coinbase-advanced/#agent-risk-score) | 72% (partial) | limits |
 | [Binance](https://tradingagentstack.com/tool/binance/#agent-risk-score) | 71% (partial) | limits, preview |
 | [Gemini](https://tradingagentstack.com/tool/gemini/#agent-risk-score) | 70% (partial) | limits |
