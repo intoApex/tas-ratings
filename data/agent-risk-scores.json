@@ -6,7 +6,7 @@
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "TradingAgentStack (tradingagentstack.com)",
   "generated": "2026-10-31",
-  "count": 45,
+  "count": 47,
   "safety_formula": "https://tradingagentstack.com/safety-score/",
   "risk_v2_method": "https://tradingagentstack.com/methodology/#agent-risk-score",
   "incidents": "https://tradingagentstack.com/incidents/",
@@ -20,8 +20,8 @@
    "name": "Link agent wallet",
    "category": "agent_payments",
    "category_label": "AI agent payments",
-   "agent_risk_score_pct": 84,
-   "points": 76,
+   "agent_risk_score_pct": 71,
+   "points": 64,
    "max": 90,
    "partial": true,
    "missing_inputs": [
@@ -41,16 +41,16 @@
      "source": "https://github.com/stripe/link-cli"
     },
     "approval": {
-     "points": 15,
+     "points": 8,
      "max": 15,
-     "note": "You approve the amount of every purchase in the Link app before the agent can pay",
-     "source": "https://link.com/agents"
+     "note": "Optional since link-cli 1.0.1: without an approval policy you approve every purchase in the Link app; with --use-approval-policy, spend requests within the policy's per-purchase limit (and optional allowed payment methods) are approved without a tap",
+     "source": "https://github.com/stripe/link-cli/releases/tag/%40stripe%2Flink-cli%401.0.1"
     },
     "withdraw": {
-     "points": 15,
+     "points": 10,
      "max": 15,
-     "note": "No payment goes out without your approval in the Link app, and each card or token is single-use",
-     "source": "https://link.com/agents"
+     "note": "Payments go only to merchants through single-use cards or tokens; under an approval policy they go out without a tap but stay capped per purchase and by Link's service limits",
+     "source": "https://github.com/stripe/link-cli/releases/tag/%40stripe%2Flink-cli%401.0.1"
     },
     "preview": {
      "points": null,
@@ -73,7 +73,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/link-agent-wallet/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "agent-payments-protocol-ap2",
@@ -136,7 +136,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/agent-payments-protocol-ap2/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "stripe-issuing-for-agents",
@@ -196,7 +196,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/stripe-issuing-for-agents/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "lightning-agent-tools",
@@ -258,7 +258,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/lightning-agent-tools/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "x402",
@@ -321,7 +321,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/x402/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "coinbase-agentic-wallet",
@@ -381,7 +381,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/coinbase-agentic-wallet/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "safe-smart-account",
@@ -441,7 +441,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/safe-smart-account/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "zerodev",
@@ -502,7 +502,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/zerodev/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "crossmint-agent-wallets",
@@ -562,7 +562,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/crossmint-agent-wallets/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "turnkey",
@@ -622,7 +622,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/turnkey/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "privy-server-wallets",
@@ -680,7 +680,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/privy-server-wallets/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "coinbase-cdp-server-wallets",
@@ -740,7 +740,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/coinbase-cdp-server-wallets/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "coinbase-agentkit",
@@ -800,7 +800,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/coinbase-agentkit/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "binance-agentic-wallet",
@@ -858,6 +858,67 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/binance-agentic-wallet/#agent-risk-score",
+   "last_checked": "2026-10-31"
+  },
+  {
+   "slug": "tria-agentic-trading",
+   "name": "Tria Agentic Trading",
+   "category": "ai_trading_agent",
+   "category_label": "AI trading agents",
+   "agent_risk_score_pct": 64,
+   "points": 45,
+   "max": 70,
+   "partial": true,
+   "missing_inputs": [
+    "limits",
+    "preview"
+   ],
+   "inputs": {
+    "custody": {
+     "points": 20,
+     "max": 20,
+     "note": "The agent trades your own self-custodial account with a trade-only key you create in the Tria app; it can open and close positions but can't withdraw, and you can revoke it any time",
+     "source": "https://blogs.tria.so/en/agentic-trading-on-tria"
+    },
+    "limits": {
+     "points": null,
+     "max": 20,
+     "note": "Missing: no official source found yet",
+     "source": null
+    },
+    "approval": {
+     "points": 0,
+     "max": 15,
+     "note": "No approval step from Tria: whether trades need your approval depends on your AI tool and its setup",
+     "source": "https://blogs.tria.so/en/agentic-trading-on-tria"
+    },
+    "withdraw": {
+     "points": 15,
+     "max": 15,
+     "note": "The trading key gives no permission to withdraw funds",
+     "source": "https://blogs.tria.so/en/agentic-trading-on-tria"
+    },
+    "preview": {
+     "points": null,
+     "max": 10,
+     "note": "Missing: no official source found yet",
+     "source": null
+    },
+    "open": {
+     "points": 0,
+     "max": 10,
+     "note": "Closed: no public source code in our listing",
+     "source": "https://blogs.tria.so/en/agentic-trading-on-tria"
+    },
+    "record": {
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
+     "source": "https://tradingagentstack.com/incidents/"
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/tria-agentic-trading/#agent-risk-score",
    "last_checked": "2026-10-31"
   },
   {
@@ -919,7 +980,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/bitget-wallet-skill/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "heyanon",
@@ -980,7 +1041,65 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/heyanon/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
+  },
+  {
+   "slug": "mangrove",
+   "name": "Mangrove",
+   "category": "ai_trading_agent",
+   "category_label": "AI trading agents",
+   "agent_risk_score_pct": 54,
+   "points": 54,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
+   "inputs": {
+    "custody": {
+     "points": 10,
+     "max": 20,
+     "note": "Mixed: DEX swaps are signed by an encrypted wallet the local agent decrypts on your machine; with keyless Kraken OAuth the Mangrove platform holds the grant and places orders; Robinhood uses broker OAuth",
+     "source": "https://github.com/MangroveTechnologies/mangrove-agent"
+    },
+    "limits": {
+     "points": 5,
+     "max": 20,
+     "note": "Robinhood orders are bounded by a per-order cap and a 0.25% maximum slippage enforced by Mangrove, but the cap is set through the agent's own configuration call",
+     "source": "https://github.com/MangroveTechnologies/mangrove-agent/blob/main/docs/robinhood-execution.md"
+    },
+    "approval": {
+     "points": 8,
+     "max": 15,
+     "note": "Optional: Mangrove leaves Robinhood's approval preference as you set it, so with approvals on, orders wait for you; swaps and activation take confirm=true from the agent",
+     "source": "https://github.com/MangroveTechnologies/mangrove-agent/blob/main/docs/robinhood-execution.md"
+    },
+    "withdraw": {
+     "points": 10,
+     "max": 15,
+     "note": "Local swap signing is limited to 1inch router calls and their approvals, and live swaps need a backup-confirmed wallet; the check is in local code the machine owner can change",
+     "source": "https://github.com/MangroveTechnologies/mangrove-agent"
+    },
+    "preview": {
+     "points": 5,
+     "max": 10,
+     "note": "Paper schedules simulate strategies with no funds at risk, and Kraken orders can be dry-run validated (cex_validate_order); there is no preview of each live order",
+     "source": "https://github.com/MangroveTechnologies/mangrove-agent"
+    },
+    "open": {
+     "points": 6,
+     "max": 10,
+     "note": "The local agent is open source (MIT); the hosted MangroveAI service is not, and no audit report was found",
+     "source": "https://github.com/MangroveTechnologies/mangrove-agent"
+    },
+    "record": {
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
+     "source": "https://tradingagentstack.com/incidents/"
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/mangrove/#agent-risk-score",
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "okx-agentic-wallet",
@@ -1041,7 +1160,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/okx-agentic-wallet/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "virtuals-acp-acp-cli",
@@ -1101,7 +1220,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/virtuals-acp-acp-cli/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "olas-pearl",
@@ -1164,7 +1283,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/olas-pearl/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "bybit",
@@ -1224,7 +1343,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/bybit/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "kraken",
@@ -1282,7 +1401,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/kraken/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "okx",
@@ -1343,7 +1462,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/okx/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "veranta-mcp-formerly-avantis",
@@ -1401,7 +1520,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/veranta-mcp-formerly-avantis/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "bitget",
@@ -1461,7 +1580,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/bitget/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "dydx",
@@ -1522,7 +1641,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/dydx/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "gmx",
@@ -1582,7 +1701,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/gmx/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "coinbase-advanced",
@@ -1642,7 +1761,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/coinbase-advanced/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "binance",
@@ -1697,15 +1816,15 @@
     "record": {
      "points": 0,
      "max": 10,
-     "note": "Unresolved incident: Binance said its initial investigation suggests an attacker used a compromised DevOps engineer's laptop to reach a service container and submit unauthorized withdrawal transactions, and that it found no evidence of a wallet private key compromise. It suspended all deposits and withdrawals as a precaution, is working with law enforcement, says it will cover all losses and will publish a full post-mortem once the investigation is complete.",
-     "source": "https://x.com/binance/status/2115993361517891592"
+     "note": "Unresolved incident: Binance said its hot wallets were compromised at about 20:05 UTC on Oct 29, with about $6.3B of token assets taken through unauthorized withdrawals; it first pointed to a compromised DevOps engineer's laptop but later found additional points of breach, and says it has found no evidence that wallet private keys leaked. About $3B has been frozen on-chain, Binance has set aside more than $6.34B to cover all losses (SAFU fund and company funds), withdrawals stay paused with a phased restart targeted, deposits work, and a Proof of Reserves update (by Nov 2) and a post-mortem are promised.",
+     "source": "https://x.com/binance/status/2116258356109496479"
     }
    },
    "incidents": [
     {
      "date": "2026-10-29",
-     "title": "Binance said its initial investigation suggests an attacker used a compromised DevOps engineer's laptop to reach a service container and submit unauthorized withdrawal transactions, and that it found no evidence of a wallet private key compromise. It suspended all deposits and withdrawals as a precaution, is working with law enforcement, says it will cover all losses and will publish a full post-mortem once the investigation is complete.",
-     "source": "https://x.com/binance/status/2115993361517891592",
+     "title": "Binance said its hot wallets were compromised at about 20:05 UTC on Oct 29, with about $6.3B of token assets taken through unauthorized withdrawals; it first pointed to a compromised DevOps engineer's laptop but later found additional points of breach, and says it has found no evidence that wallet private keys leaked. About $3B has been frozen on-chain, Binance has set aside more than $6.34B to cover all losses (SAFU fund and company funds), withdrawals stay paused with a phased restart targeted, deposits work, and a Proof of Reserves update (by Nov 2) and a post-mortem are promised.",
+     "source": "https://x.com/binance/status/2116258356109496479",
      "resolved": false
     }
    ],
@@ -1770,7 +1889,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/gemini/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "aster",
@@ -1831,7 +1950,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/aster/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "hyperliquid",
@@ -1892,7 +2011,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/hyperliquid/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "lighter",
@@ -1953,7 +2072,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/lighter/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "paradex",
@@ -2014,7 +2133,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/paradex/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "pacifica",
@@ -2077,7 +2196,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/pacifica/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "edgex",
@@ -2140,7 +2259,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/edgex/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "extended",
@@ -2202,7 +2321,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/extended/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "craic-hub-exchange",
@@ -2262,7 +2381,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/craic-hub-exchange/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "0x-swap-api",
@@ -2325,7 +2444,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/0x-swap-api/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "jupiter-api",
@@ -2388,7 +2507,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/jupiter-api/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "1inch-swap-api",
@@ -2450,7 +2569,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/1inch-swap-api/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "bonkbot",
@@ -2514,7 +2633,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/bonkbot/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "banana-gun",
@@ -2578,7 +2697,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/banana-gun/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "solana-agent-kit",
@@ -2641,7 +2760,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/solana-agent-kit/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "maestro",
@@ -2703,7 +2822,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/maestro/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "trojan",
@@ -2765,7 +2884,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/trojan/#agent-risk-score",
-   "last_checked": "2026-10-30"
+   "last_checked": "2026-10-31"
   }
  ]
 }

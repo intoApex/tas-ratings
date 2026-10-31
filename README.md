@@ -2,8 +2,8 @@
 
 Open data from [TradingAgentStack](https://tradingagentstack.com). One question drives every score: **if the agent is wrong, hacked or prompt-injected, how much money can it lose?**
 
-- **45 Agent Risk Scores** for agent wallets, exchanges for bots, on-chain and DeFi agents, agent payment rails, AI trading agents and agent tokens with a real product
-- **155 tools** in the full directory, with sources and last-checked dates
+- **47 Agent Risk Scores** for agent wallets, exchanges for bots, on-chain and DeFi agents, agent payment rails, AI trading agents and agent tokens with a real product
+- **160 tools** in the full directory, with sources and last-checked dates
 - **18 incidents** from official disclosures
 
 Generated 2026-10-31 from the live site. Updated automatically on every site release; do not edit by hand.
@@ -27,7 +27,7 @@ Seven inputs, 100 points: custody (20), limits enforced outside the model (20), 
 
 | Tool | Agent Risk Score | Missing inputs |
 |---|---|---|
-| [Link agent wallet](https://tradingagentstack.com/tool/link-agent-wallet/#agent-risk-score) | 84% (partial) | preview |
+| [Link agent wallet](https://tradingagentstack.com/tool/link-agent-wallet/#agent-risk-score) | 71% (partial) | preview |
 | [Agent Payments Protocol (AP2)](https://tradingagentstack.com/tool/agent-payments-protocol-ap2/#agent-risk-score) | 69% (partial) | custody, limits, withdraw, preview |
 | [Stripe Issuing for agents](https://tradingagentstack.com/tool/stripe-issuing-for-agents/#agent-risk-score) | 56% (partial) | preview |
 | [Lightning Agent Tools](https://tradingagentstack.com/tool/lightning-agent-tools/#agent-risk-score) | 52% (partial) | approval, withdraw, preview |
@@ -51,8 +51,10 @@ Seven inputs, 100 points: custody (20), limits enforced outside the model (20), 
 | Tool | Agent Risk Score | Missing inputs |
 |---|---|---|
 | [Binance Agentic Wallet](https://tradingagentstack.com/tool/binance-agentic-wallet/#agent-risk-score) | 69% | none |
+| [Tria Agentic Trading](https://tradingagentstack.com/tool/tria-agentic-trading/#agent-risk-score) | 64% (partial) | limits, preview |
 | [Bitget Wallet Skill](https://tradingagentstack.com/tool/bitget-wallet-skill/#agent-risk-score) | 60% (partial) | limits, withdraw |
 | [HeyAnon](https://tradingagentstack.com/tool/heyanon/#agent-risk-score) | 55% (partial) | custody, limits |
+| [Mangrove](https://tradingagentstack.com/tool/mangrove/#agent-risk-score) | 54% | none |
 | [OKX Agentic Wallet](https://tradingagentstack.com/tool/okx-agentic-wallet/#agent-risk-score) | 46% (partial) | limits, withdraw |
 
 ### Agent tokens with a product

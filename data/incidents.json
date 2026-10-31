@@ -10,11 +10,11 @@
  "incidents": [
   {
    "date": "2026-10-29",
-   "title": "Binance said its initial investigation suggests an attacker used a compromised DevOps engineer's laptop to reach a service container and submit unauthorized withdrawal transactions, and that it found no evidence of a wallet private key compromise. It suspended all deposits and withdrawals as a precaution, is working with law enforcement, says it will cover all losses and will publish a full post-mortem once the investigation is complete.",
+   "title": "Binance said its hot wallets were compromised at about 20:05 UTC on Oct 29, with about $6.3B of token assets taken through unauthorized withdrawals; it first pointed to a compromised DevOps engineer's laptop but later found additional points of breach, and says it has found no evidence that wallet private keys leaked. About $3B has been frozen on-chain, Binance has set aside more than $6.34B to cover all losses (SAFU fund and company funds), withdrawals stay paused with a phased restart targeted, deposits work, and a Proof of Reserves update (by Nov 2) and a post-mortem are promised.",
    "tools": [
     "Binance"
    ],
-   "source": "https://x.com/binance/status/2115993361517891592",
+   "source": "https://x.com/binance/status/2116258356109496479",
    "resolved": false
   },
   {
