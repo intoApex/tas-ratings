@@ -6,7 +6,7 @@ Open data from [TradingAgentStack](https://tradingagentstack.com). One question 
 - **155 tools** in the full directory, with sources and last-checked dates
 - **18 incidents** from official disclosures
 
-Generated 2026-10-30 from the live site. Updated automatically on every site release; do not edit by hand.
+Generated 2026-10-31 from the live site. Updated automatically on every site release; do not edit by hand.
 
 ## Files
 

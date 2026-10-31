@@ -5,7 +5,7 @@
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "TradingAgentStack (tradingagentstack.com)",
-  "generated": "2026-10-30",
+  "generated": "2026-10-31",
   "count": 45,
   "safety_formula": "https://tradingagentstack.com/safety-score/",
   "risk_v2_method": "https://tradingagentstack.com/methodology/#agent-risk-score",
@@ -858,7 +858,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/binance-agentic-wallet/#agent-risk-score",
-   "last_checked": "2026-10-26"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "bitget-wallet-skill",
@@ -1710,7 +1710,7 @@
     }
    ],
    "page": "https://tradingagentstack.com/tool/binance/#agent-risk-score",
-   "last_checked": "2026-10-29"
+   "last_checked": "2026-10-31"
   },
   {
    "slug": "gemini",
