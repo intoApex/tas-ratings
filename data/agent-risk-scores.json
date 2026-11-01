@@ -1,6 +1,6 @@
 {
  "meta": {
-  "name": "Agent Risk Scores",
+  "name": "Agent Risk Scores (deprecated alias of the Safety score)",
   "url": "https://tradingagentstack.com/data/",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
@@ -8,256 +8,170 @@
   "generated": "2026-11-01",
   "count": 47,
   "safety_formula": "https://tradingagentstack.com/safety-score/",
-  "risk_v2_method": "https://tradingagentstack.com/methodology/#agent-risk-score",
+  "safety_model": "One Safety score since 2026-11-01 (the Agent Risk Score v2 is merged in; risk_v2 is a deprecated alias equal to it)",
+  "safety_inputs": [
+   {
+    "key": "unattended",
+    "label": "Human approval",
+    "max": 25
+   },
+   {
+    "key": "approval",
+    "label": "Guardrails outside the agent",
+    "max": 15
+   },
+   {
+    "key": "paper",
+    "label": "Test before real money",
+    "max": 15
+   },
+   {
+    "key": "withdraw",
+    "label": "Sending funds out",
+    "max": 15
+   },
+   {
+    "key": "keys",
+    "label": "Who holds the keys",
+    "max": 10
+   },
+   {
+    "key": "open",
+    "label": "Open source or audited",
+    "max": 10
+   },
+   {
+    "key": "record",
+    "label": "Incident record (last 12 months)",
+    "max": 10
+   }
+  ],
+  "risk_v2_method": "https://tradingagentstack.com/safety-score/",
   "incidents": "https://tradingagentstack.com/incidents/",
   "corrections": "https://tradingagentstack.com/submit/",
   "disclaimer": "Not financial advice. Verify with the vendor.",
-  "method": "https://tradingagentstack.com/methodology/#agent-risk-score"
+  "deprecated": "Since 2026-11-01 the Agent Risk Score is merged into the Safety score; these rows equal safety-scores.json for the same tools, with the old input names. Will be removed.",
+  "method": "https://tradingagentstack.com/safety-score/"
  },
  "scores": [
-  {
-   "slug": "link-agent-wallet",
-   "name": "Link agent wallet",
-   "category": "agent_payments",
-   "category_label": "AI agent payments",
-   "agent_risk_score_pct": 71,
-   "points": 64,
-   "max": 90,
-   "partial": true,
-   "missing_inputs": [
-    "preview"
-   ],
-   "inputs": {
-    "custody": {
-     "points": 10,
-     "max": 20,
-     "note": "Link keeps your payment methods and issues a new one-time-use card or single-use token for each approved payment; your card details are never exposed to the agent",
-     "source": "https://github.com/stripe/link-cli"
-    },
-    "limits": {
-     "points": 20,
-     "max": 20,
-     "note": "Link's service limits: $5,000 per spend request, $5,000 a day and $20,000 per 30 days",
-     "source": "https://github.com/stripe/link-cli"
-    },
-    "approval": {
-     "points": 8,
-     "max": 15,
-     "note": "Optional since link-cli 1.0.1: without an approval policy you approve every purchase in the Link app; with --use-approval-policy, spend requests within the policy's per-purchase limit (and optional allowed payment methods) are approved without a tap",
-     "source": "https://github.com/stripe/link-cli/releases/tag/%40stripe%2Flink-cli%401.0.1"
-    },
-    "withdraw": {
-     "points": 10,
-     "max": 15,
-     "note": "Payments go only to merchants through single-use cards or tokens; under an approval policy they go out without a tap but stay capped per purchase and by Link's service limits",
-     "source": "https://github.com/stripe/link-cli/releases/tag/%40stripe%2Flink-cli%401.0.1"
-    },
-    "preview": {
-     "points": null,
-     "max": 10,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "open": {
-     "points": 6,
-     "max": 10,
-     "note": "link-cli is open source (MIT); no audit report found",
-     "source": "https://github.com/stripe/link-cli"
-    },
-    "record": {
-     "points": 10,
-     "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
-     "source": "https://tradingagentstack.com/incidents/"
-    }
-   },
-   "incidents": [],
-   "page": "https://tradingagentstack.com/tool/link-agent-wallet/#agent-risk-score",
-   "last_checked": "2026-10-31"
-  },
   {
    "slug": "agent-payments-protocol-ap2",
    "name": "Agent Payments Protocol (AP2)",
    "category": "agent_payments",
    "category_label": "AI agent payments",
-   "agent_risk_score_pct": 69,
-   "points": 24,
-   "max": 35,
+   "agent_risk_score_pct": 75,
+   "points": 45,
+   "max": 60,
    "partial": true,
    "missing_inputs": [
     "custody",
-    "limits",
     "withdraw",
     "preview"
    ],
    "inputs": {
     "custody": {
      "points": null,
-     "max": 20,
-     "note": "Missing: no official source found yet",
+     "max": 10,
+     "note": "Missing: not documented",
      "source": null
     },
     "limits": {
-     "points": null,
-     "max": 20,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "points": 15,
+     "max": 15,
+     "note": "Approval/confirmation step documented",
+     "source": "https://ap2-protocol.org/"
     },
     "approval": {
-     "points": 8,
-     "max": 15,
-     "note": "Protocol score, optional: human-present flows record your authorization of each finalized checkout in a signed mandate; human-not-present flows let the agent pay within an open mandate",
+     "points": 10,
+     "max": 25,
+     "note": "Protocol score, optional: human-present flows record your authorization of each finalized checkout in a signed mandate; human-not-present flows let the agent pay within an open mandate (official docs)",
      "source": "https://ap2-protocol.org/"
     },
     "withdraw": {
      "points": null,
      "max": 15,
-     "note": "Missing: no official source found yet",
+     "note": "Missing: not documented",
      "source": null
     },
     "preview": {
      "points": null,
-     "max": 10,
-     "note": "Missing: no official source found yet",
+     "max": 15,
+     "note": "Missing: not documented",
      "source": null
     },
     "open": {
-     "points": 6,
+     "points": 10,
      "max": 10,
-     "note": "Open specification, SDK and samples (Apache-2.0); no audit report found",
+     "note": "Open specification, SDK and samples (Apache-2.0); no audit report found (official docs)",
      "source": "https://github.com/google-agentic-commerce/AP2"
     },
     "record": {
      "points": 10,
      "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
      "source": "https://tradingagentstack.com/incidents/"
     }
    },
    "incidents": [],
-   "page": "https://tradingagentstack.com/tool/agent-payments-protocol-ap2/#agent-risk-score",
+   "page": "https://tradingagentstack.com/tool/agent-payments-protocol-ap2/#safety",
    "last_checked": "2026-10-31"
   },
   {
-   "slug": "stripe-issuing-for-agents",
-   "name": "Stripe Issuing for agents",
+   "slug": "link-agent-wallet",
+   "name": "Link agent wallet",
    "category": "agent_payments",
    "category_label": "AI agent payments",
-   "agent_risk_score_pct": 56,
-   "points": 50,
-   "max": 90,
-   "partial": true,
-   "missing_inputs": [
-    "preview"
-   ],
+   "agent_risk_score_pct": 75,
+   "points": 75,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
    "inputs": {
     "custody": {
-     "points": 10,
-     "max": 20,
-     "note": "Stripe holds the funds and authorizes every charge against the card's controls; the agent only gets details of a scoped or single-use card, or a scoped Shared Payment Token",
-     "source": "https://docs.stripe.com/issuing/agents"
-    },
-    "limits": {
-     "points": 20,
-     "max": 20,
-     "note": "Spend limits per authorization or over a period (e.g. monthly) and allowed merchant categories, set per card or cardholder and applied by Stripe at authorization",
-     "source": "https://docs.stripe.com/issuing/agents"
-    },
-    "approval": {
-     "points": 0,
-     "max": 15,
-     "note": "No human approval step: real-time authorization webhooks let your own code approve or decline each charge, with a 2-second default timeout before the card's default rules apply",
-     "source": "https://docs.stripe.com/issuing/agents"
-    },
-    "withdraw": {
-     "points": 10,
-     "max": 15,
-     "note": "Merchant category controls restrict where a card can be charged (an allowlist of business types), and single-use cards are invalidated after use",
-     "source": "https://docs.stripe.com/issuing/agents"
-    },
-    "preview": {
-     "points": null,
-     "max": 10,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "open": {
-     "points": 0,
-     "max": 10,
-     "note": "Closed: no public source code in our listing",
-     "source": "https://docs.stripe.com/issuing/agents"
-    },
-    "record": {
-     "points": 10,
-     "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
-     "source": "https://tradingagentstack.com/incidents/"
-    }
-   },
-   "incidents": [],
-   "page": "https://tradingagentstack.com/tool/stripe-issuing-for-agents/#agent-risk-score",
-   "last_checked": "2026-10-31"
-  },
-  {
-   "slug": "lightning-agent-tools",
-   "name": "Lightning Agent Tools",
-   "category": "agent_payments",
-   "category_label": "AI agent payments",
-   "agent_risk_score_pct": 52,
-   "points": 31,
-   "max": 60,
-   "partial": true,
-   "missing_inputs": [
-    "approval",
-    "withdraw",
-    "preview"
-   ],
-   "inputs": {
-    "custody": {
-     "points": 10,
-     "max": 20,
-     "note": "The default setup keeps the keys on a separate signer machine; the agent machine runs a watch-only node",
-     "source": "https://github.com/lightninglabs/lightning-agent-tools"
-    },
-    "limits": {
      "points": 5,
-     "max": 20,
-     "note": "Client-side only: the lnget client takes a --max-cost cap per request",
-     "source": "https://github.com/lightninglabs/lightning-agent-tools"
+     "max": 10,
+     "note": "Link keeps your payment methods and issues a new one-time-use card or single-use token for each approved payment; your card details are never exposed to the agent (official docs)",
+     "source": "https://github.com/stripe/link-cli"
+    },
+    "limits": {
+     "points": 15,
+     "max": 15,
+     "note": "Link's service limits: $5,000 per spend request, $5,000 a day and $20,000 per 30 days (official docs)",
+     "source": "https://github.com/stripe/link-cli"
     },
     "approval": {
-     "points": null,
-     "max": 15,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "points": 10,
+     "max": 25,
+     "note": "Optional since link-cli 1.0.1: without an approval policy you approve every purchase in the Link app; with --use-approval-policy, spend requests within the policy's per-purchase limit (and optional allowed payment methods) are approved without a tap (official docs)",
+     "source": "https://github.com/stripe/link-cli/releases/tag/%40stripe%2Flink-cli%401.0.1"
     },
     "withdraw": {
-     "points": null,
+     "points": 10,
      "max": 15,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "note": "Payments go only to merchants through single-use cards or tokens; under an approval policy they go out without a tap but stay capped per purchase and by Link's service limits (official docs)",
+     "source": "https://github.com/stripe/link-cli/releases/tag/%40stripe%2Flink-cli%401.0.1"
     },
     "preview": {
-     "points": null,
-     "max": 10,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "points": 15,
+     "max": 15,
+     "note": "Paper, demo or testnet mode available",
+     "source": "https://link.com/agents"
     },
     "open": {
-     "points": 6,
+     "points": 10,
      "max": 10,
-     "note": "Open source (official Lightning Labs repository); no audit report found",
-     "source": "https://github.com/lightninglabs/lightning-agent-tools"
+     "note": "link-cli is open source (MIT); no audit report found (official docs)",
+     "source": "https://github.com/stripe/link-cli"
     },
     "record": {
      "points": 10,
      "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
      "source": "https://tradingagentstack.com/incidents/"
     }
    },
    "incidents": [],
-   "page": "https://tradingagentstack.com/tool/lightning-agent-tools/#agent-risk-score",
+   "page": "https://tradingagentstack.com/tool/link-agent-wallet/#safety",
    "last_checked": "2026-10-31"
   },
   {
@@ -265,62 +179,119 @@
    "name": "x402",
    "category": "agent_payments",
    "category_label": "AI agent payments",
-   "agent_risk_score_pct": 52,
-   "points": 21,
-   "max": 40,
+   "agent_risk_score_pct": 64,
+   "points": 58,
+   "max": 90,
    "partial": true,
    "missing_inputs": [
-    "custody",
-    "approval",
-    "withdraw",
-    "preview"
+    "custody"
    ],
    "inputs": {
     "custody": {
      "points": null,
-     "max": 20,
-     "note": "Missing: no official source found yet",
+     "max": 10,
+     "note": "Missing: not documented",
      "source": null
     },
     "limits": {
-     "points": 5,
-     "max": 20,
-     "note": "Protocol score: x402 itself has no spending budget (the exact scheme pays exactly what the server asks); Coinbase's x402 client adds client-side caps per payment and per time window (TypeScript only)",
+     "points": 8,
+     "max": 15,
+     "note": "Protocol score: x402 itself has no spending budget (the exact scheme pays exactly what the server asks); Coinbase's x402 client adds client-side caps per payment and per time window (TypeScript only) (official docs)",
      "source": "https://docs.cdp.coinbase.com/x402/buyer/client-configuration.md"
     },
     "approval": {
-     "points": null,
-     "max": 15,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "points": 0,
+     "max": 25,
+     "note": "Can place live orders with no documented approval step",
+     "source": "https://docs.x402.org/faq"
     },
     "withdraw": {
-     "points": null,
+     "points": 15,
      "max": 15,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "note": "Facilitator is non-custodial; it only settles payment payloads the buyer's wallet signs and cannot alter them (official docs)",
+     "source": "https://docs.x402.org/core-concepts/facilitator"
     },
     "preview": {
-     "points": null,
-     "max": 10,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "points": 15,
+     "max": 15,
+     "note": "Paper, demo or testnet mode available",
+     "source": "https://docs.x402.org/faq"
     },
     "open": {
-     "points": 6,
+     "points": 10,
      "max": 10,
-     "note": "Open protocol and SDKs (Apache-2.0); no audit report found",
+     "note": "Open protocol and SDKs (Apache-2.0); no audit report found (official docs)",
      "source": "https://github.com/x402-foundation/x402"
     },
     "record": {
      "points": 10,
      "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
      "source": "https://tradingagentstack.com/incidents/"
     }
    },
    "incidents": [],
-   "page": "https://tradingagentstack.com/tool/x402/#agent-risk-score",
+   "page": "https://tradingagentstack.com/tool/x402/#safety",
+   "last_checked": "2026-10-31"
+  },
+  {
+   "slug": "lightning-agent-tools",
+   "name": "Lightning Agent Tools",
+   "category": "agent_payments",
+   "category_label": "AI agent payments",
+   "agent_risk_score_pct": 56,
+   "points": 48,
+   "max": 85,
+   "partial": true,
+   "missing_inputs": [
+    "withdraw"
+   ],
+   "inputs": {
+    "custody": {
+     "points": 5,
+     "max": 10,
+     "note": "The default setup keeps the keys on a separate signer machine; the agent machine runs a watch-only node (official docs)",
+     "source": "https://github.com/lightninglabs/lightning-agent-tools"
+    },
+    "limits": {
+     "points": 8,
+     "max": 15,
+     "note": "Client-side only: the lnget client takes a --max-cost cap per request (official docs)",
+     "source": "https://github.com/lightninglabs/lightning-agent-tools"
+    },
+    "approval": {
+     "points": 0,
+     "max": 25,
+     "note": "Can place live orders with no documented approval step",
+     "source": "https://github.com/lightninglabs/lightning-agent-tools"
+    },
+    "withdraw": {
+     "points": null,
+     "max": 15,
+     "note": "Missing: not documented",
+     "source": null
+    },
+    "preview": {
+     "points": 15,
+     "max": 15,
+     "note": "Paper, demo or testnet mode available",
+     "source": "https://github.com/lightninglabs/lightning-agent-tools"
+    },
+    "open": {
+     "points": 10,
+     "max": 10,
+     "note": "Open source (official Lightning Labs repository); no audit report found (official docs)",
+     "source": "https://github.com/lightninglabs/lightning-agent-tools"
+    },
+    "record": {
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
+     "source": "https://tradingagentstack.com/incidents/"
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/lightning-agent-tools/#safety",
    "last_checked": "2026-10-31"
   },
   {
@@ -328,59 +299,115 @@
    "name": "Coinbase Agentic Wallet",
    "category": "agent_payments",
    "category_label": "AI agent payments",
-   "agent_risk_score_pct": 51,
-   "points": 46,
-   "max": 90,
-   "partial": true,
-   "missing_inputs": [
-    "preview"
-   ],
+   "agent_risk_score_pct": 55,
+   "points": 55,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
    "inputs": {
     "custody": {
-     "points": 10,
-     "max": 20,
-     "note": "Private keys stay in Coinbase infrastructure in Trusted Execution Environments, never exposed to the agent's prompt or LLM",
+     "points": 5,
+     "max": 10,
+     "note": "Private keys stay in Coinbase infrastructure in Trusted Execution Environments, never exposed to the agent's prompt or LLM (official docs)",
      "source": "https://www.coinbase.com/developer-platform/discover/launches/agentic-wallets"
     },
     "limits": {
-     "points": 20,
-     "max": 20,
-     "note": "Max per call and max per session are set in the wallet UI; agents respect these limits but can't change them",
+     "points": 15,
+     "max": 15,
+     "note": "Max per call and max per session are set in the wallet UI; agents respect these limits but can't change them (official docs)",
      "source": "https://docs.cdp.coinbase.com/agentic-wallet/mcp/faq"
     },
     "approval": {
      "points": 0,
-     "max": 15,
-     "note": "Once permissions and limits are set, the agent acts with no approval per transaction",
+     "max": 25,
+     "note": "Once permissions and limits are set, the agent acts with no approval per transaction (official docs)",
      "source": "https://www.coinbase.com/developer-platform/discover/launches/agentic-wallets"
     },
     "withdraw": {
      "points": 0,
      "max": 15,
-     "note": "The send command takes any address or ENS name (e.g. vitalik.eth); no recipient allowlist is documented",
+     "note": "The send command takes any address or ENS name (e.g. vitalik.eth); no recipient allowlist is documented (official docs)",
      "source": "https://docs.cdp.coinbase.com/agentic-wallet/cli/welcome"
     },
     "preview": {
-     "points": null,
-     "max": 10,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "points": 15,
+     "max": 15,
+     "note": "Paper, demo or testnet mode available",
+     "source": "https://docs.cdp.coinbase.com/agentic-wallet/cli/welcome"
     },
     "open": {
-     "points": 6,
+     "points": 10,
      "max": 10,
-     "note": "The agent skills are open source (MIT); no audit report found",
+     "note": "The agent skills are open source (MIT); no audit report found (official docs)",
      "source": "https://github.com/coinbase/agentic-wallet-skills"
     },
     "record": {
      "points": 10,
      "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
      "source": "https://tradingagentstack.com/incidents/"
     }
    },
    "incidents": [],
-   "page": "https://tradingagentstack.com/tool/coinbase-agentic-wallet/#agent-risk-score",
+   "page": "https://tradingagentstack.com/tool/coinbase-agentic-wallet/#safety",
+   "last_checked": "2026-10-31"
+  },
+  {
+   "slug": "stripe-issuing-for-agents",
+   "name": "Stripe Issuing for agents",
+   "category": "agent_payments",
+   "category_label": "AI agent payments",
+   "agent_risk_score_pct": 55,
+   "points": 55,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
+   "inputs": {
+    "custody": {
+     "points": 5,
+     "max": 10,
+     "note": "Stripe holds the funds and authorizes every charge against the card's controls; the agent only gets details of a scoped or single-use card, or a scoped Shared Payment Token (official docs)",
+     "source": "https://docs.stripe.com/issuing/agents"
+    },
+    "limits": {
+     "points": 15,
+     "max": 15,
+     "note": "Spend limits per authorization or over a period (e.g. monthly) and allowed merchant categories, set per card or cardholder and applied by Stripe at authorization (official docs)",
+     "source": "https://docs.stripe.com/issuing/agents"
+    },
+    "approval": {
+     "points": 0,
+     "max": 25,
+     "note": "No human approval step: real-time authorization webhooks let your own code approve or decline each charge, with a 2-second default timeout before the card's default rules apply (official docs)",
+     "source": "https://docs.stripe.com/issuing/agents"
+    },
+    "withdraw": {
+     "points": 10,
+     "max": 15,
+     "note": "Merchant category controls restrict where a card can be charged (an allowlist of business types), and single-use cards are invalidated after use (official docs)",
+     "source": "https://docs.stripe.com/issuing/agents"
+    },
+    "preview": {
+     "points": 15,
+     "max": 15,
+     "note": "Issuing has test-mode helpers to simulate card authorizations in a sandbox (official docs)",
+     "source": "https://docs.stripe.com/api/issuing/authorizations/test_mode_create"
+    },
+    "open": {
+     "points": 0,
+     "max": 10,
+     "note": "No public source code in our listing",
+     "source": "https://docs.stripe.com/issuing/agents"
+    },
+    "record": {
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
+     "source": "https://tradingagentstack.com/incidents/"
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/stripe-issuing-for-agents/#safety",
    "last_checked": "2026-10-31"
   },
   {
@@ -389,58 +416,56 @@
    "category": "agent_wallet",
    "category_label": "AI agent wallets",
    "agent_risk_score_pct": 100,
-   "points": 90,
-   "max": 90,
-   "partial": true,
-   "missing_inputs": [
-    "preview"
-   ],
+   "points": 100,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
    "inputs": {
     "custody": {
-     "points": 20,
-     "max": 20,
-     "note": "In Safe's AI-agent setup the agent is one signer of a multisig; it can't execute alone",
+     "points": 10,
+     "max": 10,
+     "note": "In Safe's AI-agent setup the agent is one signer of a multisig; it can't execute alone (official docs)",
      "source": "https://docs.safe.global/home/ai-agent-quickstarts/human-approval"
     },
     "limits": {
-     "points": 20,
-     "max": 20,
-     "note": "Allowance module: a per-token spending limit for the agent that resets on a schedule, spent through the module contract",
+     "points": 15,
+     "max": 15,
+     "note": "Allowance module: a per-token spending limit for the agent that resets on a schedule, spent through the module contract (official docs)",
      "source": "https://docs.safe.global/home/ai-agent-quickstarts/agent-with-spending-limit"
     },
     "approval": {
-     "points": 15,
-     "max": 15,
-     "note": "Threshold setup where at least one human approval is required for agent-proposed transactions",
+     "points": 25,
+     "max": 25,
+     "note": "Threshold setup where at least one human approval is required for agent-proposed transactions (official docs)",
      "source": "https://docs.safe.global/home/ai-agent-quickstarts/human-approval"
     },
     "withdraw": {
      "points": 15,
      "max": 15,
-     "note": "Under the human-approval threshold the agent can't move funds to any address without a human signer",
+     "note": "Under the human-approval threshold the agent can't move funds to any address without a human signer (official docs)",
      "source": "https://docs.safe.global/home/ai-agent-quickstarts/human-approval"
     },
     "preview": {
-     "points": null,
-     "max": 10,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "points": 15,
+     "max": 15,
+     "note": "The agent quickstart runs on the Sepolia testnet (chain ID 11155111) (official docs)",
+     "source": "https://docs.safe.global/home/ai-agent-quickstarts/human-approval"
     },
     "open": {
      "points": 10,
      "max": 10,
-     "note": "Open source (LGPL-3.0) with published audits for each contract version and the allowance module",
+     "note": "Open source (LGPL-3.0) with published audits for each contract version and the allowance module (official docs)",
      "source": "https://docs.safe.global/advanced/smart-account-audits"
     },
     "record": {
      "points": 10,
      "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
      "source": "https://tradingagentstack.com/incidents/"
     }
    },
    "incidents": [],
-   "page": "https://tradingagentstack.com/tool/safe-smart-account/#agent-risk-score",
+   "page": "https://tradingagentstack.com/tool/safe-smart-account/#safety",
    "last_checked": "2026-10-31"
   },
   {
@@ -448,298 +473,57 @@
    "name": "ZeroDev",
    "category": "agent_wallet",
    "category_label": "AI agent wallets",
-   "agent_risk_score_pct": 88,
-   "points": 66,
-   "max": 75,
-   "partial": true,
-   "missing_inputs": [
-    "approval",
-    "preview"
-   ],
-   "inputs": {
-    "custody": {
-     "points": 20,
-     "max": 20,
-     "note": "You keep the main key; the agent gets a session key limited to the permissions you assign",
-     "source": "https://docs.zerodev.app/sdk/permissions/intro"
-    },
-    "limits": {
-     "points": 20,
-     "max": 20,
-     "note": "Policies (value limit, allowed calls, rate limits, gas, time windows) are checked by the Kernel account's permission validator (checkUserOpPolicy)",
-     "source": "https://github.com/zerodevapp/kernel"
-    },
-    "approval": {
-     "points": null,
-     "max": 15,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "withdraw": {
-     "points": 10,
-     "max": 15,
-     "note": "The call policy restricts which contracts or addresses the session key can interact with",
-     "source": "https://docs.zerodev.app/sdk/permissions/policies/call"
-    },
-    "preview": {
-     "points": null,
-     "max": 10,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "open": {
-     "points": 6,
-     "max": 10,
-     "note": "Open source (official repository); no audit report found in the official docs",
-     "source": "https://github.com/zerodevapp/kernel"
-    },
-    "record": {
-     "points": 10,
-     "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
-     "source": "https://tradingagentstack.com/incidents/"
-    }
-   },
-   "incidents": [],
-   "page": "https://tradingagentstack.com/tool/zerodev/#agent-risk-score",
-   "last_checked": "2026-10-31"
-  },
-  {
-   "slug": "crossmint-agent-wallets",
-   "name": "Crossmint Agent Wallets",
-   "category": "agent_wallet",
-   "category_label": "AI agent wallets",
-   "agent_risk_score_pct": 67,
-   "points": 60,
-   "max": 90,
-   "partial": true,
-   "missing_inputs": [
-    "preview"
-   ],
-   "inputs": {
-    "custody": {
-     "points": 20,
-     "max": 20,
-     "note": "The user or your backend holds the root key; the agent only holds a delegated key bound to the permissions the owner approved",
-     "source": "https://docs.crossmint.com/agents/wallets/overview"
-    },
-    "limits": {
-     "points": 20,
-     "max": 20,
-     "note": "Spend cap, allowed counterparties and time window per agent, enforced on-chain: transactions outside them are rejected by the wallet",
-     "source": "https://docs.crossmint.com/agents/wallets/overview"
-    },
-    "approval": {
-     "points": 0,
-     "max": 15,
-     "note": "The owner approves the permission set once; the agent then signs with no prompt per action",
-     "source": "https://docs.crossmint.com/agents/wallets/overview"
-    },
-    "withdraw": {
-     "points": 10,
-     "max": 15,
-     "note": "Allowed counterparties per agent (an address allowlist)",
-     "source": "https://docs.crossmint.com/agents/wallets/overview"
-    },
-    "preview": {
-     "points": null,
-     "max": 10,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "open": {
-     "points": 0,
-     "max": 10,
-     "note": "Closed: no public source code in our listing",
-     "source": "https://www.crossmint.com/"
-    },
-    "record": {
-     "points": 10,
-     "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
-     "source": "https://tradingagentstack.com/incidents/"
-    }
-   },
-   "incidents": [],
-   "page": "https://tradingagentstack.com/tool/crossmint-agent-wallets/#agent-risk-score",
-   "last_checked": "2026-10-31"
-  },
-  {
-   "slug": "turnkey",
-   "name": "Turnkey",
-   "category": "agent_wallet",
-   "category_label": "AI agent wallets",
-   "agent_risk_score_pct": 64,
-   "points": 58,
-   "max": 90,
-   "partial": true,
-   "missing_inputs": [
-    "preview"
-   ],
-   "inputs": {
-    "custody": {
-     "points": 10,
-     "max": 20,
-     "note": "Keys are only decrypted inside secure enclaves and are never exposed to Turnkey, your software or your team; signing follows your policies",
-     "source": "https://docs.turnkey.com/security/non-custodial-key-mgmt"
-    },
-    "limits": {
-     "points": 20,
-     "max": 20,
-     "note": "The policy engine runs inside Turnkey's secure enclaves; policies can check the amount sent (eth.tx.value) and the recipient (eth.tx.to)",
-     "source": "https://docs.turnkey.com/security/secure-enclaves"
-    },
-    "approval": {
-     "points": 8,
-     "max": 15,
-     "note": "Optional: a policy's consensus sets which users (or a quorum) must approve an action",
-     "source": "https://docs.turnkey.com/concepts/policies/overview"
-    },
-    "withdraw": {
-     "points": 10,
-     "max": 15,
-     "note": "Recipient allowlists, e.g. eth.tx.to == an allowed address",
-     "source": "https://docs.turnkey.com/concepts/policies/overview"
-    },
-    "preview": {
-     "points": null,
-     "max": 10,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "open": {
-     "points": 0,
-     "max": 10,
-     "note": "Closed: no public source code in our listing",
-     "source": "https://www.turnkey.com/"
-    },
-    "record": {
-     "points": 10,
-     "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
-     "source": "https://tradingagentstack.com/incidents/"
-    }
-   },
-   "incidents": [],
-   "page": "https://tradingagentstack.com/tool/turnkey/#agent-risk-score",
-   "last_checked": "2026-10-31"
-  },
-  {
-   "slug": "privy-server-wallets",
-   "name": "Privy server wallets",
-   "category": "agent_wallet",
-   "category_label": "AI agent wallets",
-   "agent_risk_score_pct": 63,
-   "points": 63,
+   "agent_risk_score_pct": 70,
+   "points": 70,
    "max": 100,
    "partial": false,
    "missing_inputs": [],
    "inputs": {
     "custody": {
      "points": 10,
-     "max": 20,
-     "note": "Keys are split into shares and only reassembled inside a trusted execution environment (AWS Nitro Enclaves), which checks authorization and policies",
-     "source": "https://docs.privy.io/security/wallet-infrastructure/architecture"
+     "max": 10,
+     "note": "You keep the main key; the agent gets a session key limited to the permissions you assign (official docs)",
+     "source": "https://docs.zerodev.app/sdk/permissions/intro"
     },
     "limits": {
-     "points": 20,
-     "max": 20,
-     "note": "Transfer limits and contract allowlists, evaluated by the secure enclave before signing; stateful policies add rolling caps (e.g. 24 hours)",
-     "source": "https://docs.privy.io/controls/policies/overview"
+     "points": 15,
+     "max": 15,
+     "note": "Policies (value limit, allowed calls, rate limits, gas, time windows) are checked by the Kernel account's permission validator (checkUserOpPolicy) (official docs)",
+     "source": "https://github.com/zerodevapp/kernel"
     },
     "approval": {
-     "points": 8,
-     "max": 15,
-     "note": "Optional: key quorums can require m-of-n approvals, including a user's signature",
-     "source": "https://docs.privy.io/controls/key-quorum/overview"
+     "points": 0,
+     "max": 25,
+     "note": "Can place live orders with no documented approval step",
+     "source": "https://docs.zerodev.app/sdk/permissions/intro"
     },
     "withdraw": {
      "points": 10,
      "max": 15,
-     "note": "Allowlists and denylists of transfer recipients",
-     "source": "https://docs.privy.io/controls/policies/overview"
+     "note": "The call policy restricts which contracts or addresses the session key can interact with (official docs)",
+     "source": "https://docs.zerodev.app/sdk/permissions/policies/call"
     },
     "preview": {
-     "points": 5,
-     "max": 10,
-     "note": "Transactions are simulated before policy evaluation when Privy both signs and broadcasts (not for sign-only requests)",
-     "source": "https://docs.privy.io/controls/policies/overview"
+     "points": 15,
+     "max": 15,
+     "note": "Paper, demo or testnet mode available",
+     "source": "https://docs.zerodev.app/sdk/permissions/intro"
     },
     "open": {
-     "points": 0,
+     "points": 10,
      "max": 10,
-     "note": "Closed: no public source code in our listing",
-     "source": "https://www.privy.io/"
+     "note": "Open source",
+     "source": "https://docs.zerodev.app/sdk/permissions/intro"
     },
     "record": {
      "points": 10,
      "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
      "source": "https://tradingagentstack.com/incidents/"
     }
    },
    "incidents": [],
-   "page": "https://tradingagentstack.com/tool/privy-server-wallets/#agent-risk-score",
-   "last_checked": "2026-10-31"
-  },
-  {
-   "slug": "coinbase-cdp-server-wallets",
-   "name": "Coinbase CDP Server Wallets",
-   "category": "agent_wallet",
-   "category_label": "AI agent wallets",
-   "agent_risk_score_pct": 56,
-   "points": 50,
-   "max": 90,
-   "partial": true,
-   "missing_inputs": [
-    "preview"
-   ],
-   "inputs": {
-    "custody": {
-     "points": 10,
-     "max": 20,
-     "note": "Coinbase keeps private keys inside a Trusted Execution Environment; your server operates the accounts with API keys",
-     "source": "https://docs.cdp.coinbase.com/wallets/quickstart/api-key-auth.md"
-    },
-    "limits": {
-     "points": 20,
-     "max": 20,
-     "note": "Policy Engine accepts or rejects each operation by value (e.g. ethValue <=), destination address and network before signing",
-     "source": "https://docs.cdp.coinbase.com/server-wallets/v2/using-the-wallet-api/policies/overview"
-    },
-    "approval": {
-     "points": 0,
-     "max": 15,
-     "note": "Policies accept or reject operations automatically; no human-approval step in the policy docs",
-     "source": "https://docs.cdp.coinbase.com/server-wallets/v2/using-the-wallet-api/policies/overview"
-    },
-    "withdraw": {
-     "points": 10,
-     "max": 15,
-     "note": "Destination allowlists (evmAddress in [...]) in the Policy Engine",
-     "source": "https://docs.cdp.coinbase.com/server-wallets/v2/using-the-wallet-api/policies/overview"
-    },
-    "preview": {
-     "points": null,
-     "max": 10,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "open": {
-     "points": 0,
-     "max": 10,
-     "note": "Closed: no public source code in our listing",
-     "source": "https://docs.cdp.coinbase.com/server-wallets/v2/introduction/welcome"
-    },
-    "record": {
-     "points": 10,
-     "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
-     "source": "https://tradingagentstack.com/incidents/"
-    }
-   },
-   "incidents": [],
-   "page": "https://tradingagentstack.com/tool/coinbase-cdp-server-wallets/#agent-risk-score",
+   "page": "https://tradingagentstack.com/tool/zerodev/#safety",
    "last_checked": "2026-10-31"
   },
   {
@@ -747,59 +531,289 @@
    "name": "Coinbase AgentKit",
    "category": "agent_wallet",
    "category_label": "AI agent wallets",
-   "agent_risk_score_pct": 38,
-   "points": 34,
-   "max": 90,
-   "partial": true,
-   "missing_inputs": [
-    "preview"
-   ],
+   "agent_risk_score_pct": 65,
+   "points": 65,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
    "inputs": {
     "custody": {
-     "points": 10,
-     "max": 20,
-     "note": "Wallet providers include CDP and Privy server wallets, where keys stay in the provider's secure environment (a local Viem key is also possible)",
+     "points": 5,
+     "max": 10,
+     "note": "Wallet providers include CDP and Privy server wallets, where keys stay in the provider's secure environment (a local Viem key is also possible) (official docs)",
      "source": "https://github.com/coinbase/agentkit"
     },
     "limits": {
-     "points": 0,
-     "max": 20,
-     "note": "The README says AgentKit does not enforce spend caps or allowlist destinations",
+     "points": 15,
+     "max": 15,
+     "note": "Approval/confirmation step documented",
      "source": "https://github.com/coinbase/agentkit"
     },
     "approval": {
-     "points": 8,
-     "max": 15,
-     "note": "Optional: not built in; the README points to LangChain middleware and a guardrails example that adds human approval for transfers in your agent code",
+     "points": 10,
+     "max": 25,
+     "note": "Optional: not built in; the README points to LangChain middleware and a guardrails example that adds human approval for transfers in your agent code (official docs)",
      "source": "https://github.com/coinbase/agentkit"
     },
     "withdraw": {
      "points": 0,
      "max": 15,
-     "note": "The README says AgentKit does not allowlist destinations; transfer actions can send anywhere",
+     "note": "The README says AgentKit does not allowlist destinations; transfer actions can send anywhere (official docs)",
      "source": "https://github.com/coinbase/agentkit"
     },
     "preview": {
-     "points": null,
-     "max": 10,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "points": 15,
+     "max": 15,
+     "note": "Paper, demo or testnet mode available",
+     "source": "https://github.com/coinbase/agentkit"
     },
     "open": {
-     "points": 6,
+     "points": 10,
      "max": 10,
-     "note": "Open source (official repository); no audit report found in the official docs",
+     "note": "Open source",
      "source": "https://github.com/coinbase/agentkit"
     },
     "record": {
      "points": 10,
      "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
      "source": "https://tradingagentstack.com/incidents/"
     }
    },
    "incidents": [],
-   "page": "https://tradingagentstack.com/tool/coinbase-agentkit/#agent-risk-score",
+   "page": "https://tradingagentstack.com/tool/coinbase-agentkit/#safety",
+   "last_checked": "2026-10-31"
+  },
+  {
+   "slug": "privy-server-wallets",
+   "name": "Privy server wallets",
+   "category": "agent_wallet",
+   "category_label": "AI agent wallets",
+   "agent_risk_score_pct": 65,
+   "points": 65,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
+   "inputs": {
+    "custody": {
+     "points": 5,
+     "max": 10,
+     "note": "Keys are split into shares and only reassembled inside a trusted execution environment (AWS Nitro Enclaves), which checks authorization and policies (official docs)",
+     "source": "https://docs.privy.io/security/wallet-infrastructure/architecture"
+    },
+    "limits": {
+     "points": 15,
+     "max": 15,
+     "note": "Transfer limits and contract allowlists, evaluated by the secure enclave before signing; stateful policies add rolling caps (e.g. 24 hours) (official docs)",
+     "source": "https://docs.privy.io/controls/policies/overview"
+    },
+    "approval": {
+     "points": 10,
+     "max": 25,
+     "note": "Optional: key quorums can require m-of-n approvals, including a user's signature (official docs)",
+     "source": "https://docs.privy.io/controls/key-quorum/overview"
+    },
+    "withdraw": {
+     "points": 10,
+     "max": 15,
+     "note": "Allowlists and denylists of transfer recipients (official docs)",
+     "source": "https://docs.privy.io/controls/policies/overview"
+    },
+    "preview": {
+     "points": 15,
+     "max": 15,
+     "note": "Paper, demo or testnet mode available",
+     "source": "https://docs.privy.io/recipes/agent-integrations/agentic-wallets"
+    },
+    "open": {
+     "points": 0,
+     "max": 10,
+     "note": "No public source code in our listing",
+     "source": "https://docs.privy.io/recipes/agent-integrations/agentic-wallets"
+    },
+    "record": {
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
+     "source": "https://tradingagentstack.com/incidents/"
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/privy-server-wallets/#safety",
+   "last_checked": "2026-10-31"
+  },
+  {
+   "slug": "turnkey",
+   "name": "Turnkey",
+   "category": "agent_wallet",
+   "category_label": "AI agent wallets",
+   "agent_risk_score_pct": 65,
+   "points": 65,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
+   "inputs": {
+    "custody": {
+     "points": 5,
+     "max": 10,
+     "note": "Keys are only decrypted inside secure enclaves and are never exposed to Turnkey, your software or your team; signing follows your policies (official docs)",
+     "source": "https://docs.turnkey.com/security/non-custodial-key-mgmt"
+    },
+    "limits": {
+     "points": 15,
+     "max": 15,
+     "note": "The policy engine runs inside Turnkey's secure enclaves; policies can check the amount sent (eth.tx.value) and the recipient (eth.tx.to) (official docs)",
+     "source": "https://docs.turnkey.com/security/secure-enclaves"
+    },
+    "approval": {
+     "points": 10,
+     "max": 25,
+     "note": "Optional: a policy's consensus sets which users (or a quorum) must approve an action (official docs)",
+     "source": "https://docs.turnkey.com/concepts/policies/overview"
+    },
+    "withdraw": {
+     "points": 10,
+     "max": 15,
+     "note": "Recipient allowlists, e.g. eth.tx.to == an allowed address (official docs)",
+     "source": "https://docs.turnkey.com/concepts/policies/overview"
+    },
+    "preview": {
+     "points": 15,
+     "max": 15,
+     "note": "Paper, demo or testnet mode available",
+     "source": "https://docs.turnkey.com/concepts/policies/overview"
+    },
+    "open": {
+     "points": 0,
+     "max": 10,
+     "note": "No public source code in our listing",
+     "source": "https://docs.turnkey.com/concepts/policies/overview"
+    },
+    "record": {
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
+     "source": "https://tradingagentstack.com/incidents/"
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/turnkey/#safety",
+   "last_checked": "2026-10-31"
+  },
+  {
+   "slug": "crossmint-agent-wallets",
+   "name": "Crossmint Agent Wallets",
+   "category": "agent_wallet",
+   "category_label": "AI agent wallets",
+   "agent_risk_score_pct": 60,
+   "points": 60,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
+   "inputs": {
+    "custody": {
+     "points": 10,
+     "max": 10,
+     "note": "The user or your backend holds the root key; the agent only holds a delegated key bound to the permissions the owner approved (official docs)",
+     "source": "https://docs.crossmint.com/agents/wallets/overview"
+    },
+    "limits": {
+     "points": 15,
+     "max": 15,
+     "note": "Spend cap, allowed counterparties and time window per agent, enforced on-chain: transactions outside them are rejected by the wallet (official docs)",
+     "source": "https://docs.crossmint.com/agents/wallets/overview"
+    },
+    "approval": {
+     "points": 0,
+     "max": 25,
+     "note": "The owner approves the permission set once; the agent then signs with no prompt per action (official docs)",
+     "source": "https://docs.crossmint.com/agents/wallets/overview"
+    },
+    "withdraw": {
+     "points": 10,
+     "max": 15,
+     "note": "Allowed counterparties per agent (an address allowlist) (official docs)",
+     "source": "https://docs.crossmint.com/agents/wallets/overview"
+    },
+    "preview": {
+     "points": 15,
+     "max": 15,
+     "note": "Paper, demo or testnet mode available",
+     "source": "https://docs.crossmint.com/agents/wallets/overview"
+    },
+    "open": {
+     "points": 0,
+     "max": 10,
+     "note": "No public source code in our listing",
+     "source": "https://docs.crossmint.com/agents/wallets/overview"
+    },
+    "record": {
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
+     "source": "https://tradingagentstack.com/incidents/"
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/crossmint-agent-wallets/#safety",
+   "last_checked": "2026-10-31"
+  },
+  {
+   "slug": "coinbase-cdp-server-wallets",
+   "name": "Coinbase CDP Server Wallets",
+   "category": "agent_wallet",
+   "category_label": "AI agent wallets",
+   "agent_risk_score_pct": 55,
+   "points": 55,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
+   "inputs": {
+    "custody": {
+     "points": 5,
+     "max": 10,
+     "note": "Coinbase keeps private keys inside a Trusted Execution Environment; your server operates the accounts with API keys (official docs)",
+     "source": "https://docs.cdp.coinbase.com/wallets/quickstart/api-key-auth.md"
+    },
+    "limits": {
+     "points": 15,
+     "max": 15,
+     "note": "Policy Engine accepts or rejects each operation by value (e.g. ethValue <=), destination address and network before signing (official docs)",
+     "source": "https://docs.cdp.coinbase.com/server-wallets/v2/using-the-wallet-api/policies/overview"
+    },
+    "approval": {
+     "points": 0,
+     "max": 25,
+     "note": "Policies accept or reject operations automatically; no human-approval step in the policy docs (official docs)",
+     "source": "https://docs.cdp.coinbase.com/server-wallets/v2/using-the-wallet-api/policies/overview"
+    },
+    "withdraw": {
+     "points": 10,
+     "max": 15,
+     "note": "Destination allowlists (evmAddress in [...]) in the Policy Engine (official docs)",
+     "source": "https://docs.cdp.coinbase.com/server-wallets/v2/using-the-wallet-api/policies/overview"
+    },
+    "preview": {
+     "points": 15,
+     "max": 15,
+     "note": "Paper, demo or testnet mode available",
+     "source": "https://docs.cdp.coinbase.com/server-wallets/v2/using-the-wallet-api/policies/overview"
+    },
+    "open": {
+     "points": 0,
+     "max": 10,
+     "note": "No public source code in our listing",
+     "source": "https://docs.cdp.coinbase.com/server-wallets/v2/using-the-wallet-api/policies/overview"
+    },
+    "record": {
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
+     "source": "https://tradingagentstack.com/incidents/"
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/coinbase-cdp-server-wallets/#safety",
    "last_checked": "2026-10-31"
   },
   {
@@ -807,240 +821,57 @@
    "name": "Binance Agentic Wallet",
    "category": "ai_trading_agent",
    "category_label": "AI trading agents",
-   "agent_risk_score_pct": 69,
-   "points": 69,
+   "agent_risk_score_pct": 65,
+   "points": 65,
    "max": 100,
    "partial": false,
    "missing_inputs": [],
    "inputs": {
     "custody": {
-     "points": 10,
-     "max": 20,
-     "note": "MPC keyless wallet: the private key is never fully reconstructed on any single device or server",
+     "points": 5,
+     "max": 10,
+     "note": "MPC keyless wallet: the private key is never fully reconstructed on any single device or server (official docs)",
      "source": "https://developers.binance.com/docs/agentic-wallet/welcome"
     },
     "limits": {
-     "points": 20,
-     "max": 20,
-     "note": "A daily limit and a tradable token scope set in the Binance App constrain the agent at the API level",
+     "points": 15,
+     "max": 15,
+     "note": "A daily limit and a tradable token scope set in the Binance App constrain the agent at the API level (official docs)",
      "source": "https://developers.binance.com/docs/agentic-wallet/welcome"
     },
     "approval": {
-     "points": 8,
-     "max": 15,
-     "note": "Partly outside the agent: actions outside your rules are rejected or need a second confirmation from you; routine swap and transfer confirmations are chat instructions in the skill, which you can ask it to skip",
+     "points": 10,
+     "max": 25,
+     "note": "Partly outside the agent: actions outside your rules are rejected or need a second confirmation from you; routine swap and transfer confirmations are chat instructions in the skill, which you can ask it to skip (official docs)",
      "source": "https://developers.binance.com/docs/agentic-wallet/welcome"
     },
     "withdraw": {
      "points": 10,
      "max": 15,
-     "note": "The docs' token-transfer example says the address has to be in your Binance address book; contract calls and message signing also need developer mode turned on",
+     "note": "The docs' token-transfer example says the address has to be in your Binance address book; contract calls and message signing also need developer mode turned on (official docs)",
      "source": "https://developers.binance.com/docs/agentic-wallet/welcome"
     },
     "preview": {
      "points": 5,
-     "max": 10,
-     "note": "Skill instructions: swaps and limit orders go through a security pre-check, and contract calls and signatures are previewed before execution (some actions only)",
+     "max": 15,
+     "note": "Skill instructions: swaps and limit orders go through a security pre-check, and contract calls and signatures are previewed before execution (some actions only) (official docs)",
      "source": "https://www.binance.com/en/skills/detail/binance-web3/binance-agentic-wallet"
     },
     "open": {
-     "points": 6,
+     "points": 10,
      "max": 10,
-     "note": "The agent skills are public on GitHub (binance-skills-hub); no license or audit report found for the wallet",
+     "note": "The agent skills are public on GitHub (binance-skills-hub); no license or audit report found for the wallet (official docs)",
      "source": "https://github.com/binance/binance-skills-hub"
     },
     "record": {
      "points": 10,
      "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
      "source": "https://tradingagentstack.com/incidents/"
     }
    },
    "incidents": [],
-   "page": "https://tradingagentstack.com/tool/binance-agentic-wallet/#agent-risk-score",
-   "last_checked": "2026-10-31"
-  },
-  {
-   "slug": "tria-agentic-trading",
-   "name": "Tria Agentic Trading",
-   "category": "ai_trading_agent",
-   "category_label": "AI trading agents",
-   "agent_risk_score_pct": 64,
-   "points": 45,
-   "max": 70,
-   "partial": true,
-   "missing_inputs": [
-    "limits",
-    "preview"
-   ],
-   "inputs": {
-    "custody": {
-     "points": 20,
-     "max": 20,
-     "note": "The agent trades your own self-custodial account with a trade-only key you create in the Tria app; it can open and close positions but can't withdraw, and you can revoke it any time",
-     "source": "https://blogs.tria.so/en/agentic-trading-on-tria"
-    },
-    "limits": {
-     "points": null,
-     "max": 20,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "approval": {
-     "points": 0,
-     "max": 15,
-     "note": "No approval step from Tria: whether trades need your approval depends on your AI tool and its setup",
-     "source": "https://blogs.tria.so/en/agentic-trading-on-tria"
-    },
-    "withdraw": {
-     "points": 15,
-     "max": 15,
-     "note": "The trading key gives no permission to withdraw funds",
-     "source": "https://blogs.tria.so/en/agentic-trading-on-tria"
-    },
-    "preview": {
-     "points": null,
-     "max": 10,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "open": {
-     "points": 0,
-     "max": 10,
-     "note": "Closed: no public source code in our listing",
-     "source": "https://blogs.tria.so/en/agentic-trading-on-tria"
-    },
-    "record": {
-     "points": 10,
-     "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
-     "source": "https://tradingagentstack.com/incidents/"
-    }
-   },
-   "incidents": [],
-   "page": "https://tradingagentstack.com/tool/tria-agentic-trading/#agent-risk-score",
-   "last_checked": "2026-10-31"
-  },
-  {
-   "slug": "bitget-wallet-skill",
-   "name": "Bitget Wallet Skill",
-   "category": "ai_trading_agent",
-   "category_label": "AI trading agents",
-   "agent_risk_score_pct": 60,
-   "points": 39,
-   "max": 65,
-   "partial": true,
-   "missing_inputs": [
-    "limits",
-    "withdraw"
-   ],
-   "inputs": {
-    "custody": {
-     "points": 10,
-     "max": 20,
-     "note": "With social login, transactions are signed in the Bitget Wallet TEE and no private key is kept locally (the other mode keeps a mnemonic on the agent's machine)",
-     "source": "https://github.com/bitget-wallet-ai-lab/bitget-wallet-skill"
-    },
-    "limits": {
-     "points": null,
-     "max": 20,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "approval": {
-     "points": 8,
-     "max": 15,
-     "note": "Prompt-level: the skill asks for your confirmation in chat before every fund-moving action and swaps never sign autonomously; the x402 payment example uses an --auto flag",
-     "source": "https://github.com/bitget-wallet-ai-lab/bitget-wallet-skill"
-    },
-    "withdraw": {
-     "points": null,
-     "max": 15,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "preview": {
-     "points": 5,
-     "max": 10,
-     "note": "Pre-swap token risk check (some actions only)",
-     "source": "https://github.com/bitget-wallet-ai-lab/bitget-wallet-skill"
-    },
-    "open": {
-     "points": 6,
-     "max": 10,
-     "note": "Open source (MIT); no audit report found",
-     "source": "https://github.com/bitget-wallet-ai-lab/bitget-wallet-skill"
-    },
-    "record": {
-     "points": 10,
-     "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
-     "source": "https://tradingagentstack.com/incidents/"
-    }
-   },
-   "incidents": [],
-   "page": "https://tradingagentstack.com/tool/bitget-wallet-skill/#agent-risk-score",
-   "last_checked": "2026-10-31"
-  },
-  {
-   "slug": "heyanon",
-   "name": "HeyAnon",
-   "category": "ai_trading_agent",
-   "category_label": "AI trading agents",
-   "agent_risk_score_pct": 55,
-   "points": 33,
-   "max": 60,
-   "partial": true,
-   "missing_inputs": [
-    "custody",
-    "limits"
-   ],
-   "inputs": {
-    "custody": {
-     "points": null,
-     "max": 20,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "limits": {
-     "points": null,
-     "max": 20,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "approval": {
-     "points": 8,
-     "max": 15,
-     "note": "Optional: turn on Plan Flow to confirm, modify or abort every planned action before it runs",
-     "source": "https://docs.heyanon.ai/heyanon-v2/readme/getting-started/account-settings"
-    },
-    "withdraw": {
-     "points": 10,
-     "max": 15,
-     "note": "Whitelist Protection: HeyAnon only sends funds to addresses on your list",
-     "source": "https://docs.heyanon.ai/heyanon-v2/readme/getting-started/account-settings"
-    },
-    "preview": {
-     "points": 5,
-     "max": 10,
-     "note": "Plan Flow shows a step-by-step preview of every planned action (opt-in)",
-     "source": "https://docs.heyanon.ai/heyanon-v2/readme/getting-started/account-settings"
-    },
-    "open": {
-     "points": 0,
-     "max": 10,
-     "note": "Closed: no public source code in our listing",
-     "source": "https://docs.heyanon.ai/heyanon.ai"
-    },
-    "record": {
-     "points": 10,
-     "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
-     "source": "https://tradingagentstack.com/incidents/"
-    }
-   },
-   "incidents": [],
-   "page": "https://tradingagentstack.com/tool/heyanon/#agent-risk-score",
+   "page": "https://tradingagentstack.com/tool/binance-agentic-wallet/#safety",
    "last_checked": "2026-10-31"
   },
   {
@@ -1048,57 +879,233 @@
    "name": "Mangrove",
    "category": "ai_trading_agent",
    "category_label": "AI trading agents",
-   "agent_risk_score_pct": 54,
-   "points": 54,
+   "agent_risk_score_pct": 58,
+   "points": 58,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
+   "inputs": {
+    "custody": {
+     "points": 5,
+     "max": 10,
+     "note": "Mixed: DEX swaps are signed by an encrypted wallet the local agent decrypts on your machine; with keyless Kraken OAuth the Mangrove platform holds the grant and places orders; Robinhood uses broker OAuth (official docs)",
+     "source": "https://github.com/MangroveTechnologies/mangrove-agent"
+    },
+    "limits": {
+     "points": 8,
+     "max": 15,
+     "note": "No per-order approval from Mangrove; only limits: a per-order cap and limit prices within 0.25% of Mangrove's evaluation price on Robinhood, and deterministic risk gates run on MangroveAI (official docs)",
+     "source": "https://github.com/MangroveTechnologies/mangrove-agent/blob/main/docs/robinhood-execution.md"
+    },
+    "approval": {
+     "points": 0,
+     "max": 25,
+     "note": "Live swaps and strategy activation take confirm=true from the agent, not a human; Robinhood orders run without approval unless your Robinhood approval setting requires it",
+     "source": "https://github.com/MangroveTechnologies/mangrove-agent/blob/main/docs/robinhood-execution.md"
+    },
+    "withdraw": {
+     "points": 10,
+     "max": 15,
+     "note": "Local swap signing is limited to 1inch router calls and their approvals, and live swaps need a backup-confirmed wallet; the check is in local code the machine owner can change (official docs)",
+     "source": "https://github.com/MangroveTechnologies/mangrove-agent"
+    },
+    "preview": {
+     "points": 15,
+     "max": 15,
+     "note": "Paper, demo or testnet mode available",
+     "source": "https://github.com/MangroveTechnologies/mangrove-agent"
+    },
+    "open": {
+     "points": 10,
+     "max": 10,
+     "note": "The local agent is open source (MIT); the hosted MangroveAI service is not, and no audit report was found (official docs)",
+     "source": "https://github.com/MangroveTechnologies/mangrove-agent"
+    },
+    "record": {
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
+     "source": "https://tradingagentstack.com/incidents/"
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/mangrove/#safety",
+   "last_checked": "2026-10-31"
+  },
+  {
+   "slug": "heyanon",
+   "name": "HeyAnon",
+   "category": "ai_trading_agent",
+   "category_label": "AI trading agents",
+   "agent_risk_score_pct": 56,
+   "points": 50,
+   "max": 90,
+   "partial": true,
+   "missing_inputs": [
+    "custody"
+   ],
+   "inputs": {
+    "custody": {
+     "points": null,
+     "max": 10,
+     "note": "Missing: not documented",
+     "source": null
+    },
+    "limits": {
+     "points": 15,
+     "max": 15,
+     "note": "Approval/confirmation step documented",
+     "source": "https://docs.heyanon.ai/heyanon-v2/readme/getting-started/account-settings"
+    },
+    "approval": {
+     "points": 10,
+     "max": 25,
+     "note": "Optional: turn on Plan Flow to confirm, modify or abort every planned action before it runs (official docs)",
+     "source": "https://docs.heyanon.ai/heyanon-v2/readme/getting-started/account-settings"
+    },
+    "withdraw": {
+     "points": 10,
+     "max": 15,
+     "note": "Whitelist Protection: HeyAnon only sends funds to addresses on your list (official docs)",
+     "source": "https://docs.heyanon.ai/heyanon-v2/readme/getting-started/account-settings"
+    },
+    "preview": {
+     "points": 5,
+     "max": 15,
+     "note": "Plan Flow shows a step-by-step preview of every planned action (opt-in) (official docs)",
+     "source": "https://docs.heyanon.ai/heyanon-v2/readme/getting-started/account-settings"
+    },
+    "open": {
+     "points": 0,
+     "max": 10,
+     "note": "No public source code in our listing",
+     "source": "https://docs.heyanon.ai/heyanon-v2/readme/getting-started/account-settings"
+    },
+    "record": {
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
+     "source": "https://tradingagentstack.com/incidents/"
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/heyanon/#safety",
+   "last_checked": "2026-10-31"
+  },
+  {
+   "slug": "bitget-wallet-skill",
+   "name": "Bitget Wallet Skill",
+   "category": "ai_trading_agent",
+   "category_label": "AI trading agents",
+   "agent_risk_score_pct": 55,
+   "points": 55,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
+   "inputs": {
+    "custody": {
+     "points": 5,
+     "max": 10,
+     "note": "With social login, transactions are signed in the Bitget Wallet TEE and no private key is kept locally (the other mode keeps a mnemonic on the agent's machine) (official docs)",
+     "source": "https://github.com/bitget-wallet-ai-lab/bitget-wallet-skill"
+    },
+    "limits": {
+     "points": 15,
+     "max": 15,
+     "note": "Approval/confirmation step documented",
+     "source": "https://github.com/bitget-wallet-ai-lab/bitget-wallet-skill"
+    },
+    "approval": {
+     "points": 10,
+     "max": 25,
+     "note": "Prompt-level: the skill asks for your confirmation in chat before every fund-moving action and swaps never sign autonomously; the x402 payment example uses an --auto flag (official docs)",
+     "source": "https://github.com/bitget-wallet-ai-lab/bitget-wallet-skill"
+    },
+    "withdraw": {
+     "points": 0,
+     "max": 15,
+     "note": "Skill holds the wallet mnemonic and supports direct transfers to any address; no allowlist exists (a risk rule engine is only planned) (official docs)",
+     "source": "https://github.com/bitget-wallet-ai-lab/bitget-wallet-skill"
+    },
+    "preview": {
+     "points": 5,
+     "max": 15,
+     "note": "Pre-swap token risk check (some actions only) (official docs)",
+     "source": "https://github.com/bitget-wallet-ai-lab/bitget-wallet-skill"
+    },
+    "open": {
+     "points": 10,
+     "max": 10,
+     "note": "Open source (MIT); no audit report found (official docs)",
+     "source": "https://github.com/bitget-wallet-ai-lab/bitget-wallet-skill"
+    },
+    "record": {
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
+     "source": "https://tradingagentstack.com/incidents/"
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/bitget-wallet-skill/#safety",
+   "last_checked": "2026-10-31"
+  },
+  {
+   "slug": "tria-agentic-trading",
+   "name": "Tria Agentic Trading",
+   "category": "ai_trading_agent",
+   "category_label": "AI trading agents",
+   "agent_risk_score_pct": 35,
+   "points": 35,
    "max": 100,
    "partial": false,
    "missing_inputs": [],
    "inputs": {
     "custody": {
      "points": 10,
-     "max": 20,
-     "note": "Mixed: DEX swaps are signed by an encrypted wallet the local agent decrypts on your machine; with keyless Kraken OAuth the Mangrove platform holds the grant and places orders; Robinhood uses broker OAuth",
-     "source": "https://github.com/MangroveTechnologies/mangrove-agent"
+     "max": 10,
+     "note": "The agent trades your own self-custodial account with a trade-only key you create in the Tria app; it can open and close positions but can't withdraw, and you can revoke it any time (official docs)",
+     "source": "https://blogs.tria.so/en/agentic-trading-on-tria"
     },
     "limits": {
-     "points": 5,
-     "max": 20,
-     "note": "Robinhood orders are bounded by a per-order cap and a 0.25% maximum slippage enforced by Mangrove, but the cap is set through the agent's own configuration call",
-     "source": "https://github.com/MangroveTechnologies/mangrove-agent/blob/main/docs/robinhood-execution.md"
+     "points": 0,
+     "max": 15,
+     "note": "No approval or limit option in our listing",
+     "source": "https://blogs.tria.so/en/agentic-trading-on-tria"
     },
     "approval": {
-     "points": 8,
-     "max": 15,
-     "note": "Optional: Mangrove leaves Robinhood's approval preference as you set it, so with approvals on, orders wait for you; swaps and activation take confirm=true from the agent",
-     "source": "https://github.com/MangroveTechnologies/mangrove-agent/blob/main/docs/robinhood-execution.md"
+     "points": 0,
+     "max": 25,
+     "note": "Tria adds no approval step: whether trades need your approval depends on your AI tool and how you set it up",
+     "source": "https://blogs.tria.so/en/agentic-trading-on-tria"
     },
     "withdraw": {
-     "points": 10,
+     "points": 15,
      "max": 15,
-     "note": "Local swap signing is limited to 1inch router calls and their approvals, and live swaps need a backup-confirmed wallet; the check is in local code the machine owner can change",
-     "source": "https://github.com/MangroveTechnologies/mangrove-agent"
+     "note": "The agent's trading key can open and close positions but can't withdraw; funds stay in your self-custodial Tria account (official docs)",
+     "source": "https://blogs.tria.so/en/agentic-trading-on-tria"
     },
     "preview": {
-     "points": 5,
-     "max": 10,
-     "note": "Paper schedules simulate strategies with no funds at risk, and Kraken orders can be dry-run validated (cex_validate_order); there is no preview of each live order",
-     "source": "https://github.com/MangroveTechnologies/mangrove-agent"
+     "points": 0,
+     "max": 15,
+     "note": "The documented setup uses live markets, not a practice account; the SDK targets mainnet with no testnet (official docs)",
+     "source": "https://blogs.tria.so/en/agentic-trading-on-tria"
     },
     "open": {
-     "points": 6,
+     "points": 0,
      "max": 10,
-     "note": "The local agent is open source (MIT); the hosted MangroveAI service is not, and no audit report was found",
-     "source": "https://github.com/MangroveTechnologies/mangrove-agent"
+     "note": "No public source code in our listing",
+     "source": "https://blogs.tria.so/en/agentic-trading-on-tria"
     },
     "record": {
      "points": 10,
      "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
      "source": "https://tradingagentstack.com/incidents/"
     }
    },
    "incidents": [],
-   "page": "https://tradingagentstack.com/tool/mangrove/#agent-risk-score",
+   "page": "https://tradingagentstack.com/tool/tria-agentic-trading/#safety",
    "last_checked": "2026-10-31"
   },
   {
@@ -1106,60 +1113,57 @@
    "name": "OKX Agentic Wallet",
    "category": "ai_trading_agent",
    "category_label": "AI trading agents",
-   "agent_risk_score_pct": 46,
-   "points": 30,
-   "max": 65,
-   "partial": true,
-   "missing_inputs": [
-    "limits",
-    "withdraw"
-   ],
+   "agent_risk_score_pct": 25,
+   "points": 25,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
    "inputs": {
     "custody": {
-     "points": 10,
-     "max": 20,
-     "note": "Private key generation, storage and signing all happen inside a TEE, out of reach of the agent",
+     "points": 5,
+     "max": 10,
+     "note": "Private key generation, storage and signing all happen inside a TEE, out of reach of the agent (official docs)",
      "source": "https://web3.okx.com/onchainos/dev-docs/wallet/agentic-wallet"
     },
     "limits": {
-     "points": null,
-     "max": 20,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "points": 0,
+     "max": 15,
+     "note": "No approval or limit option in our listing",
+     "source": "https://web3.okx.com/onchainos/dev-docs/wallet/agentic-wallet"
     },
     "approval": {
      "points": 0,
-     "max": 15,
-     "note": "Built for AI agents to execute on-chain transactions autonomously; no confirmation step is described",
+     "max": 25,
+     "note": "Built for AI agents to execute on-chain transactions autonomously; no confirmation step is described (official docs)",
      "source": "https://www.okx.com/en-us/help/okx-wallet-officially-launches-agentic-wallet"
     },
     "withdraw": {
-     "points": null,
+     "points": 0,
      "max": 15,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "note": "Agent can send tokens to a specified address; keys sit in a TEE and transfers get risk scans, but no allowlist is documented (official docs)",
+     "source": "https://web3.okx.com/onchainos/dev-docs/wallet/agentic-wallet-skills"
     },
     "preview": {
      "points": 10,
-     "max": 10,
-     "note": "Every transaction goes through risk simulation and scoring before execution",
+     "max": 15,
+     "note": "Every transaction goes through risk simulation and scoring before execution (official docs)",
      "source": "https://web3.okx.com/onchainos/dev-docs/wallet/agentic-wallet"
     },
     "open": {
      "points": 0,
      "max": 10,
-     "note": "Closed: no public source code in our listing",
+     "note": "No public source code in our listing",
      "source": "https://web3.okx.com/onchainos/dev-docs/wallet/agentic-wallet"
     },
     "record": {
      "points": 10,
      "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
      "source": "https://tradingagentstack.com/incidents/"
     }
    },
    "incidents": [],
-   "page": "https://tradingagentstack.com/tool/okx-agentic-wallet/#agent-risk-score",
+   "page": "https://tradingagentstack.com/tool/okx-agentic-wallet/#safety",
    "last_checked": "2026-10-31"
   },
   {
@@ -1167,59 +1171,57 @@
    "name": "Virtuals ACP (acp-cli)",
    "category": "agent_token",
    "category_label": "Agent tokens with a product",
-   "agent_risk_score_pct": 84,
-   "points": 76,
-   "max": 90,
-   "partial": true,
-   "missing_inputs": [
-    "preview"
-   ],
+   "agent_risk_score_pct": 95,
+   "points": 95,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
    "inputs": {
     "custody": {
-     "points": 10,
-     "max": 20,
-     "note": "Agent wallets are Privy-managed; signer keys are kept in the OS keychain after browser approval, and Node.js never touches raw key material at rest",
+     "points": 5,
+     "max": 10,
+     "note": "Agent wallets are Privy-managed; signer keys are kept in the OS keychain after browser approval, and Node.js never touches raw key material at rest (official docs)",
      "source": "https://github.com/Virtual-Protocol/acp-cli"
     },
     "limits": {
-     "points": 20,
-     "max": 20,
-     "note": "Wallet policies are allowlists of contract or wallet addresses, enforced server-side on every transaction the signer makes; editing them needs the dashboard",
+     "points": 15,
+     "max": 15,
+     "note": "Wallet policies are allowlists of contract or wallet addresses, enforced server-side on every transaction the signer makes; editing them needs the dashboard (official docs)",
      "source": "https://github.com/Virtual-Protocol/acp-cli"
     },
     "approval": {
-     "points": 15,
-     "max": 15,
-     "note": "Optional deny-all signer policy: manual approval for every transaction (the default restricted policy authorizes all ACP transactions without asking)",
+     "points": 25,
+     "max": 25,
+     "note": "Optional deny-all signer policy: manual approval for every transaction (the default restricted policy authorizes all ACP transactions without asking) (official docs)",
      "source": "https://github.com/Virtual-Protocol/acp-cli"
     },
     "withdraw": {
      "points": 15,
      "max": 15,
-     "note": "Under the deny-all policy nothing leaves the wallet without manual approval; otherwise wallet policies limit destinations to an address allowlist",
+     "note": "Under the deny-all policy nothing leaves the wallet without manual approval; otherwise wallet policies limit destinations to an address allowlist (official docs)",
      "source": "https://github.com/Virtual-Protocol/acp-cli"
     },
     "preview": {
-     "points": null,
-     "max": 10,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "points": 15,
+     "max": 15,
+     "note": "Paper, demo or testnet mode available",
+     "source": "https://github.com/Virtual-Protocol/acp-cli"
     },
     "open": {
-     "points": 6,
+     "points": 10,
      "max": 10,
-     "note": "acp-cli is open source (ISC); no audit report found for ACP",
+     "note": "acp-cli is open source (ISC); no audit report found for ACP (official docs)",
      "source": "https://github.com/Virtual-Protocol/acp-cli"
     },
     "record": {
      "points": 10,
      "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
      "source": "https://tradingagentstack.com/incidents/"
     }
    },
    "incidents": [],
-   "page": "https://tradingagentstack.com/tool/virtuals-acp-acp-cli/#agent-risk-score",
+   "page": "https://tradingagentstack.com/tool/virtuals-acp-acp-cli/#safety",
    "last_checked": "2026-10-31"
   },
   {
@@ -1227,299 +1229,61 @@
    "name": "Olas Pearl",
    "category": "agent_token",
    "category_label": "Agent tokens with a product",
-   "agent_risk_score_pct": 46,
-   "points": 16,
-   "max": 35,
+   "agent_risk_score_pct": 33,
+   "points": 20,
+   "max": 60,
    "partial": true,
    "missing_inputs": [
     "custody",
-    "limits",
     "withdraw",
     "preview"
    ],
    "inputs": {
     "custody": {
      "points": null,
-     "max": 20,
-     "note": "Missing: no official source found yet",
+     "max": 10,
+     "note": "Missing: not documented",
      "source": null
     },
     "limits": {
-     "points": null,
-     "max": 20,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "points": 0,
+     "max": 15,
+     "note": "No approval or limit option in our listing",
+     "source": "https://olas.network/blog/introducing-pearl-v1-the-ai-agent-app-store-powered-by-olas"
     },
     "approval": {
      "points": 0,
-     "max": 15,
-     "note": "Agents trade on their own (e.g. 'Trades autonomously in DeFi'); the only approval Pearl documents is for top-ups from your funding Safe",
+     "max": 25,
+     "note": "Agents trade on their own (e.g. 'Trades autonomously in DeFi'); the only approval Pearl documents is for top-ups from your funding Safe (official docs)",
      "source": "https://olas.network/agents"
     },
     "withdraw": {
      "points": null,
      "max": 15,
-     "note": "Missing: no official source found yet",
+     "note": "Missing: not documented",
      "source": null
     },
     "preview": {
      "points": null,
-     "max": 10,
-     "note": "Missing: no official source found yet",
+     "max": 15,
+     "note": "Missing: not documented",
      "source": null
     },
     "open": {
-     "points": 6,
+     "points": 10,
      "max": 10,
-     "note": "Pearl is open source (Apache-2.0); no audit report found",
+     "note": "Pearl is open source (Apache-2.0); no audit report found (official docs)",
      "source": "https://github.com/valory-xyz/olas-operate-app"
     },
     "record": {
      "points": 10,
      "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
      "source": "https://tradingagentstack.com/incidents/"
     }
    },
    "incidents": [],
-   "page": "https://tradingagentstack.com/tool/olas-pearl/#agent-risk-score",
-   "last_checked": "2026-10-31"
-  },
-  {
-   "slug": "bybit",
-   "name": "Bybit",
-   "category": "bot_exchange",
-   "category_label": "Exchanges & brokers for bots",
-   "agent_risk_score_pct": 89,
-   "points": 71,
-   "max": 80,
-   "partial": true,
-   "missing_inputs": [
-    "limits"
-   ],
-   "inputs": {
-    "custody": {
-     "points": 20,
-     "max": 20,
-     "note": "The official MCP runs on your API key; Bybit's README says to keep withdrawal access disabled, so a trade key can't move funds out",
-     "source": "https://github.com/bybit-exchange/trading-mcp"
-    },
-    "limits": {
-     "points": null,
-     "max": 20,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "approval": {
-     "points": 15,
-     "max": 15,
-     "note": "Each write operation requires a separate approval form (the server relies on your MCP client's approval response)",
-     "source": "https://github.com/bybit-exchange/trading-mcp"
-    },
-    "withdraw": {
-     "points": 15,
-     "max": 15,
-     "note": "Withdrawal access is a key permission you can leave disabled",
-     "source": "https://github.com/bybit-exchange/trading-mcp"
-    },
-    "preview": {
-     "points": 5,
-     "max": 10,
-     "note": "An order pre-check tool is available (optional, not a full simulation)",
-     "source": "https://github.com/bybit-exchange/trading-mcp"
-    },
-    "open": {
-     "points": 6,
-     "max": 10,
-     "note": "The official MCP server is open source (MIT); no audit report found",
-     "source": "https://github.com/bybit-exchange/trading-mcp"
-    },
-    "record": {
-     "points": 10,
-     "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
-     "source": "https://tradingagentstack.com/incidents/"
-    }
-   },
-   "incidents": [],
-   "page": "https://tradingagentstack.com/tool/bybit/#agent-risk-score",
-   "last_checked": "2026-10-31"
-  },
-  {
-   "slug": "kraken",
-   "name": "Kraken",
-   "category": "bot_exchange",
-   "category_label": "Exchanges & brokers for bots",
-   "agent_risk_score_pct": 84,
-   "points": 84,
-   "max": 100,
-   "partial": false,
-   "missing_inputs": [],
-   "inputs": {
-    "custody": {
-     "points": 20,
-     "max": 20,
-     "note": "Granular key permissions; without Withdraw Funds a key can't move funds off Kraken",
-     "source": "https://docs.kraken.com/exchange/guides/rest/api-keys"
-    },
-    "limits": {
-     "points": 20,
-     "max": 20,
-     "note": "Kraken's MCP docs: set position size limits and pair allowlists at the API key level on Kraken's settings page",
-     "source": "https://docs.kraken.com/home/mcp"
-    },
-    "approval": {
-     "points": 8,
-     "max": 15,
-     "note": "Optional, client-dependent: since kraken-cli 0.5.0 each dangerous MCP call (trading, funding) goes to you through MCP elicitation; on clients that can't show that prompt the agent itself passes acknowledged=true, and --allow-dangerous turns the check off",
-     "source": "https://github.com/krakenfx/kraken-cli/blob/v0.5.0/CHANGELOG.md"
-    },
-    "withdraw": {
-     "points": 15,
-     "max": 15,
-     "note": "Withdraw Funds is a separate key permission (the MCP's funding service can withdraw only if you grant it)",
-     "source": "https://docs.kraken.com/exchange/guides/rest/api-keys"
-    },
-    "preview": {
-     "points": 5,
-     "max": 10,
-     "note": "AddOrder has validate=true: the order is checked but not sent to the matching engine (optional, per order)",
-     "source": "https://docs.kraken.com/api/docs/rest-api/add-order"
-    },
-    "open": {
-     "points": 6,
-     "max": 10,
-     "note": "Open source (official repository); no audit report found in the official docs",
-     "source": "https://github.com/krakenfx/kraken-cli"
-    },
-    "record": {
-     "points": 10,
-     "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
-     "source": "https://tradingagentstack.com/incidents/"
-    }
-   },
-   "incidents": [],
-   "page": "https://tradingagentstack.com/tool/kraken/#agent-risk-score",
-   "last_checked": "2026-10-31"
-  },
-  {
-   "slug": "okx",
-   "name": "OKX",
-   "category": "bot_exchange",
-   "category_label": "Exchanges & brokers for bots",
-   "agent_risk_score_pct": 84,
-   "points": 59,
-   "max": 70,
-   "partial": true,
-   "missing_inputs": [
-    "limits",
-    "preview"
-   ],
-   "inputs": {
-    "custody": {
-     "points": 20,
-     "max": 20,
-     "note": "Keys stay on your device; Read, Trade and Withdraw are separate key permissions, and without Withdraw a key can't send funds off OKX (Trade keys can move funds between your own OKX accounts)",
-     "source": "https://www.okx.com/en-us/help/api-faq"
-    },
-    "limits": {
-     "points": null,
-     "max": 20,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "approval": {
-     "points": 8,
-     "max": 15,
-     "note": "Optional and prompt-level: every money-moving tool is marked [CAUTION] so the AI asks before acting; no separate human-approval step",
-     "source": "https://www.okx.com/docs-v5/agent_en/"
-    },
-    "withdraw": {
-     "points": 15,
-     "max": 15,
-     "note": "No Agent Trade Kit tool executes withdrawals, and Withdraw is a separate key permission",
-     "source": "https://www.okx.com/en-us/help/api-faq"
-    },
-    "preview": {
-     "points": null,
-     "max": 10,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "open": {
-     "points": 6,
-     "max": 10,
-     "note": "Open source (official repository); no audit report found in the official docs",
-     "source": "https://github.com/okx/agent-trade-kit"
-    },
-    "record": {
-     "points": 10,
-     "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
-     "source": "https://tradingagentstack.com/incidents/"
-    }
-   },
-   "incidents": [],
-   "page": "https://tradingagentstack.com/tool/okx/#agent-risk-score",
-   "last_checked": "2026-10-31"
-  },
-  {
-   "slug": "veranta-mcp-formerly-avantis",
-   "name": "Veranta MCP (formerly Avantis)",
-   "category": "bot_exchange",
-   "category_label": "Exchanges & brokers for bots",
-   "agent_risk_score_pct": 83,
-   "points": 83,
-   "max": 100,
-   "partial": false,
-   "missing_inputs": [],
-   "inputs": {
-    "custody": {
-     "points": 20,
-     "max": 20,
-     "note": "The agent trades with a session key your wallet registers as a delegate; it can open, close and modify positions but can't withdraw USDC from your account, grant allowances or add delegates, and you can revoke it any time",
-     "source": "https://sdk.veranta.xyz/ai/session-keys"
-    },
-    "limits": {
-     "points": 20,
-     "max": 20,
-     "note": "A policy enforced inside every trading tool caps leverage, collateral and size per trade, daily notional, open positions and daily loss; the AI can't edit it, and on the hosted connector you set it by signing with your wallet (default preset: 3x, $250 per trade, $100 daily loss)",
-     "source": "https://sdk.veranta.xyz/ai/safety"
-    },
-    "approval": {
-     "points": 8,
-     "max": 15,
-     "note": "Optional: a confirmation is required only above a notional you set (off by default), for bulk closes and for vault moves; otherwise it depends on your AI client asking before tools run",
-     "source": "https://sdk.veranta.xyz/ai/safety"
-    },
-    "withdraw": {
-     "points": 15,
-     "max": 15,
-     "note": "The session key can't send USDC out of your account; margin withdrawals always pay your own wallet",
-     "source": "https://sdk.veranta.xyz/ai/safety"
-    },
-    "preview": {
-     "points": 10,
-     "max": 10,
-     "note": "Every trade is quoted before it executes (entry with spread, fees, liquidation price and the policy verdict); a quote expires after 30 seconds and executes once",
-     "source": "https://sdk.veranta.xyz/ai/safety"
-    },
-    "open": {
-     "points": 0,
-     "max": 10,
-     "note": "Closed: no public source code in our listing",
-     "source": "https://sdk.veranta.xyz/ai/overview"
-    },
-    "record": {
-     "points": 10,
-     "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
-     "source": "https://tradingagentstack.com/incidents/"
-    }
-   },
-   "incidents": [],
-   "page": "https://tradingagentstack.com/tool/veranta-mcp-formerly-avantis/#agent-risk-score",
+   "page": "https://tradingagentstack.com/tool/olas-pearl/#safety",
    "last_checked": "2026-10-31"
   },
   {
@@ -1527,180 +1291,231 @@
    "name": "Bitget",
    "category": "bot_exchange",
    "category_label": "Exchanges & brokers for bots",
-   "agent_risk_score_pct": 80,
-   "points": 64,
-   "max": 80,
-   "partial": true,
-   "missing_inputs": [
-    "limits"
-   ],
+   "agent_risk_score_pct": 85,
+   "points": 85,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
    "inputs": {
     "custody": {
-     "points": 20,
-     "max": 20,
-     "note": "The agent works in a separate Agentic account; withdrawals and main-account operations must always be done manually on the web",
+     "points": 10,
+     "max": 10,
+     "note": "The agent works in a separate Agentic account; withdrawals and main-account operations must always be done manually on the web (official docs)",
      "source": "https://www.bitget.com/docs/uta/agent-hub"
     },
     "limits": {
-     "points": null,
-     "max": 20,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "points": 15,
+     "max": 15,
+     "note": "Approval/confirmation step documented",
+     "source": "https://www.bitget.com/docs/uta/agent-hub"
     },
     "approval": {
-     "points": 8,
-     "max": 15,
-     "note": "Optional: with the Skill the AI asks before acting; the MCP section documents no confirmation step",
+     "points": 10,
+     "max": 25,
+     "note": "Optional: with the Skill the AI asks before acting; the MCP section documents no confirmation step (official docs)",
      "source": "https://www.bitget.com/docs/uta/agent-hub"
     },
     "withdraw": {
      "points": 15,
      "max": 15,
-     "note": "The AI can't withdraw; withdrawals are manual on the web",
+     "note": "The AI can't withdraw; withdrawals are manual on the web (official docs)",
      "source": "https://www.bitget.com/docs/uta/agent-hub"
     },
     "preview": {
-     "points": 5,
-     "max": 10,
-     "note": "Dry-run builds the full request without sending it (CLI)",
+     "points": 15,
+     "max": 15,
+     "note": "Paper, demo or testnet mode available",
      "source": "https://www.bitget.com/docs/uta/agent-hub"
     },
     "open": {
-     "points": 6,
+     "points": 10,
      "max": 10,
-     "note": "Agent Hub is open source (MIT); no audit report found",
+     "note": "Agent Hub is open source (MIT); no audit report found (official docs)",
      "source": "https://www.bitget.com/docs/uta/agent-hub"
     },
     "record": {
      "points": 10,
      "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
      "source": "https://tradingagentstack.com/incidents/"
     }
    },
    "incidents": [],
-   "page": "https://tradingagentstack.com/tool/bitget/#agent-risk-score",
+   "page": "https://tradingagentstack.com/tool/bitget/#safety",
    "last_checked": "2026-10-31"
   },
   {
-   "slug": "dydx",
-   "name": "dYdX",
+   "slug": "bybit",
+   "name": "Bybit",
    "category": "bot_exchange",
    "category_label": "Exchanges & brokers for bots",
-   "agent_risk_score_pct": 79,
-   "points": 55,
-   "max": 70,
-   "partial": true,
-   "missing_inputs": [
-    "limits",
-    "preview"
-   ],
+   "agent_risk_score_pct": 85,
+   "points": 85,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
    "inputs": {
     "custody": {
-     "points": 20,
-     "max": 20,
-     "note": "A permissioned key can be limited to placing orders, with withdrawals and transfers blocked",
-     "source": "https://docs.dydx.xyz/concepts/trading/authenticators"
+     "points": 10,
+     "max": 10,
+     "note": "The official MCP runs on your API key; Bybit's README says to keep withdrawal access disabled, so a trade key can't move funds out (official docs)",
+     "source": "https://github.com/bybit-exchange/trading-mcp"
     },
     "limits": {
-     "points": null,
-     "max": 20,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "points": 15,
+     "max": 15,
+     "note": "Approval/confirmation step documented",
+     "source": "https://github.com/bybit-exchange/trading-mcp"
     },
     "approval": {
-     "points": 0,
-     "max": 15,
-     "note": "API orders execute with no approval step",
-     "source": "https://docs.dydx.xyz/concepts/trading/authenticators"
+     "points": 10,
+     "max": 25,
+     "note": "Optional, client-dependent: each write operation asks for a separate approval form, but the server relies on your MCP client's approval response, so whether you confirm each order depends on the client (official docs)",
+     "source": "https://github.com/bybit-exchange/trading-mcp"
     },
     "withdraw": {
      "points": 15,
      "max": 15,
-     "note": "Permissioned trading keys can be barred from withdrawals and transfers",
-     "source": "https://docs.dydx.xyz/concepts/trading/authenticators"
+     "note": "Withdrawal access is a key permission you can leave disabled (official docs)",
+     "source": "https://github.com/bybit-exchange/trading-mcp"
     },
     "preview": {
-     "points": null,
-     "max": 10,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "points": 15,
+     "max": 15,
+     "note": "Paper, demo or testnet mode available",
+     "source": "https://github.com/bybit-exchange/trading-mcp"
     },
     "open": {
      "points": 10,
      "max": 10,
-     "note": "Open-source chain, indexer and clients with audit reports in the v4-chain repo",
-     "source": "https://github.com/dydxprotocol/v4-chain/tree/main/audits"
+     "note": "The official MCP server is open source (MIT); no audit report found (official docs)",
+     "source": "https://github.com/bybit-exchange/trading-mcp"
     },
     "record": {
      "points": 10,
      "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
      "source": "https://tradingagentstack.com/incidents/"
     }
    },
    "incidents": [],
-   "page": "https://tradingagentstack.com/tool/dydx/#agent-risk-score",
+   "page": "https://tradingagentstack.com/tool/bybit/#safety",
    "last_checked": "2026-10-31"
   },
   {
-   "slug": "gmx",
-   "name": "GMX",
+   "slug": "kraken",
+   "name": "Kraken",
    "category": "bot_exchange",
    "category_label": "Exchanges & brokers for bots",
-   "agent_risk_score_pct": 75,
-   "points": 60,
-   "max": 80,
-   "partial": true,
-   "missing_inputs": [
-    "limits"
-   ],
+   "agent_risk_score_pct": 85,
+   "points": 85,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
    "inputs": {
     "custody": {
-     "points": 20,
-     "max": 20,
-     "note": "A delegated signer trades with the owner's collateral but can't withdraw; proceeds return to the main account",
-     "source": "https://docs.gmx.io/docs/api/contracts/delegated-trading"
+     "points": 10,
+     "max": 10,
+     "note": "Granular key permissions; without Withdraw Funds a key can't move funds off Kraken (official docs)",
+     "source": "https://docs.kraken.com/exchange/guides/rest/api-keys"
     },
     "limits": {
-     "points": null,
-     "max": 20,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "points": 15,
+     "max": 15,
+     "note": "Kraken's MCP docs: set position size limits and pair allowlists at the API key level on Kraken's settings page (official docs)",
+     "source": "https://docs.kraken.com/home/mcp"
     },
     "approval": {
-     "points": 0,
-     "max": 15,
-     "note": "Orders execute with no approval step",
-     "source": "https://docs.gmx.io/docs/api/contracts/delegated-trading"
+     "points": 10,
+     "max": 25,
+     "note": "Optional, client-dependent: since kraken-cli 0.5.0 each dangerous MCP call (trading, funding) goes to you through MCP elicitation; on clients that can't show that prompt the agent itself passes acknowledged=true, and --allow-dangerous turns the check off (official docs)",
+     "source": "https://github.com/krakenfx/kraken-cli/blob/v0.5.0/CHANGELOG.md"
     },
     "withdraw": {
      "points": 15,
      "max": 15,
-     "note": "Withdrawals aren't delegated to subaccount signers",
-     "source": "https://docs.gmx.io/docs/api/contracts/delegated-trading"
+     "note": "Withdraw Funds is a separate key permission (the MCP's funding service can withdraw only if you grant it) (official docs)",
+     "source": "https://docs.kraken.com/exchange/guides/rest/api-keys"
     },
     "preview": {
-     "points": 5,
-     "max": 10,
-     "note": "SimulationRouter can dry-run a request before a keeper executes it (optional)",
-     "source": "https://docs.gmx.io/docs/api/contracts/simulations"
+     "points": 15,
+     "max": 15,
+     "note": "Paper, demo or testnet mode available",
+     "source": "https://docs.kraken.com/home/mcp"
     },
     "open": {
      "points": 10,
      "max": 10,
-     "note": "V2 contracts public on GitHub with audits by Guardian, Certora, ABDK, Dedaub and Sherlock",
-     "source": "https://docs.gmx.io/docs/security"
+     "note": "Open source",
+     "source": "https://docs.kraken.com/home/mcp"
     },
     "record": {
      "points": 10,
      "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
      "source": "https://tradingagentstack.com/incidents/"
     }
    },
    "incidents": [],
-   "page": "https://tradingagentstack.com/tool/gmx/#agent-risk-score",
+   "page": "https://tradingagentstack.com/tool/kraken/#safety",
+   "last_checked": "2026-10-31"
+  },
+  {
+   "slug": "okx",
+   "name": "OKX",
+   "category": "bot_exchange",
+   "category_label": "Exchanges & brokers for bots",
+   "agent_risk_score_pct": 85,
+   "points": 85,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
+   "inputs": {
+    "custody": {
+     "points": 10,
+     "max": 10,
+     "note": "Keys stay on your device; Read, Trade and Withdraw are separate key permissions, and without Withdraw a key can't send funds off OKX (Trade keys can move funds between your own OKX accounts) (official docs)",
+     "source": "https://www.okx.com/en-us/help/api-faq"
+    },
+    "limits": {
+     "points": 15,
+     "max": 15,
+     "note": "Approval/confirmation step documented",
+     "source": "https://www.okx.com/docs-v5/agent_en/"
+    },
+    "approval": {
+     "points": 10,
+     "max": 25,
+     "note": "Optional and prompt-level: every money-moving tool is marked [CAUTION] so the AI asks before acting; no separate human-approval step (official docs)",
+     "source": "https://www.okx.com/docs-v5/agent_en/"
+    },
+    "withdraw": {
+     "points": 15,
+     "max": 15,
+     "note": "No Agent Trade Kit tool executes withdrawals, and Withdraw is a separate key permission (official docs)",
+     "source": "https://www.okx.com/en-us/help/api-faq"
+    },
+    "preview": {
+     "points": 15,
+     "max": 15,
+     "note": "Paper, demo or testnet mode available",
+     "source": "https://www.okx.com/docs-v5/agent_en/"
+    },
+    "open": {
+     "points": 10,
+     "max": 10,
+     "note": "Open source",
+     "source": "https://www.okx.com/docs-v5/agent_en/"
+    },
+    "record": {
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
+     "source": "https://tradingagentstack.com/incidents/"
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/okx/#safety",
    "last_checked": "2026-10-31"
   },
   {
@@ -1708,59 +1523,581 @@
    "name": "Coinbase Advanced",
    "category": "bot_exchange",
    "category_label": "Exchanges & brokers for bots",
-   "agent_risk_score_pct": 72,
-   "points": 58,
-   "max": 80,
-   "partial": true,
-   "missing_inputs": [
-    "limits"
-   ],
+   "agent_risk_score_pct": 75,
+   "points": 75,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
    "inputs": {
     "custody": {
-     "points": 20,
-     "max": 20,
-     "note": "Trading needs only view and trade permissions; transfer is a separate key permission you can leave off",
+     "points": 10,
+     "max": 10,
+     "note": "Trading needs only view and trade permissions; transfer is a separate key permission you can leave off (official docs)",
      "source": "https://docs.cdp.coinbase.com/coinbase-app/authentication-authorization/authorization"
     },
     "limits": {
-     "points": null,
-     "max": 20,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "points": 15,
+     "max": 15,
+     "note": "Approval/confirmation step documented",
+     "source": "https://docs.cdp.coinbase.com/coinbase-for-agents/overview"
     },
     "approval": {
-     "points": 8,
-     "max": 15,
-     "note": "Optional: depends on your AI client (Claude previews and asks for confirmation in chat; ChatGPT creates the order in one turn)",
+     "points": 10,
+     "max": 25,
+     "note": "Optional: depends on your AI client (Claude previews and asks for confirmation in chat; ChatGPT creates the order in one turn) (official docs)",
      "source": "https://docs.cdp.coinbase.com/coinbase-for-agents/overview"
     },
     "withdraw": {
      "points": 15,
      "max": 15,
-     "note": "The agent CLI's Transfer permission only moves funds between your portfolios and can't withdraw to external addresses",
+     "note": "The agent CLI's Transfer permission only moves funds between your portfolios and can't withdraw to external addresses (official docs)",
      "source": "https://docs.cdp.coinbase.com/coinbase-for-agents/overview"
     },
     "preview": {
-     "points": 5,
-     "max": 10,
-     "note": "orders_preview estimates fill, fees and slippage before orders_create, and the API has a Preview Order endpoint (optional)",
-     "source": "https://docs.cdp.coinbase.com/api-reference/advanced-trade-api/rest-api/orders/preview-orders"
+     "points": 15,
+     "max": 15,
+     "note": "Paper, demo or testnet mode available",
+     "source": "https://docs.cdp.coinbase.com/coinbase-for-agents/overview"
     },
     "open": {
      "points": 0,
      "max": 10,
-     "note": "Closed: no public source code in our listing",
-     "source": "https://www.coinbase.com/advanced-trade"
+     "note": "No public source code in our listing",
+     "source": "https://docs.cdp.coinbase.com/coinbase-for-agents/overview"
     },
     "record": {
      "points": 10,
      "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
      "source": "https://tradingagentstack.com/incidents/"
     }
    },
    "incidents": [],
-   "page": "https://tradingagentstack.com/tool/coinbase-advanced/#agent-risk-score",
+   "page": "https://tradingagentstack.com/tool/coinbase-advanced/#safety",
+   "last_checked": "2026-10-31"
+  },
+  {
+   "slug": "veranta-mcp-formerly-avantis",
+   "name": "Veranta MCP (formerly Avantis)",
+   "category": "bot_exchange",
+   "category_label": "Exchanges & brokers for bots",
+   "agent_risk_score_pct": 75,
+   "points": 75,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
+   "inputs": {
+    "custody": {
+     "points": 10,
+     "max": 10,
+     "note": "The agent trades with a session key your wallet registers as a delegate; it can open, close and modify positions but can't withdraw USDC from your account, grant allowances or add delegates, and you can revoke it any time (official docs)",
+     "source": "https://sdk.veranta.xyz/ai/session-keys"
+    },
+    "limits": {
+     "points": 15,
+     "max": 15,
+     "note": "A policy enforced inside every trading tool caps leverage, collateral and size per trade, daily notional, open positions and daily loss; the AI can't edit it, and on the hosted connector you set it by signing with your wallet (default preset: 3x, $250 per trade, $100 daily loss) (official docs)",
+     "source": "https://sdk.veranta.xyz/ai/safety"
+    },
+    "approval": {
+     "points": 10,
+     "max": 25,
+     "note": "Every trade is quoted first, but a confirmation is required only above a notional you set (off by default) and for vault moves; otherwise whether you approve each fill depends on your AI client's tool prompts and the conversation",
+     "source": "https://sdk.veranta.xyz/ai/safety"
+    },
+    "withdraw": {
+     "points": 15,
+     "max": 15,
+     "note": "The session key can't send USDC out of your account; margin withdrawals always pay your own wallet (official docs)",
+     "source": "https://sdk.veranta.xyz/ai/safety"
+    },
+    "preview": {
+     "points": 15,
+     "max": 15,
+     "note": "Testnet mode (--network=testnet) trades test USDC from a faucet, so nothing is real money (official docs)",
+     "source": "https://sdk.veranta.xyz/ai/session-keys"
+    },
+    "open": {
+     "points": 0,
+     "max": 10,
+     "note": "No public source code in our listing",
+     "source": "https://sdk.veranta.xyz/ai/overview"
+    },
+    "record": {
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
+     "source": "https://tradingagentstack.com/incidents/"
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/veranta-mcp-formerly-avantis/#safety",
+   "last_checked": "2026-10-31"
+  },
+  {
+   "slug": "gmx",
+   "name": "GMX",
+   "category": "bot_exchange",
+   "category_label": "Exchanges & brokers for bots",
+   "agent_risk_score_pct": 68,
+   "points": 68,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
+   "inputs": {
+    "custody": {
+     "points": 10,
+     "max": 10,
+     "note": "Delegated subaccount signers with expiry, action caps and gasless revocation (official docs)",
+     "source": "https://docs.gmx.io/docs/api/contracts/delegated-trading"
+    },
+    "limits": {
+     "points": 8,
+     "max": 15,
+     "note": "No per-order approval; a delegated signer has an expiry and a maximum action count (official docs)",
+     "source": "https://docs.gmx.io/docs/api/contracts/delegated-trading"
+    },
+    "approval": {
+     "points": 0,
+     "max": 25,
+     "note": "API orders execute with no per-order approval step",
+     "source": "https://docs.gmx.io/docs/api/contracts/delegated-trading"
+    },
+    "withdraw": {
+     "points": 15,
+     "max": 15,
+     "note": "A delegated subaccount signer can't withdraw, and order proceeds return to the main account (official docs)",
+     "source": "https://docs.gmx.io/docs/api/contracts/delegated-trading"
+    },
+    "preview": {
+     "points": 15,
+     "max": 15,
+     "note": "Contracts deployed on Arbitrum Sepolia and Avalanche Fuji (no testnet app) (official docs)",
+     "source": "https://docs.gmx.io/docs/api/contracts/addresses"
+    },
+    "open": {
+     "points": 10,
+     "max": 10,
+     "note": "V2 contracts public on GitHub with audits by Guardian, Certora, ABDK, Dedaub and Sherlock (official docs)",
+     "source": "https://docs.gmx.io/docs/security"
+    },
+    "record": {
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
+     "source": "https://tradingagentstack.com/incidents/"
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/gmx/#safety",
+   "last_checked": "2026-10-31"
+  },
+  {
+   "slug": "lighter",
+   "name": "Lighter",
+   "category": "bot_exchange",
+   "category_label": "Exchanges & brokers for bots",
+   "agent_risk_score_pct": 68,
+   "points": 68,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
+   "inputs": {
+    "custody": {
+     "points": 10,
+     "max": 10,
+     "note": "Separate key per account and sub-account, maker-only keys and read-only tokens (5 minutes to 10 years) (official docs)",
+     "source": "https://docs.lighter.xyz/developers/integration-guides/api-keys"
+    },
+    "limits": {
+     "points": 8,
+     "max": 15,
+     "note": "No per-order approval; maker-only keys (post-only orders and cancels) and read-only tokens limit what a credential can do (official docs)",
+     "source": "https://docs.lighter.xyz/developers/integration-guides/api-keys"
+    },
+    "approval": {
+     "points": 0,
+     "max": 25,
+     "note": "API orders execute with no per-order approval step",
+     "source": "https://docs.lighter.xyz/developers/integration-guides/api-keys"
+    },
+    "withdraw": {
+     "points": 15,
+     "max": 15,
+     "note": "A key can make a 'secure withdrawal' only back to the account owner's own Ethereum address; sending to anyone else needs the wallet's signature (official docs)",
+     "source": "https://docs.lighter.xyz/developers/integration-guides/api-keys"
+    },
+    "preview": {
+     "points": 15,
+     "max": 15,
+     "note": "Public testnet app and API settling to Sepolia (official docs)",
+     "source": "https://docs.lighter.xyz/developers/getting-started/environments"
+    },
+    "open": {
+     "points": 10,
+     "max": 10,
+     "note": "Circuits and contracts are public on GitHub (contracts under a source-available licence) and the docs link 9 audit reports (official docs)",
+     "source": "https://docs.lighter.xyz/security/security-audits"
+    },
+    "record": {
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
+     "source": "https://tradingagentstack.com/incidents/"
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/lighter/#safety",
+   "last_checked": "2026-10-31"
+  },
+  {
+   "slug": "paradex",
+   "name": "Paradex",
+   "category": "bot_exchange",
+   "category_label": "Exchanges & brokers for bots",
+   "agent_risk_score_pct": 68,
+   "points": 68,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
+   "inputs": {
+    "custody": {
+     "points": 10,
+     "max": 10,
+     "note": "Trading-only subkeys with an IP allowlist of up to 50 ranges, and read-only tokens (official docs)",
+     "source": "https://docs.paradex.trade/api/general-information/api-authentication"
+    },
+    "limits": {
+     "points": 8,
+     "max": 15,
+     "note": "No per-order approval; market-maker protection, price bands and a receive window limit orders (official docs)",
+     "source": "https://docs.paradex.trade/trading/market-maker-protections"
+    },
+    "approval": {
+     "points": 0,
+     "max": 25,
+     "note": "API orders execute with no per-order approval step",
+     "source": "https://docs.paradex.trade/api/general-information/api-authentication"
+    },
+    "withdraw": {
+     "points": 15,
+     "max": 15,
+     "note": "Trading subkeys can't withdraw, transfer or change settings (official docs)",
+     "source": "https://docs.paradex.trade/api/general-information/api-authentication"
+    },
+    "preview": {
+     "points": 15,
+     "max": 15,
+     "note": "Testnet app and API with $1M of test USDC per new account (official docs)",
+     "source": "https://docs.paradex.trade/docs/testnet-faqs"
+    },
+    "open": {
+     "points": 10,
+     "max": 10,
+     "note": "Core contracts audited by Cairo Security Clan (2025) and the bridge by Zellic and Trail of Bits; the bridge is open source (official docs)",
+     "source": "https://docs.paradex.trade/chain/security/audit-pentests"
+    },
+    "record": {
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
+     "source": "https://tradingagentstack.com/incidents/"
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/paradex/#safety",
+   "last_checked": "2026-10-31"
+  },
+  {
+   "slug": "dydx",
+   "name": "dYdX",
+   "category": "bot_exchange",
+   "category_label": "Exchanges & brokers for bots",
+   "agent_risk_score_pct": 68,
+   "points": 68,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
+   "inputs": {
+    "custody": {
+     "points": 10,
+     "max": 10,
+     "note": "Permissioned keys scoped by message type, market and sub-account, removable at any time (official docs)",
+     "source": "https://docs.dydx.xyz/concepts/trading/authenticators"
+    },
+    "limits": {
+     "points": 8,
+     "max": 15,
+     "note": "No per-order approval; permissioned keys filter which actions, markets and sub-accounts a key can touch (official docs)",
+     "source": "https://docs.dydx.xyz/concepts/trading/authenticators"
+    },
+    "approval": {
+     "points": 0,
+     "max": 25,
+     "note": "API orders execute with no per-order approval step",
+     "source": "https://docs.dydx.xyz/concepts/trading/authenticators"
+    },
+    "withdraw": {
+     "points": 15,
+     "max": 15,
+     "note": "A permissioned trading key can be barred from withdrawals and transfers entirely (official docs)",
+     "source": "https://docs.dydx.xyz/concepts/trading/authenticators"
+    },
+    "preview": {
+     "points": 15,
+     "max": 15,
+     "note": "Public testnet front end, indexer and faucet (official docs)",
+     "source": "https://docs.dydx.xyz/interaction/endpoints"
+    },
+    "open": {
+     "points": 10,
+     "max": 10,
+     "note": "Open-source chain, indexer and clients with audit reports in the v4-chain repo (official docs)",
+     "source": "https://github.com/dydxprotocol/v4-chain/tree/main/audits"
+    },
+    "record": {
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
+     "source": "https://tradingagentstack.com/incidents/"
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/dydx/#safety",
+   "last_checked": "2026-10-31"
+  },
+  {
+   "slug": "pacifica",
+   "name": "Pacifica",
+   "category": "bot_exchange",
+   "category_label": "Exchanges & brokers for bots",
+   "agent_risk_score_pct": 62,
+   "points": 53,
+   "max": 85,
+   "partial": true,
+   "missing_inputs": [
+    "withdraw"
+   ],
+   "inputs": {
+    "custody": {
+     "points": 10,
+     "max": 10,
+     "note": "Revocable agent keys bound to the account; subaccounts with their own keypairs (official docs)",
+     "source": "https://docs.pacifica.fi/api-documentation/api/signing/api-agent-keys"
+    },
+    "limits": {
+     "points": 8,
+     "max": 15,
+     "note": "No per-order approval; the official MCP server has a read-only mode (official docs)",
+     "source": "https://docs.pacifica.fi/api-documentation/api/mcp"
+    },
+    "approval": {
+     "points": 0,
+     "max": 25,
+     "note": "API orders execute with no per-order approval step",
+     "source": "https://docs.pacifica.fi/api-documentation/api/signing/api-agent-keys"
+    },
+    "withdraw": {
+     "points": null,
+     "max": 15,
+     "note": "Missing: not documented",
+     "source": null
+    },
+    "preview": {
+     "points": 15,
+     "max": 15,
+     "note": "Testnet API; the official MCP server defaults to testnet (official docs)",
+     "source": "https://docs.pacifica.fi/api-documentation/api/rest-api"
+    },
+    "open": {
+     "points": 10,
+     "max": 10,
+     "note": "BlockSec audit of the perp contracts; core contracts are not open source (official docs)",
+     "source": "https://docs.pacifica.fi/other/audits"
+    },
+    "record": {
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
+     "source": "https://tradingagentstack.com/incidents/"
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/pacifica/#safety",
+   "last_checked": "2026-10-31"
+  },
+  {
+   "slug": "gemini",
+   "name": "Gemini",
+   "category": "bot_exchange",
+   "category_label": "Exchanges & brokers for bots",
+   "agent_risk_score_pct": 60,
+   "points": 60,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
+   "inputs": {
+    "custody": {
+     "points": 10,
+     "max": 10,
+     "note": "The default Trader role can't withdraw; withdrawals need a separate Fund Manager role (official docs)",
+     "source": "https://developer.gemini.com/roles"
+    },
+    "limits": {
+     "points": 0,
+     "max": 15,
+     "note": "No approval or limit option in our listing",
+     "source": "https://developer.gemini.com/rate-limit"
+    },
+    "approval": {
+     "points": 0,
+     "max": 25,
+     "note": "The official MCP server's README documents no confirmation step before orders (official docs)",
+     "source": "https://github.com/gemini/developer-platform"
+    },
+    "withdraw": {
+     "points": 15,
+     "max": 15,
+     "note": "Trader-role keys can't withdraw (the MCP has withdrawal tools, which need a Fund Manager key) (official docs)",
+     "source": "https://developer.gemini.com/roles"
+    },
+    "preview": {
+     "points": 15,
+     "max": 15,
+     "note": "Paper, demo or testnet mode available",
+     "source": "https://developer.gemini.com/rate-limit"
+    },
+    "open": {
+     "points": 10,
+     "max": 10,
+     "note": "Open source",
+     "source": "https://developer.gemini.com/rate-limit"
+    },
+    "record": {
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
+     "source": "https://tradingagentstack.com/incidents/"
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/gemini/#safety",
+   "last_checked": "2026-10-31"
+  },
+  {
+   "slug": "aster",
+   "name": "Aster",
+   "category": "bot_exchange",
+   "category_label": "Exchanges & brokers for bots",
+   "agent_risk_score_pct": 58,
+   "points": 58,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
+   "inputs": {
+    "custody": {
+     "points": 10,
+     "max": 10,
+     "note": "Agent wallets with separate perp, spot and withdraw flags, a required expiry, and an IP whitelist when withdraw is on (official docs)",
+     "source": "https://github.com/asterdex/api-docs/blob/master/V3(Recommended)/EN/aster-finance-futures-api-v3.md"
+    },
+    "limits": {
+     "points": 8,
+     "max": 15,
+     "note": "No per-order approval; market-maker protection and a countdown cancel-all (dead-man's switch) (official docs)",
+     "source": "https://github.com/asterdex/api-docs/blob/master/V3(Recommended)/EN/aster-finance-futures-api-v3.md"
+    },
+    "approval": {
+     "points": 0,
+     "max": 25,
+     "note": "API orders execute with no per-order approval step",
+     "source": "https://github.com/asterdex/api-docs/blob/master/V3(Recommended)/EN/aster-finance-futures-api-v3.md"
+    },
+    "withdraw": {
+     "points": 15,
+     "max": 15,
+     "note": "Agent wallets have a separate withdraw permission; with it off they can only move funds between the owner's sub-accounts (official docs)",
+     "source": "https://github.com/asterdex/api-docs/blob/master/V3(Recommended)/EN/aster-finance-futures-api-v3.md"
+    },
+    "preview": {
+     "points": 15,
+     "max": 15,
+     "note": "Testnet app, API and daily faucet (official docs)",
+     "source": "https://docs.asterdex.com/aster-chain/testnet"
+    },
+    "open": {
+     "points": 0,
+     "max": 10,
+     "note": "The 7 published audits cover vault, earn and stablecoin products, not the perp engine, chain or bridges (official docs)",
+     "source": "https://docs.asterdex.com/overview/audit-reports"
+    },
+    "record": {
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
+     "source": "https://tradingagentstack.com/incidents/"
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/aster/#safety",
+   "last_checked": "2026-10-31"
+  },
+  {
+   "slug": "hyperliquid",
+   "name": "Hyperliquid",
+   "category": "bot_exchange",
+   "category_label": "Exchanges & brokers for bots",
+   "agent_risk_score_pct": 50,
+   "points": 50,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
+   "inputs": {
+    "custody": {
+     "points": 10,
+     "max": 10,
+     "note": "Bots trade through API (agent) wallets that sign for your account but can't withdraw or transfer (official docs)",
+     "source": "https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/nonces-and-api-wallets"
+    },
+    "limits": {
+     "points": 0,
+     "max": 15,
+     "note": "No approval or limit option in our listing",
+     "source": "https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/rate-limits-and-user-limits"
+    },
+    "approval": {
+     "points": 0,
+     "max": 25,
+     "note": "Agent-wallet orders execute with no approval step (official docs)",
+     "source": "https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/nonces-and-api-wallets"
+    },
+    "withdraw": {
+     "points": 15,
+     "max": 15,
+     "note": "Agent wallets cannot withdraw or transfer (official docs)",
+     "source": "https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/nonces-and-api-wallets"
+    },
+    "preview": {
+     "points": 15,
+     "max": 15,
+     "note": "Paper, demo or testnet mode available",
+     "source": "https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/rate-limits-and-user-limits"
+    },
+    "open": {
+     "points": 0,
+     "max": 10,
+     "note": "No public source code in our listing",
+     "source": "https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/rate-limits-and-user-limits"
+    },
+    "record": {
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
+     "source": "https://tradingagentstack.com/incidents/"
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/hyperliquid/#safety",
    "last_checked": "2026-10-31"
   },
   {
@@ -1768,50 +2105,47 @@
    "name": "Binance",
    "category": "bot_exchange",
    "category_label": "Exchanges & brokers for bots",
-   "agent_risk_score_pct": 71,
-   "points": 50,
-   "max": 70,
-   "partial": true,
-   "missing_inputs": [
-    "limits",
-    "preview"
-   ],
+   "agent_risk_score_pct": 49,
+   "points": 49,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
    "inputs": {
     "custody": {
-     "points": 20,
-     "max": 20,
-     "note": "The official MCP trades in a dedicated Agentic sub-account you fund yourself; there is no withdrawal scope, so the agent can never move funds out of it",
+     "points": 10,
+     "max": 10,
+     "note": "The official MCP trades in a dedicated Agentic sub-account you fund yourself; there is no withdrawal scope, so the agent can never move funds out of it (official docs)",
      "source": "https://developers.binance.com/en/docs/agent-native/mcp-server/agentic"
     },
     "limits": {
-     "points": null,
-     "max": 20,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "approval": {
      "points": 15,
      "max": 15,
-     "note": "Confirm-first: every non-read action (orders, cancels, sub-account transfers) waits for your yes before it is sent",
+     "note": "Approval/confirmation step documented",
+     "source": "https://developers.binance.com/en/docs/agent-native/mcp-server"
+    },
+    "approval": {
+     "points": 25,
+     "max": 25,
+     "note": "Confirm-first: every non-read action (orders, cancels, sub-account transfers) waits for your yes before it is sent (official docs)",
      "source": "https://developers.binance.com/en/docs/agent-native/mcp-server/agentic"
     },
     "withdraw": {
      "points": 15,
      "max": 15,
-     "note": "No withdrawal scope: the agent can't send funds to an external address (and a plain API key needs a separate withdrawal permission)",
+     "note": "No withdrawal scope: the agent can't send funds to an external address (and a plain API key needs a separate withdrawal permission) (official docs)",
      "source": "https://developers.binance.com/en/docs/agent-native/mcp-server/agentic"
     },
     "preview": {
-     "points": null,
-     "max": 10,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "points": 15,
+     "max": 15,
+     "note": "Paper, demo or testnet mode available",
+     "source": "https://developers.binance.com/en/docs/agent-native/mcp-server"
     },
     "open": {
      "points": 0,
      "max": 10,
-     "note": "Closed: no public source code in our listing",
-     "source": "https://www.binance.com/"
+     "note": "No public source code in our listing",
+     "source": "https://developers.binance.com/en/docs/agent-native/mcp-server"
     },
     "record": {
      "points": 0,
@@ -1828,374 +2162,65 @@
      "resolved": false
     }
    ],
-   "page": "https://tradingagentstack.com/tool/binance/#agent-risk-score",
+   "page": "https://tradingagentstack.com/tool/binance/#safety",
    "last_checked": "2026-10-31"
   },
   {
-   "slug": "gemini",
-   "name": "Gemini",
+   "slug": "extended",
+   "name": "Extended",
    "category": "bot_exchange",
    "category_label": "Exchanges & brokers for bots",
-   "agent_risk_score_pct": 70,
-   "points": 56,
-   "max": 80,
-   "partial": true,
-   "missing_inputs": [
-    "limits"
-   ],
+   "agent_risk_score_pct": 43,
+   "points": 43,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
    "inputs": {
     "custody": {
-     "points": 20,
-     "max": 20,
-     "note": "The default Trader role can't withdraw; withdrawals need a separate Fund Manager role",
-     "source": "https://developer.gemini.com/roles"
+     "points": 10,
+     "max": 10,
+     "note": "Up to 10 sub-accounts per wallet, each with its own API key and Stark key (official docs)",
+     "source": "https://api.docs.extended.exchange/"
     },
     "limits": {
-     "points": null,
-     "max": 20,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "points": 8,
+     "max": 15,
+     "note": "No per-order approval; a dead-man's switch and per-market order and position caps (official docs)",
+     "source": "https://docs.extended.exchange/extended-resources/trading/crypto-markets/trading-rules"
     },
     "approval": {
      "points": 0,
-     "max": 15,
-     "note": "The official MCP server's README documents no confirmation step before orders",
-     "source": "https://github.com/gemini/developer-platform"
+     "max": 25,
+     "note": "API orders execute with no per-order approval step",
+     "source": "https://api.docs.extended.exchange/"
     },
     "withdraw": {
+     "points": 0,
+     "max": 15,
+     "note": "The Stark key every order needs can also withdraw and transfer (official docs)",
+     "source": "https://api.docs.extended.exchange/"
+    },
+    "preview": {
      "points": 15,
      "max": 15,
-     "note": "Trader-role keys can't withdraw (the MCP has withdrawal tools, which need a Fund Manager key)",
-     "source": "https://developer.gemini.com/roles"
-    },
-    "preview": {
-     "points": 5,
-     "max": 10,
-     "note": "The MCP's margin tools include order previews (some actions only)",
-     "source": "https://github.com/gemini/developer-platform"
-    },
-    "open": {
-     "points": 6,
-     "max": 10,
-     "note": "Open source (official repository); no audit report found in the official docs",
-     "source": "https://github.com/gemini/developer-platform"
-    },
-    "record": {
-     "points": 10,
-     "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
-     "source": "https://tradingagentstack.com/incidents/"
-    }
-   },
-   "incidents": [],
-   "page": "https://tradingagentstack.com/tool/gemini/#agent-risk-score",
-   "last_checked": "2026-10-31"
-  },
-  {
-   "slug": "aster",
-   "name": "Aster",
-   "category": "bot_exchange",
-   "category_label": "Exchanges & brokers for bots",
-   "agent_risk_score_pct": 64,
-   "points": 45,
-   "max": 70,
-   "partial": true,
-   "missing_inputs": [
-    "limits",
-    "preview"
-   ],
-   "inputs": {
-    "custody": {
-     "points": 20,
-     "max": 20,
-     "note": "With the withdraw permission off, an agent wallet can only trade and move funds between the owner's sub-accounts",
-     "source": "https://github.com/asterdex/api-docs/blob/master/V3(Recommended)/EN/aster-finance-futures-api-v3.md"
-    },
-    "limits": {
-     "points": null,
-     "max": 20,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "approval": {
-     "points": 0,
-     "max": 15,
-     "note": "API orders execute with no approval step",
-     "source": "https://github.com/asterdex/api-docs/blob/master/V3(Recommended)/EN/aster-finance-futures-api-v3.md"
-    },
-    "withdraw": {
-     "points": 15,
-     "max": 15,
-     "note": "Withdraw is a separate agent permission that requires an IP whitelist",
-     "source": "https://github.com/asterdex/api-docs/blob/master/V3(Recommended)/EN/aster-finance-futures-api-v3.md"
-    },
-    "preview": {
-     "points": null,
-     "max": 10,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "note": "Sepolia testnet with daily test USDC (official docs)",
+     "source": "https://docs.extended.exchange/extended-resources/more/testnet"
     },
     "open": {
      "points": 0,
      "max": 10,
-     "note": "Closed: no public source code in our listing",
-     "source": "https://www.asterdex.com/"
+     "note": "Audits cover the earlier Starknet contracts; none found yet for the Arc settlement contracts (migrated 2026-10-22) (official docs)",
+     "source": "https://docs.extended.exchange/extended-resources/more/smart-contract-audits"
     },
     "record": {
      "points": 10,
      "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
      "source": "https://tradingagentstack.com/incidents/"
     }
    },
    "incidents": [],
-   "page": "https://tradingagentstack.com/tool/aster/#agent-risk-score",
-   "last_checked": "2026-10-31"
-  },
-  {
-   "slug": "hyperliquid",
-   "name": "Hyperliquid",
-   "category": "bot_exchange",
-   "category_label": "Exchanges & brokers for bots",
-   "agent_risk_score_pct": 64,
-   "points": 45,
-   "max": 70,
-   "partial": true,
-   "missing_inputs": [
-    "limits",
-    "preview"
-   ],
-   "inputs": {
-    "custody": {
-     "points": 20,
-     "max": 20,
-     "note": "Bots trade through API (agent) wallets that sign for your account but can't withdraw or transfer",
-     "source": "https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/nonces-and-api-wallets"
-    },
-    "limits": {
-     "points": null,
-     "max": 20,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "approval": {
-     "points": 0,
-     "max": 15,
-     "note": "Agent-wallet orders execute with no approval step",
-     "source": "https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/nonces-and-api-wallets"
-    },
-    "withdraw": {
-     "points": 15,
-     "max": 15,
-     "note": "Agent wallets cannot withdraw or transfer",
-     "source": "https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/nonces-and-api-wallets"
-    },
-    "preview": {
-     "points": null,
-     "max": 10,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "open": {
-     "points": 0,
-     "max": 10,
-     "note": "Closed: no public source code in our listing",
-     "source": "https://hyperliquid.xyz/"
-    },
-    "record": {
-     "points": 10,
-     "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
-     "source": "https://tradingagentstack.com/incidents/"
-    }
-   },
-   "incidents": [],
-   "page": "https://tradingagentstack.com/tool/hyperliquid/#agent-risk-score",
-   "last_checked": "2026-10-31"
-  },
-  {
-   "slug": "lighter",
-   "name": "Lighter",
-   "category": "bot_exchange",
-   "category_label": "Exchanges & brokers for bots",
-   "agent_risk_score_pct": 64,
-   "points": 45,
-   "max": 70,
-   "partial": true,
-   "missing_inputs": [
-    "limits",
-    "preview"
-   ],
-   "inputs": {
-    "custody": {
-     "points": 10,
-     "max": 20,
-     "note": "Keys can move funds between your own accounts and withdraw back to your own Ethereum address, but can't send to anyone else",
-     "source": "https://docs.lighter.xyz/developers/integration-guides/api-keys"
-    },
-    "limits": {
-     "points": null,
-     "max": 20,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "approval": {
-     "points": 0,
-     "max": 15,
-     "note": "API orders execute with no approval step",
-     "source": "https://docs.lighter.xyz/developers/integration-guides/api-keys"
-    },
-    "withdraw": {
-     "points": 15,
-     "max": 15,
-     "note": "Sending to a different owner or a fast withdrawal to any address needs the wallet's signature",
-     "source": "https://docs.lighter.xyz/developers/integration-guides/api-keys"
-    },
-    "preview": {
-     "points": null,
-     "max": 10,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "open": {
-     "points": 10,
-     "max": 10,
-     "note": "Public circuits and contracts (source-available licence) with 9 audit reports linked in the docs",
-     "source": "https://docs.lighter.xyz/security/security-audits"
-    },
-    "record": {
-     "points": 10,
-     "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
-     "source": "https://tradingagentstack.com/incidents/"
-    }
-   },
-   "incidents": [],
-   "page": "https://tradingagentstack.com/tool/lighter/#agent-risk-score",
-   "last_checked": "2026-10-31"
-  },
-  {
-   "slug": "paradex",
-   "name": "Paradex",
-   "category": "bot_exchange",
-   "category_label": "Exchanges & brokers for bots",
-   "agent_risk_score_pct": 64,
-   "points": 45,
-   "max": 70,
-   "partial": true,
-   "missing_inputs": [
-    "limits",
-    "preview"
-   ],
-   "inputs": {
-    "custody": {
-     "points": 20,
-     "max": 20,
-     "note": "Trading subkeys can place and cancel orders but can't withdraw, transfer or change settings",
-     "source": "https://docs.paradex.trade/api/general-information/api-authentication"
-    },
-    "limits": {
-     "points": null,
-     "max": 20,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "approval": {
-     "points": 0,
-     "max": 15,
-     "note": "API orders execute with no approval step",
-     "source": "https://docs.paradex.trade/api/general-information/api-authentication"
-    },
-    "withdraw": {
-     "points": 15,
-     "max": 15,
-     "note": "Subkeys can't withdraw or transfer",
-     "source": "https://docs.paradex.trade/api/general-information/api-authentication"
-    },
-    "preview": {
-     "points": null,
-     "max": 10,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "open": {
-     "points": 0,
-     "max": 10,
-     "note": "Closed: no public source code in our listing",
-     "source": "https://www.paradex.trade/"
-    },
-    "record": {
-     "points": 10,
-     "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
-     "source": "https://tradingagentstack.com/incidents/"
-    }
-   },
-   "incidents": [],
-   "page": "https://tradingagentstack.com/tool/paradex/#agent-risk-score",
-   "last_checked": "2026-10-31"
-  },
-  {
-   "slug": "pacifica",
-   "name": "Pacifica",
-   "category": "bot_exchange",
-   "category_label": "Exchanges & brokers for bots",
-   "agent_risk_score_pct": 29,
-   "points": 10,
-   "max": 35,
-   "partial": true,
-   "missing_inputs": [
-    "custody",
-    "limits",
-    "withdraw",
-    "preview"
-   ],
-   "inputs": {
-    "custody": {
-     "points": null,
-     "max": 20,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "limits": {
-     "points": null,
-     "max": 20,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "approval": {
-     "points": 0,
-     "max": 15,
-     "note": "API orders execute with no approval step",
-     "source": "https://docs.pacifica.fi/api-documentation/api/signing/api-agent-keys"
-    },
-    "withdraw": {
-     "points": null,
-     "max": 15,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "preview": {
-     "points": null,
-     "max": 10,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "open": {
-     "points": 0,
-     "max": 10,
-     "note": "Closed: no public source code in our listing",
-     "source": "https://pacifica.fi/"
-    },
-    "record": {
-     "points": 10,
-     "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
-     "source": "https://tradingagentstack.com/incidents/"
-    }
-   },
-   "incidents": [],
-   "page": "https://tradingagentstack.com/tool/pacifica/#agent-risk-score",
+   "page": "https://tradingagentstack.com/tool/extended/#safety",
    "last_checked": "2026-10-31"
   },
   {
@@ -2204,123 +2229,59 @@
    "category": "bot_exchange",
    "category_label": "Exchanges & brokers for bots",
    "agent_risk_score_pct": 29,
-   "points": 10,
-   "max": 35,
+   "points": 20,
+   "max": 70,
    "partial": true,
    "missing_inputs": [
-    "custody",
-    "limits",
     "withdraw",
     "preview"
    ],
    "inputs": {
     "custody": {
-     "points": null,
-     "max": 20,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "points": 10,
+     "max": 10,
+     "note": "Orders need a separate trading (signer) key apart from the wallet key; up to 20 trading sub-accounts (official docs)",
+     "source": "https://edgex-1.gitbook.io/edgeX-documentation/api-v2/authentication"
     },
     "limits": {
-     "points": null,
-     "max": 20,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "approval": {
      "points": 0,
      "max": 15,
-     "note": "API orders execute with no approval step",
+     "note": "No preview, approval or risk-limit feature documented for API orders (official docs)",
      "source": "https://edgex-1.gitbook.io/edgeX-documentation/api-v2/private-api/order-api"
     },
-    "withdraw": {
-     "points": null,
-     "max": 15,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "preview": {
-     "points": null,
-     "max": 10,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "open": {
-     "points": 0,
-     "max": 10,
-     "note": "Closed: no public source code in our listing",
-     "source": "https://www.edgex.exchange/"
-    },
-    "record": {
-     "points": 10,
-     "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
-     "source": "https://tradingagentstack.com/incidents/"
-    }
-   },
-   "incidents": [],
-   "page": "https://tradingagentstack.com/tool/edgex/#agent-risk-score",
-   "last_checked": "2026-10-31"
-  },
-  {
-   "slug": "extended",
-   "name": "Extended",
-   "category": "bot_exchange",
-   "category_label": "Exchanges & brokers for bots",
-   "agent_risk_score_pct": 18,
-   "points": 10,
-   "max": 55,
-   "partial": true,
-   "missing_inputs": [
-    "limits",
-    "withdraw",
-    "preview"
-   ],
-   "inputs": {
-    "custody": {
-     "points": 0,
-     "max": 20,
-     "note": "The Stark key every order needs can also withdraw and transfer funds",
-     "source": "https://api.docs.extended.exchange/"
-    },
-    "limits": {
-     "points": null,
-     "max": 20,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
     "approval": {
      "points": 0,
-     "max": 15,
-     "note": "API orders execute with no approval step",
-     "source": "https://api.docs.extended.exchange/"
+     "max": 25,
+     "note": "API orders execute with no per-order approval step",
+     "source": "https://edgex-1.gitbook.io/edgeX-documentation/api-v2/authentication"
     },
     "withdraw": {
      "points": null,
      "max": 15,
-     "note": "Missing: no official source found yet",
+     "note": "Missing: not documented",
      "source": null
     },
     "preview": {
      "points": null,
-     "max": 10,
-     "note": "Missing: no official source found yet",
+     "max": 15,
+     "note": "Missing: not documented",
      "source": null
     },
     "open": {
      "points": 0,
      "max": 10,
-     "note": "Closed: no public source code in our listing",
-     "source": "https://extended.exchange/"
+     "note": "Listed audits are undated or cover the older StarkEx engine; no V2 contract source found (official docs)",
+     "source": "https://edgex-1.gitbook.io/edgeX-documentation/audits"
     },
     "record": {
      "points": 10,
      "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
      "source": "https://tradingagentstack.com/incidents/"
     }
    },
    "incidents": [],
-   "page": "https://tradingagentstack.com/tool/extended/#agent-risk-score",
+   "page": "https://tradingagentstack.com/tool/edgex/#safety",
    "last_checked": "2026-10-31"
   },
   {
@@ -2328,185 +2289,57 @@
    "name": "Craic Hub Exchange",
    "category": "defi_agent",
    "category_label": "On-chain & DeFi trading agents",
-   "agent_risk_score_pct": 81,
-   "points": 65,
-   "max": 80,
-   "partial": true,
-   "missing_inputs": [
-    "limits"
-   ],
+   "agent_risk_score_pct": 80,
+   "points": 80,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
    "inputs": {
     "custody": {
-     "points": 20,
-     "max": 20,
-     "note": "Non-custodial: you sign in your own wallet, and the site never asks for, sees or stores a seed phrase or private key",
+     "points": 10,
+     "max": 10,
+     "note": "Non-custodial: you sign in your own wallet, and the site never asks for, sees or stores a seed phrase or private key (official docs)",
      "source": "https://thehubexchange.com/security.html"
     },
     "limits": {
-     "points": null,
-     "max": 20,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "approval": {
      "points": 15,
      "max": 15,
-     "note": "Every trade, order and launch needs your wallet signature; the Craic Bot (coming soon) reads each request back and gives you one tap to sign",
-     "source": "https://thehubexchange.com/craicbot"
+     "note": "Approval/confirmation step documented",
+     "source": "https://thehubexchange.com/security.html"
+    },
+    "approval": {
+     "points": 25,
+     "max": 25,
+     "note": "Every swap, order and launch is signed in your own wallet (a signed limit or DCA order then fills on-chain without asking again); the Craic Bot, marked coming soon, reads each request back for a one-tap signature",
+     "source": "https://thehubexchange.com/security.html"
     },
     "withdraw": {
      "points": 15,
      "max": 15,
-     "note": "The site and bot hold no keys, so they can't send your funds anywhere without your signature",
+     "note": "The site and bot hold no keys, so they can't send your funds anywhere without your signature (official docs)",
      "source": "https://thehubexchange.com/security.html"
     },
     "preview": {
      "points": 5,
-     "max": 10,
-     "note": "Auto Trade only: before your wallet opens, the site decodes the transaction and blocks unknown programs, unlimited approvals and authority changes",
+     "max": 15,
+     "note": "Auto Trade only: before your wallet opens, the site decodes the transaction and blocks unknown programs, unlimited approvals and authority changes (official docs)",
      "source": "https://thehubexchange.com/security.html"
     },
     "open": {
      "points": 0,
      "max": 10,
-     "note": "Closed: no public source code; the security page is the team's own self-review, not an independent audit",
+     "note": "Closed: no public source code; the security page is the team's own self-review, not an independent audit (official docs)",
      "source": "https://thehubexchange.com/security.html"
     },
     "record": {
      "points": 10,
      "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
      "source": "https://tradingagentstack.com/incidents/"
     }
    },
    "incidents": [],
-   "page": "https://tradingagentstack.com/tool/craic-hub-exchange/#agent-risk-score",
-   "last_checked": "2026-10-31"
-  },
-  {
-   "slug": "0x-swap-api",
-   "name": "0x Swap API",
-   "category": "defi_agent",
-   "category_label": "On-chain & DeFi trading agents",
-   "agent_risk_score_pct": 75,
-   "points": 30,
-   "max": 40,
-   "partial": true,
-   "missing_inputs": [
-    "limits",
-    "approval",
-    "withdraw",
-    "preview"
-   ],
-   "inputs": {
-    "custody": {
-     "points": 20,
-     "max": 20,
-     "note": "The API returns a transaction that your own wallet submits; 0x doesn't sign for you",
-     "source": "https://docs.0x.org/evm/0x-swap-api/guides/swap-tokens-with-0x-swap-api"
-    },
-    "limits": {
-     "points": null,
-     "max": 20,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "approval": {
-     "points": null,
-     "max": 15,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "withdraw": {
-     "points": null,
-     "max": 15,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "preview": {
-     "points": null,
-     "max": 10,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "open": {
-     "points": 0,
-     "max": 10,
-     "note": "Closed: no public source code in our listing",
-     "source": "https://0x.org/"
-    },
-    "record": {
-     "points": 10,
-     "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
-     "source": "https://tradingagentstack.com/incidents/"
-    }
-   },
-   "incidents": [],
-   "page": "https://tradingagentstack.com/tool/0x-swap-api/#agent-risk-score",
-   "last_checked": "2026-10-31"
-  },
-  {
-   "slug": "jupiter-api",
-   "name": "Jupiter API",
-   "category": "defi_agent",
-   "category_label": "On-chain & DeFi trading agents",
-   "agent_risk_score_pct": 75,
-   "points": 30,
-   "max": 40,
-   "partial": true,
-   "missing_inputs": [
-    "limits",
-    "approval",
-    "withdraw",
-    "preview"
-   ],
-   "inputs": {
-    "custody": {
-     "points": 20,
-     "max": 20,
-     "note": "The API returns a serialized swap transaction that your wallet signs before it is sent",
-     "source": "https://developers.jup.ag/docs/swap/build-swap-transaction"
-    },
-    "limits": {
-     "points": null,
-     "max": 20,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "approval": {
-     "points": null,
-     "max": 15,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "withdraw": {
-     "points": null,
-     "max": 15,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "preview": {
-     "points": null,
-     "max": 10,
-     "note": "Missing: no official source found yet",
-     "source": null
-    },
-    "open": {
-     "points": 0,
-     "max": 10,
-     "note": "Closed: no public source code in our listing",
-     "source": "https://developers.jup.ag/"
-    },
-    "record": {
-     "points": 10,
-     "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
-     "source": "https://tradingagentstack.com/incidents/"
-    }
-   },
-   "incidents": [],
-   "page": "https://tradingagentstack.com/tool/jupiter-api/#agent-risk-score",
+   "page": "https://tradingagentstack.com/tool/craic-hub-exchange/#safety",
    "last_checked": "2026-10-31"
   },
   {
@@ -2514,189 +2347,179 @@
    "name": "1inch Swap API",
    "category": "defi_agent",
    "category_label": "On-chain & DeFi trading agents",
-   "agent_risk_score_pct": 69,
-   "points": 38,
-   "max": 55,
+   "agent_risk_score_pct": 71,
+   "points": 60,
+   "max": 85,
    "partial": true,
    "missing_inputs": [
-    "limits",
-    "withdraw",
     "preview"
    ],
    "inputs": {
     "custody": {
-     "points": 20,
-     "max": 20,
-     "note": "The API builds the swap transaction and your own wallet signs and sends it; 1inch's MCP server never holds private keys",
+     "points": 10,
+     "max": 10,
+     "note": "The API builds the swap transaction and your own wallet signs and sends it; 1inch's MCP server never holds private keys (official docs)",
      "source": "https://business.1inch.com/portal/documentation/ai-integration/overview"
     },
     "limits": {
-     "points": null,
-     "max": 20,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "points": 15,
+     "max": 15,
+     "note": "Approval/confirmation step documented",
+     "source": "https://business.1inch.com/pricing"
     },
     "approval": {
-     "points": 8,
-     "max": 15,
-     "note": "Optional: through 1inch's MCP and WalletConnect every transaction is shown in your wallet app to approve; calling the Swap API from your own program has no approval step",
+     "points": 10,
+     "max": 25,
+     "note": "Optional: through 1inch's MCP and WalletConnect every transaction is shown in your wallet app to approve; calling the Swap API from your own program has no approval step (official docs)",
      "source": "https://business.1inch.com/portal/documentation/ai-integration/overview"
     },
     "withdraw": {
-     "points": null,
+     "points": 15,
      "max": 15,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "note": "Can't withdraw or move your funds (you sign or withdrawals stay off)",
+     "source": "https://business.1inch.com/pricing"
     },
     "preview": {
      "points": null,
-     "max": 10,
-     "note": "Missing: no official source found yet",
+     "max": 15,
+     "note": "Missing: not documented",
      "source": null
     },
     "open": {
      "points": 0,
      "max": 10,
-     "note": "Closed: no public source code in our listing",
-     "source": "https://business.1inch.com/"
+     "note": "No public source code in our listing",
+     "source": "https://business.1inch.com/pricing"
     },
     "record": {
      "points": 10,
      "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
      "source": "https://tradingagentstack.com/incidents/"
     }
    },
    "incidents": [],
-   "page": "https://tradingagentstack.com/tool/1inch-swap-api/#agent-risk-score",
+   "page": "https://tradingagentstack.com/tool/1inch-swap-api/#safety",
    "last_checked": "2026-10-31"
   },
   {
-   "slug": "bonkbot",
-   "name": "BONKbot",
+   "slug": "0x-swap-api",
+   "name": "0x Swap API",
    "category": "defi_agent",
    "category_label": "On-chain & DeFi trading agents",
-   "agent_risk_score_pct": 50,
-   "points": 10,
-   "max": 20,
+   "agent_risk_score_pct": 41,
+   "points": 35,
+   "max": 85,
    "partial": true,
    "missing_inputs": [
-    "custody",
-    "limits",
-    "approval",
-    "withdraw",
     "preview"
    ],
    "inputs": {
     "custody": {
-     "points": null,
-     "max": 20,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "points": 10,
+     "max": 10,
+     "note": "The API returns a transaction that your own wallet submits; 0x doesn't sign for you (official docs)",
+     "source": "https://docs.0x.org/evm/0x-swap-api/guides/swap-tokens-with-0x-swap-api"
     },
     "limits": {
-     "points": null,
-     "max": 20,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "points": 0,
+     "max": 15,
+     "note": "No approval or limit option in our listing",
+     "source": "https://0x.org/pricing"
     },
     "approval": {
-     "points": null,
-     "max": 15,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "points": 0,
+     "max": 25,
+     "note": "Can place live orders with no documented approval step",
+     "source": "https://0x.org/pricing"
     },
     "withdraw": {
-     "points": null,
+     "points": 15,
      "max": 15,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "note": "Can't withdraw or move your funds (you sign or withdrawals stay off)",
+     "source": "https://0x.org/pricing"
     },
     "preview": {
      "points": null,
-     "max": 10,
-     "note": "Missing: no official source found yet",
+     "max": 15,
+     "note": "Missing: not documented",
      "source": null
     },
     "open": {
      "points": 0,
      "max": 10,
-     "note": "Closed: no public source code in our listing",
-     "source": "https://bonkbot.io/"
+     "note": "No public source code in our listing",
+     "source": "https://0x.org/pricing"
     },
     "record": {
      "points": 10,
      "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
      "source": "https://tradingagentstack.com/incidents/"
     }
    },
    "incidents": [],
-   "page": "https://tradingagentstack.com/tool/bonkbot/#agent-risk-score",
+   "page": "https://tradingagentstack.com/tool/0x-swap-api/#safety",
    "last_checked": "2026-10-31"
   },
   {
-   "slug": "banana-gun",
-   "name": "Banana Gun",
+   "slug": "jupiter-api",
+   "name": "Jupiter API",
    "category": "defi_agent",
    "category_label": "On-chain & DeFi trading agents",
-   "agent_risk_score_pct": 50,
-   "points": 10,
-   "max": 20,
+   "agent_risk_score_pct": 41,
+   "points": 35,
+   "max": 85,
    "partial": true,
    "missing_inputs": [
-    "custody",
-    "limits",
-    "approval",
-    "withdraw",
     "preview"
    ],
    "inputs": {
     "custody": {
-     "points": null,
-     "max": 20,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "points": 10,
+     "max": 10,
+     "note": "The API returns a serialized swap transaction that your wallet signs before it is sent (official docs)",
+     "source": "https://developers.jup.ag/docs/swap/build-swap-transaction"
     },
     "limits": {
-     "points": null,
-     "max": 20,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "points": 0,
+     "max": 15,
+     "note": "No approval or limit option in our listing",
+     "source": "https://developers.jup.ag/docs/portal/plans"
     },
     "approval": {
-     "points": null,
-     "max": 15,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "points": 0,
+     "max": 25,
+     "note": "Can place live orders with no documented approval step",
+     "source": "https://developers.jup.ag/docs/portal/plans"
     },
     "withdraw": {
-     "points": null,
+     "points": 15,
      "max": 15,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "note": "API returns unsigned transactions; you sign with your own wallet key, so the API can't move funds itself (official docs)",
+     "source": "https://developers.jup.ag/docs/swap/order-and-execute"
     },
     "preview": {
      "points": null,
-     "max": 10,
-     "note": "Missing: no official source found yet",
+     "max": 15,
+     "note": "Missing: not documented",
      "source": null
     },
     "open": {
      "points": 0,
      "max": 10,
-     "note": "Closed: no public source code in our listing",
-     "source": "https://bananagun.io/"
+     "note": "No public source code in our listing",
+     "source": "https://developers.jup.ag/docs/portal/plans"
     },
     "record": {
      "points": 10,
      "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
      "source": "https://tradingagentstack.com/incidents/"
     }
    },
    "incidents": [],
-   "page": "https://tradingagentstack.com/tool/banana-gun/#agent-risk-score",
+   "page": "https://tradingagentstack.com/tool/jupiter-api/#safety",
    "last_checked": "2026-10-31"
   },
   {
@@ -2704,62 +2527,177 @@
    "name": "Solana Agent Kit",
    "category": "defi_agent",
    "category_label": "On-chain & DeFi trading agents",
-   "agent_risk_score_pct": 40,
-   "points": 16,
-   "max": 40,
-   "partial": true,
-   "missing_inputs": [
-    "limits",
-    "approval",
-    "withdraw",
-    "preview"
-   ],
+   "agent_risk_score_pct": 35,
+   "points": 35,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
    "inputs": {
     "custody": {
      "points": 0,
-     "max": 20,
-     "note": "The quick start builds the agent's wallet from a raw secret key, so the agent process holds a key that can move all funds",
+     "max": 10,
+     "note": "The quick start builds the agent's wallet from a raw secret key, so the agent process holds a key that can move all funds (official docs)",
      "source": "https://github.com/sendaifun/solana-agent-kit"
     },
     "limits": {
-     "points": null,
-     "max": 20,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "points": 0,
+     "max": 15,
+     "note": "No approval or limit option in our listing",
+     "source": "https://github.com/sendaifun/solana-agent-kit"
     },
     "approval": {
-     "points": null,
-     "max": 15,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "points": 0,
+     "max": 25,
+     "note": "Can place live orders with no documented approval step",
+     "source": "https://github.com/sendaifun/solana-agent-kit"
     },
     "withdraw": {
-     "points": null,
+     "points": 0,
      "max": 15,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "note": "Kit signs and sends with the provided wallet and has a Transfer assets tool; no destination limits by default (Privy confirmation optional) (official docs)",
+     "source": "https://github.com/sendaifun/solana-agent-kit"
     },
     "preview": {
-     "points": null,
-     "max": 10,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "points": 15,
+     "max": 15,
+     "note": "Paper, demo or testnet mode available",
+     "source": "https://github.com/sendaifun/solana-agent-kit"
     },
     "open": {
-     "points": 6,
+     "points": 10,
      "max": 10,
-     "note": "Open source (official repository); no audit report found in the official docs",
+     "note": "Open source",
      "source": "https://github.com/sendaifun/solana-agent-kit"
     },
     "record": {
      "points": 10,
      "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
      "source": "https://tradingagentstack.com/incidents/"
     }
    },
    "incidents": [],
-   "page": "https://tradingagentstack.com/tool/solana-agent-kit/#agent-risk-score",
+   "page": "https://tradingagentstack.com/tool/solana-agent-kit/#safety",
+   "last_checked": "2026-10-31"
+  },
+  {
+   "slug": "bonkbot",
+   "name": "BONKbot",
+   "category": "defi_agent",
+   "category_label": "On-chain & DeFi trading agents",
+   "agent_risk_score_pct": 11,
+   "points": 10,
+   "max": 90,
+   "partial": true,
+   "missing_inputs": [
+    "custody"
+   ],
+   "inputs": {
+    "custody": {
+     "points": null,
+     "max": 10,
+     "note": "Missing: not documented",
+     "source": null
+    },
+    "limits": {
+     "points": 0,
+     "max": 15,
+     "note": "No approval or limit option in our listing",
+     "source": "https://docs.bonkbot.io/fee-structure"
+    },
+    "approval": {
+     "points": 0,
+     "max": 25,
+     "note": "Can place live orders with no documented approval step",
+     "source": "https://docs.bonkbot.io/fee-structure"
+    },
+    "withdraw": {
+     "points": 0,
+     "max": 15,
+     "note": "Bot wallet supports withdrawals and key export; optional 2FA guards them, but no address allowlist is documented (official docs)",
+     "source": "https://docs.bonkbot.io/security/2fa-setup"
+    },
+    "preview": {
+     "points": 0,
+     "max": 15,
+     "note": "Live only, no paper or demo mode",
+     "source": "https://docs.bonkbot.io/fee-structure"
+    },
+    "open": {
+     "points": 0,
+     "max": 10,
+     "note": "No public source code in our listing",
+     "source": "https://docs.bonkbot.io/fee-structure"
+    },
+    "record": {
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
+     "source": "https://tradingagentstack.com/incidents/"
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/bonkbot/#safety",
+   "last_checked": "2026-10-31"
+  },
+  {
+   "slug": "banana-gun",
+   "name": "Banana Gun",
+   "category": "defi_agent",
+   "category_label": "On-chain & DeFi trading agents",
+   "agent_risk_score_pct": 11,
+   "points": 10,
+   "max": 90,
+   "partial": true,
+   "missing_inputs": [
+    "custody"
+   ],
+   "inputs": {
+    "custody": {
+     "points": null,
+     "max": 10,
+     "note": "Missing: not documented",
+     "source": null
+    },
+    "limits": {
+     "points": 0,
+     "max": 15,
+     "note": "No approval or limit option in our listing",
+     "source": "https://docs.bananagun.io/banana-token/banana-bonus"
+    },
+    "approval": {
+     "points": 0,
+     "max": 25,
+     "note": "Can place live orders with no documented approval step",
+     "source": "https://docs.bananagun.io/banana-token/banana-bonus"
+    },
+    "withdraw": {
+     "points": 0,
+     "max": 15,
+     "note": "Holds or can move funds (custodial wallet or transfer actions)",
+     "source": "https://docs.bananagun.io/banana-token/banana-bonus"
+    },
+    "preview": {
+     "points": 0,
+     "max": 15,
+     "note": "Live only, no paper or demo mode",
+     "source": "https://docs.bananagun.io/banana-token/banana-bonus"
+    },
+    "open": {
+     "points": 0,
+     "max": 10,
+     "note": "No public source code in our listing",
+     "source": "https://docs.bananagun.io/banana-token/banana-bonus"
+    },
+    "record": {
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
+     "source": "https://tradingagentstack.com/incidents/"
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/banana-gun/#safety",
    "last_checked": "2026-10-31"
   },
   {
@@ -2767,61 +2705,57 @@
    "name": "Maestro",
    "category": "defi_agent",
    "category_label": "On-chain & DeFi trading agents",
-   "agent_risk_score_pct": 18,
+   "agent_risk_score_pct": 10,
    "points": 10,
-   "max": 55,
-   "partial": true,
-   "missing_inputs": [
-    "limits",
-    "approval",
-    "preview"
-   ],
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
    "inputs": {
     "custody": {
      "points": 0,
-     "max": 20,
-     "note": "The bot generates the trading wallet and signs trades and transfers for it, so it holds a key that can move everything in it",
+     "max": 10,
+     "note": "The bot generates the trading wallet and signs trades and transfers for it, so it holds a key that can move everything in it (official docs)",
      "source": "https://docs.maestrobots.com/sniper/wallet-setup"
     },
     "limits": {
-     "points": null,
-     "max": 20,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "points": 0,
+     "max": 15,
+     "note": "No approval or limit option in our listing",
+     "source": "https://docs.maestrobots.com/sniper/faq/fees"
     },
     "approval": {
-     "points": null,
-     "max": 15,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "points": 0,
+     "max": 25,
+     "note": "Can place live orders with no documented approval step",
+     "source": "https://docs.maestrobots.com/sniper/faq/fees"
     },
     "withdraw": {
      "points": 0,
      "max": 15,
-     "note": "The bot can send funds out of its wallets to other addresses",
+     "note": "The bot can send funds out of its wallets to other addresses (official docs)",
      "source": "https://docs.maestrobots.com/sniper/wallet-setup"
     },
     "preview": {
-     "points": null,
-     "max": 10,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "points": 0,
+     "max": 15,
+     "note": "Live only, no paper or demo mode",
+     "source": "https://docs.maestrobots.com/sniper/faq/fees"
     },
     "open": {
      "points": 0,
      "max": 10,
-     "note": "Closed: no public source code in our listing",
-     "source": "https://www.maestrobots.com/"
+     "note": "No public source code in our listing",
+     "source": "https://docs.maestrobots.com/sniper/faq/fees"
     },
     "record": {
      "points": 10,
      "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
      "source": "https://tradingagentstack.com/incidents/"
     }
    },
    "incidents": [],
-   "page": "https://tradingagentstack.com/tool/maestro/#agent-risk-score",
+   "page": "https://tradingagentstack.com/tool/maestro/#safety",
    "last_checked": "2026-10-31"
   },
   {
@@ -2829,61 +2763,57 @@
    "name": "Trojan",
    "category": "defi_agent",
    "category_label": "On-chain & DeFi trading agents",
-   "agent_risk_score_pct": 18,
+   "agent_risk_score_pct": 10,
    "points": 10,
-   "max": 55,
-   "partial": true,
-   "missing_inputs": [
-    "limits",
-    "approval",
-    "preview"
-   ],
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
    "inputs": {
     "custody": {
      "points": 0,
-     "max": 20,
-     "note": "Bot-managed wallet: the bot signs trades and withdrawals for you",
+     "max": 10,
+     "note": "Bot-managed wallet: the bot signs trades and withdrawals for you (official docs)",
      "source": "https://docs.trojanonsolana.com/telegram-bot-user-guide/withdraw"
     },
     "limits": {
-     "points": null,
-     "max": 20,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "points": 0,
+     "max": 15,
+     "note": "No approval or limit option in our listing",
+     "source": "https://docs.trojanonsolana.com/about-trojan-on-solana/using-trojan-on-solana"
     },
     "approval": {
-     "points": null,
-     "max": 15,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "points": 0,
+     "max": 25,
+     "note": "Can place live orders with no documented approval step",
+     "source": "https://docs.trojanonsolana.com/about-trojan-on-solana/using-trojan-on-solana"
     },
     "withdraw": {
      "points": 0,
      "max": 15,
-     "note": "Built-in withdraw action to an address you type in",
+     "note": "Built-in withdraw action to an address you type in (official docs)",
      "source": "https://docs.trojanonsolana.com/telegram-bot-user-guide/withdraw"
     },
     "preview": {
-     "points": null,
-     "max": 10,
-     "note": "Missing: no official source found yet",
-     "source": null
+     "points": 0,
+     "max": 15,
+     "note": "Live only, no paper or demo mode",
+     "source": "https://docs.trojanonsolana.com/about-trojan-on-solana/using-trojan-on-solana"
     },
     "open": {
      "points": 0,
      "max": 10,
-     "note": "Closed: no public source code in our listing",
-     "source": "https://trojan.com/"
+     "note": "No public source code in our listing",
+     "source": "https://docs.trojanonsolana.com/about-trojan-on-solana/using-trojan-on-solana"
     },
     "record": {
      "points": 10,
      "max": 10,
-     "note": "No incident naming this tool in our incident tracker for the last 12 months, and every scored input links an official source",
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
      "source": "https://tradingagentstack.com/incidents/"
     }
    },
    "incidents": [],
-   "page": "https://tradingagentstack.com/tool/trojan/#agent-risk-score",
+   "page": "https://tradingagentstack.com/tool/trojan/#safety",
    "last_checked": "2026-10-31"
   }
  ]
