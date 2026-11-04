@@ -2,10 +2,10 @@
 
 Open data from [TradingAgentStack](https://tradingagentstack.com). One question drives every score: **if a tool, or an AI agent using it, is wrong, hacked or prompt-injected, how much money can it lose?**
 
-- **160 Safety scores**, one for every tool in the directory: agent wallets, exchanges for bots, on-chain and DeFi agents, agent payment rails, AI trading agents, broker MCP servers, bots and more, with sources and last-checked dates
+- **161 Safety scores**, one for every tool in the directory: agent wallets, exchanges for bots, on-chain and DeFi agents, agent payment rails, AI trading agents, broker MCP servers, bots and more, with sources and last-checked dates
 - **18 incidents** from official disclosures
 
-Generated 2026-11-03 from the live site. Updated automatically on every site release; do not edit by hand.
+Generated 2026-11-04 from the live site. Updated automatically on every site release; do not edit by hand.
 
 ## Files
 
@@ -208,6 +208,7 @@ Seven inputs, 100 points: human approval (25), guardrails outside the agent (15)
 | [SiftingIO MCP](https://tradingagentstack.com/tool/siftingio-mcp/#safety) | 100% | none |
 | [CryptoQuant MCP Server](https://tradingagentstack.com/tool/cryptoquant-mcp-server/#safety) | 90% | none |
 | [Lava MCP (A-share news heat)](https://tradingagentstack.com/tool/lava-mcp-a-share-news-heat/#safety) | 90% | none |
+| [PredixLab MCP](https://tradingagentstack.com/tool/predixlab-mcp/#safety) | 90% | none |
 | [Pyth Pro MCP Server](https://tradingagentstack.com/tool/pyth-pro-mcp-server/#safety) | 90% | none |
 | [Redstone MCP](https://tradingagentstack.com/tool/redstone-mcp/#safety) | 90% | none |
 | [Reslyce Flow MCP](https://tradingagentstack.com/tool/reslyce-flow-mcp/#safety) | 90% | none |
