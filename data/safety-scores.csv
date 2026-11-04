@@ -104,6 +104,7 @@ alpha-vantage-api,Alpha Vantage API,data_api,90,90,100,False,,25,15,15,15,10,0,1
 coinboss-api,CoinBoss API,data_api,90,90,100,False,,25,15,15,15,10,0,10,,,,,,,
 crowdwisdomtrading-setups-api,CrowdWisdomTrading Setups API,data_api,90,90,100,False,,25,15,15,15,10,0,10,,,,,,,
 databento,Databento,data_api,90,90,100,False,,25,15,15,15,10,0,10,,,,,,,
+financial-datasets,Financial Datasets,data_api,90,90,100,False,,25,15,15,15,10,0,10,,,,,,,
 massive-polygon-api,Massive (Polygon) API,data_api,90,90,100,False,,25,15,15,15,10,0,10,,,,,,,
 poly-research-robotics,Poly Research & Robotics,data_api,90,90,100,False,,25,15,15,15,10,0,10,,,,,,,
 sec-edgar-apis,SEC EDGAR APIs,data_api,90,90,100,False,,25,15,15,15,10,0,10,,,,,,,

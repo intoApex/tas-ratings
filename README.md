@@ -2,7 +2,7 @@
 
 Open data from [TradingAgentStack](https://tradingagentstack.com). One question drives every score: **if a tool, or an AI agent using it, is wrong, hacked or prompt-injected, how much money can it lose?**
 
-- **161 Safety scores**, one for every tool in the directory: agent wallets, exchanges for bots, on-chain and DeFi agents, agent payment rails, AI trading agents, broker MCP servers, bots and more, with sources and last-checked dates
+- **162 Safety scores**, one for every tool in the directory: agent wallets, exchanges for bots, on-chain and DeFi agents, agent payment rails, AI trading agents, broker MCP servers, bots and more, with sources and last-checked dates
 - **20 incidents** from official disclosures
 
 Generated 2026-11-04 from the live site. Updated automatically on every site release; do not edit by hand.
@@ -192,6 +192,7 @@ Seven inputs, 100 points: human approval (25), guardrails outside the agent (15)
 | [CoinBoss API](https://tradingagentstack.com/tool/coinboss-api/#safety) | 90% | none |
 | [CrowdWisdomTrading Setups API](https://tradingagentstack.com/tool/crowdwisdomtrading-setups-api/#safety) | 90% | none |
 | [Databento](https://tradingagentstack.com/tool/databento/#safety) | 90% | none |
+| [Financial Datasets](https://tradingagentstack.com/tool/financial-datasets/#safety) | 90% | none |
 | [Massive (Polygon) API](https://tradingagentstack.com/tool/massive-polygon-api/#safety) | 90% | none |
 | [Poly Research & Robotics](https://tradingagentstack.com/tool/poly-research-robotics/#safety) | 90% | none |
 | [SEC EDGAR APIs](https://tradingagentstack.com/tool/sec-edgar-apis/#safety) | 90% | none |

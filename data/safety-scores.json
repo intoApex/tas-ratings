@@ -6,7 +6,7 @@
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "TradingAgentStack (tradingagentstack.com)",
   "generated": "2026-11-04",
-  "count": 161,
+  "count": 162,
   "safety_formula": "https://tradingagentstack.com/safety-score/",
   "safety_model": "One Safety score since 2026-11-01 (the Agent Risk Score v2 is merged in; risk_v2 is a deprecated alias equal to it)",
   "safety_inputs": [
@@ -6976,6 +6976,71 @@
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/databento/#safety",
    "last_checked": "2026-11-01"
+  },
+  {
+   "slug": "financial-datasets",
+   "name": "Financial Datasets",
+   "category": "data_api",
+   "category_label": "Market data APIs",
+   "safety_score_pct": 90,
+   "points": 90,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
+   "inputs": {
+    "unattended": {
+     "label": "Human approval",
+     "points": 25,
+     "max": 25,
+     "note": "Cannot place real-money orders (listing: data only)",
+     "source": null
+    },
+    "approval": {
+     "label": "Guardrails outside the agent",
+     "points": 15,
+     "max": 15,
+     "note": "Not applicable: no real-money orders",
+     "source": null
+    },
+    "paper": {
+     "label": "Test before real money",
+     "points": 15,
+     "max": 15,
+     "note": "Not applicable: no real-money orders",
+     "source": null
+    },
+    "withdraw": {
+     "label": "Sending funds out",
+     "points": 15,
+     "max": 15,
+     "note": "Not applicable: no real-money orders",
+     "source": null
+    },
+    "keys": {
+     "label": "Who holds the keys",
+     "points": 10,
+     "max": 10,
+     "note": "Not applicable: no real-money orders",
+     "source": null
+    },
+    "open": {
+     "label": "Open source or audited",
+     "points": 0,
+     "max": 10,
+     "note": "No public source code in our listing",
+     "source": null
+    },
+    "record": {
+     "label": "Incident record (last 12 months)",
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
+     "source": null
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/financial-datasets/#safety",
+   "last_checked": "2026-11-04"
   },
   {
    "slug": "massive-polygon-api",
