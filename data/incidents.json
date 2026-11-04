@@ -5,9 +5,23 @@
   "license": "CC BY 4.0",
   "rule": "Only incidents with an official source: the vendor's disclosure, a security advisory, or a named researcher's report marked as such.",
   "generated": "2026-11-04",
-  "count": 18
+  "count": 20
  },
  "incidents": [
+  {
+   "date": "2026-11-02",
+   "title": "Mercado Bitcoin, a Brazilian crypto exchange, said it identified and contained a security incident in one of its systems early on November 2 and temporarily suspended deposits and withdrawals as a precaution. It said the incident did not affect customers or result in a data breach and that it is working with the authorities; it did not name the affected system. No dollar amount is shown until Mercado Bitcoin states one.",
+   "tools": [],
+   "source": "https://x.com/MercadoBitcoin/status/2117239507263132056",
+   "resolved": false
+  },
+  {
+   "date": "2026-11-01",
+   "title": "BTCPay Server said attackers stole Bitcoin and Litecoin from hot wallets (wallets whose spending keys are stored on the server) on self-hosted instances running version 2.4.1 or earlier, using a different method to exploit the vulnerability fixed in 2.4.2 (Aug 7, 2026); the first drain it found was at 13:46 UTC on Nov 1, and that night it asked operators to shut their servers down. It has seen no impact on servers that ran 2.4.2 or later, and funds whose keys are held off the server, including hardware wallets, were unaffected. Operators on 2.4.1 or earlier should sweep hot-wallet funds to a new wallet with a new seed, move to a fresh server and replace every credential the old server could reach. BTCPay Server states no total loss.",
+   "tools": [],
+   "source": "https://blog.btcpayserver.org/btcpay-server-security-incident-2-4-1-and-earlier/",
+   "resolved": false
+  },
   {
    "date": "2026-10-29",
    "title": "Binance said its hot wallets were compromised at about 20:05 UTC on Oct 29, with about $6.3B of token assets taken through unauthorized withdrawals; it first pointed to a compromised DevOps engineer's laptop but later found additional points of breach, and says it has found no evidence that wallet private keys leaked. About $3B has been frozen on-chain, Binance has set aside more than $6.34B to cover all losses (SAFU fund and company funds), withdrawals stay paused with a phased restart targeted, deposits work, and a Proof of Reserves update (by Nov 2) and a post-mortem are promised.",
