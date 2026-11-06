@@ -5,7 +5,7 @@
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "TradingAgentStack (tradingagentstack.com)",
-  "generated": "2026-11-05",
+  "generated": "2026-11-06",
   "count": 47,
   "safety_formula": "https://tradingagentstack.com/safety-score/",
   "safety_model": "One Safety score since 2026-11-01 (the Agent Risk Score v2 is merged in; risk_v2 is a deprecated alias equal to it)",
@@ -582,7 +582,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/coinbase-agentkit/#safety",
-   "last_checked": "2026-10-31"
+   "last_checked": "2026-11-06"
   },
   {
    "slug": "privy-server-wallets",
@@ -2400,7 +2400,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/1inch-swap-api/#safety",
-   "last_checked": "2026-10-31"
+   "last_checked": "2026-11-06"
   },
   {
    "slug": "0x-swap-api",
@@ -2460,7 +2460,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/0x-swap-api/#safety",
-   "last_checked": "2026-10-31"
+   "last_checked": "2026-11-06"
   },
   {
    "slug": "jupiter-api",
@@ -2520,7 +2520,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/jupiter-api/#safety",
-   "last_checked": "2026-10-31"
+   "last_checked": "2026-11-06"
   },
   {
    "slug": "solana-agent-kit",
@@ -2578,7 +2578,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/solana-agent-kit/#safety",
-   "last_checked": "2026-10-31"
+   "last_checked": "2026-11-06"
   },
   {
    "slug": "bonkbot",
@@ -2638,7 +2638,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/bonkbot/#safety",
-   "last_checked": "2026-10-31"
+   "last_checked": "2026-11-06"
   },
   {
    "slug": "banana-gun",
@@ -2698,7 +2698,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/banana-gun/#safety",
-   "last_checked": "2026-10-31"
+   "last_checked": "2026-11-06"
   },
   {
    "slug": "maestro",
@@ -2756,7 +2756,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/maestro/#safety",
-   "last_checked": "2026-10-31"
+   "last_checked": "2026-11-06"
   },
   {
    "slug": "trojan",
@@ -2814,7 +2814,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/trojan/#safety",
-   "last_checked": "2026-10-31"
+   "last_checked": "2026-11-06"
   }
  ]
 }
