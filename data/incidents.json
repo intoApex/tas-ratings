@@ -5,9 +5,16 @@
   "license": "CC BY 4.0",
   "rule": "Only incidents with an official source: the vendor's disclosure, a security advisory, or a named researcher's report marked as such.",
   "generated": "2026-11-06",
-  "count": 20
+  "count": 21
  },
  "incidents": [
+  {
+   "date": "2026-11-05",
+   "title": "Binance said it removed all API keys linked to SignalPlus, a third-party trading platform that connects to exchange accounts by API key, as an immediate precaution after SignalPlus reported a potential security issue; Binance said its own systems were unaffected and user funds remain safe. What the issue was, and whether any keys or funds were taken, has not been stated. No dollar amount is shown unless an official source states one.",
+   "tools": [],
+   "source": "https://x.com/binance/status/2118295116716589383",
+   "resolved": false
+  },
   {
    "date": "2026-11-02",
    "title": "Mercado Bitcoin, a Brazilian crypto exchange, said it identified and contained a security incident in one of its systems early on November 2 and temporarily suspended deposits and withdrawals as a precaution. It said the incident did not affect customers or result in a data breach and that it is working with the authorities; it did not name the affected system. No dollar amount is shown until Mercado Bitcoin states one.",

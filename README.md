@@ -3,7 +3,7 @@
 Open data from [TradingAgentStack](https://tradingagentstack.com). One question drives every score: **if a tool, or an AI agent using it, is wrong, hacked or prompt-injected, how much money can it lose?**
 
 - **164 Safety scores**, one for every tool in the directory: agent wallets, exchanges for bots, on-chain and DeFi agents, agent payment rails, AI trading agents, broker MCP servers, bots and more, with sources and last-checked dates
-- **20 incidents** from official disclosures
+- **21 incidents** from official disclosures
 
 Generated 2026-11-06 from the live site. Updated automatically on every site release; do not edit by hand.
 
