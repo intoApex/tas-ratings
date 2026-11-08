@@ -54,6 +54,7 @@ backtesting-py,Backtesting.py,backtest_platform,100,100,100,False,,25,15,15,15,1
 vectorbt,VectorBT,backtest_platform,90,90,100,False,,25,15,15,15,10,0,10,,,,,,,
 quantconnect-lean,QuantConnect / LEAN,backtest_platform,60,60,100,False,,0,0,15,15,10,10,10,,,,https://www.quantconnect.com/docs/v2/cloud-platform/live-trading/brokerages/coinbase,https://www.quantconnect.com/docs/v2/cloud-platform/live-trading/brokerages/binance,,
 nautilustrader,NautilusTrader,backtest_platform,47,35,75,True,withdraw; keys,0,0,15,,,10,10,,,https://nautilustrader.io/docs/latest/concepts/overview/,,,,
+tactfolio,Tactfolio,backtest_platform,33,25,75,True,withdraw; keys,0,0,15,,,0,10,,,,,,,
 alpaca-trading-api,Alpaca Trading API,broker_api,50,50,100,False,,0,0,15,15,10,0,10,,,,https://alpaca.markets/learn/fund-live-trading-account,https://docs.alpaca.markets/docs/using-oauth2-and-trading-api,,
 interactive-brokers-api,Interactive Brokers API,broker_api,41,35,85,True,withdraw,0,0,15,,10,0,10,,,,,https://interactivebrokers.github.io/tws-api/initial_setup.html,,
 tradier-brokerage-api,Tradier Brokerage API,broker_api,41,35,85,True,withdraw,0,0,15,,10,0,10,,,,,https://docs.tradier.com/docs/authentication,,

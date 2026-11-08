@@ -2,10 +2,10 @@
 
 Open data from [TradingAgentStack](https://tradingagentstack.com). One question drives every score: **if a tool, or an AI agent using it, is wrong, hacked or prompt-injected, how much money can it lose?**
 
-- **164 Safety scores**, one for every tool in the directory: agent wallets, exchanges for bots, on-chain and DeFi agents, agent payment rails, AI trading agents, broker MCP servers, bots and more, with sources and last-checked dates
-- **21 incidents** from official disclosures
+- **165 Safety scores**, one for every tool in the directory: agent wallets, exchanges for bots, on-chain and DeFi agents, agent payment rails, AI trading agents, broker MCP servers, bots and more, with sources and last-checked dates
+- **22 incidents** from official disclosures
 
-Generated 2026-11-07 from the live site. Updated automatically on every site release; do not edit by hand.
+Generated 2026-11-08 from the live site. Updated automatically on every site release; do not edit by hand.
 
 ## Files
 
@@ -117,6 +117,7 @@ Seven inputs, 100 points: human approval (25), guardrails outside the agent (15)
 | [VectorBT](https://tradingagentstack.com/tool/vectorbt/#safety) | 90% | none |
 | [QuantConnect / LEAN](https://tradingagentstack.com/tool/quantconnect-lean/#safety) | 60% | none |
 | [NautilusTrader](https://tradingagentstack.com/tool/nautilustrader/#safety) | 47% (partial) | withdraw, keys |
+| [Tactfolio](https://tradingagentstack.com/tool/tactfolio/#safety) | 33% (partial) | withdraw, keys |
 
 ### Broker APIs
 

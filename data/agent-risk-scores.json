@@ -5,7 +5,7 @@
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "TradingAgentStack (tradingagentstack.com)",
-  "generated": "2026-11-07",
+  "generated": "2026-11-08",
   "count": 47,
   "safety_formula": "https://tradingagentstack.com/safety-score/",
   "safety_model": "One Safety score since 2026-11-01 (the Agent Risk Score v2 is merged in; risk_v2 is a deprecated alias equal to it)",
@@ -172,7 +172,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/link-agent-wallet/#safety",
-   "last_checked": "2026-10-31"
+   "last_checked": "2026-11-08"
   },
   {
    "slug": "x402",
@@ -232,7 +232,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/x402/#safety",
-   "last_checked": "2026-10-31"
+   "last_checked": "2026-11-08"
   },
   {
    "slug": "lightning-agent-tools",
@@ -292,7 +292,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/lightning-agent-tools/#safety",
-   "last_checked": "2026-10-31"
+   "last_checked": "2026-11-08"
   },
   {
    "slug": "coinbase-agentic-wallet",
@@ -350,7 +350,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/coinbase-agentic-wallet/#safety",
-   "last_checked": "2026-10-31"
+   "last_checked": "2026-11-08"
   },
   {
    "slug": "stripe-issuing-for-agents",
@@ -408,7 +408,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/stripe-issuing-for-agents/#safety",
-   "last_checked": "2026-10-31"
+   "last_checked": "2026-11-08"
   },
   {
    "slug": "safe-smart-account",
@@ -466,7 +466,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/safe-smart-account/#safety",
-   "last_checked": "2026-10-31"
+   "last_checked": "2026-11-08"
   },
   {
    "slug": "zerodev",
@@ -524,7 +524,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/zerodev/#safety",
-   "last_checked": "2026-10-31"
+   "last_checked": "2026-11-08"
   },
   {
    "slug": "coinbase-agentkit",
@@ -698,7 +698,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/turnkey/#safety",
-   "last_checked": "2026-10-31"
+   "last_checked": "2026-11-08"
   },
   {
    "slug": "crossmint-agent-wallets",
@@ -756,7 +756,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/crossmint-agent-wallets/#safety",
-   "last_checked": "2026-10-31"
+   "last_checked": "2026-11-08"
   },
   {
    "slug": "coinbase-cdp-server-wallets",
@@ -872,7 +872,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/binance-agentic-wallet/#safety",
-   "last_checked": "2026-10-31"
+   "last_checked": "2026-11-08"
   },
   {
    "slug": "mangrove",
@@ -990,7 +990,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/heyanon/#safety",
-   "last_checked": "2026-10-31"
+   "last_checked": "2026-11-08"
   },
   {
    "slug": "bitget-wallet-skill",
@@ -1164,7 +1164,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/okx-agentic-wallet/#safety",
-   "last_checked": "2026-10-31"
+   "last_checked": "2026-11-08"
   },
   {
    "slug": "virtuals-acp-acp-cli",
@@ -1222,7 +1222,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/virtuals-acp-acp-cli/#safety",
-   "last_checked": "2026-10-31"
+   "last_checked": "2026-11-08"
   },
   {
    "slug": "olas-pearl",
