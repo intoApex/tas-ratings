@@ -37,6 +37,7 @@ coinrule,Coinrule,ai_bot_platform,50,50,100,False,,0,0,15,15,10,0,10,,,https://c
 cryptohopper,Cryptohopper,ai_bot_platform,50,50,100,False,,0,0,15,15,10,0,10,,,,,,,
 surmount,Surmount,ai_bot_platform,50,50,100,False,,0,0,15,15,10,0,10,,,,https://surmount.ai/blogs/is-surmount-safe-here-s-what-you-need-to-know,https://surmount.ai/blogs/is-surmount-safe-here-s-what-you-need-to-know,,
 wundertrading,WunderTrading,ai_bot_platform,50,50,100,False,,0,0,15,15,10,0,10,,,,,,,
+tread-fi,tread.fi,ai_bot_platform,40,28,70,True,paper; withdraw,0,8,,,10,0,10,,,,,,,
 capitalise-ai,Capitalise.ai,ai_bot_platform,33,25,75,True,withdraw; keys,0,0,15,,,0,10,,,,,,,
 tickeron,Tickeron,ai_bot_platform,33,25,75,True,withdraw; keys,0,0,15,,,0,10,,,,,,,
 trade-ideas-holly-ai,Trade Ideas (Holly AI),ai_bot_platform,33,25,75,True,withdraw; keys,0,0,15,,,0,10,,,,,,,
