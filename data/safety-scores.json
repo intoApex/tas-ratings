@@ -6,7 +6,7 @@
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "TradingAgentStack (tradingagentstack.com)",
   "generated": "2026-11-09",
-  "count": 166,
+  "count": 167,
   "safety_formula": "https://tradingagentstack.com/safety-score/",
   "safety_model": "One Safety score since 2026-11-01 (the Agent Risk Score v2 is merged in; risk_v2 is a deprecated alias equal to it)",
   "safety_inputs": [
@@ -450,6 +450,71 @@
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/stripe-issuing-for-agents/#safety",
    "last_checked": "2026-11-08"
+  },
+  {
+   "slug": "gloam",
+   "name": "Gloam",
+   "category": "agent_payments",
+   "category_label": "AI agent payments",
+   "safety_score_pct": 48,
+   "points": 48,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
+   "inputs": {
+    "unattended": {
+     "label": "Human approval",
+     "points": 0,
+     "max": 25,
+     "note": "No approval per payment: the agent pays x402 and MPP resources and other Gloam addresses on its own, within its limits (official docs)",
+     "source": "https://www.npmjs.com/package/@gloamtrade/mcp"
+    },
+    "approval": {
+     "label": "Guardrails outside the agent",
+     "points": 8,
+     "max": 15,
+     "note": "Spending limits the agent can't lift, but they're off-chain limits checked by the local server itself; only on Tempo does the protocol enforce an access key's cap (official docs)",
+     "source": "https://www.npmjs.com/package/@gloamtrade/mcp"
+    },
+    "paper": {
+     "label": "Test before real money",
+     "points": 15,
+     "max": 15,
+     "note": "Paper, demo or testnet mode available",
+     "source": null
+    },
+    "withdraw": {
+     "label": "Sending funds out",
+     "points": 0,
+     "max": 15,
+     "note": "The agent can pay any x402 or MPP resource and any Gloam address within its limits; the MCP server can't cash out to a public wallet (the app and SDK can, for 0.5%) (official docs)",
+     "source": "https://www.npmjs.com/package/@gloamtrade/mcp"
+    },
+    "keys": {
+     "label": "Who holds the keys",
+     "points": 5,
+     "max": 10,
+     "note": "Self-custody: the local MCP server that signs keeps the key on your machine, and the hosted server only reads and plans and never signs or holds a key; Gloam says it never holds your keys and has no admin withdraw (official docs)",
+     "source": "https://www.gloam.trade/docs/agents"
+    },
+    "open": {
+     "label": "Open source or audited",
+     "points": 10,
+     "max": 10,
+     "note": "Open source (MIT); Kann Audits reviewed the vault contracts (report, Nov 1, 2026) and found no Critical, High or Medium issues (official docs)",
+     "source": "https://www.npmjs.com/package/@gloamtrade/mcp"
+    },
+    "record": {
+     "label": "Incident record (last 12 months)",
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
+     "source": null
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/gloam/#safety",
+   "last_checked": "2026-11-09"
   },
   {
    "slug": "safe-smart-account",

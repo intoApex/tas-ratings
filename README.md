@@ -2,7 +2,7 @@
 
 Open data from [TradingAgentStack](https://tradingagentstack.com). One question drives every score: **if a tool, or an AI agent using it, is wrong, hacked or prompt-injected, how much money can it lose?**
 
-- **166 Safety scores**, one for every tool in the directory: agent wallets, exchanges for bots, on-chain and DeFi agents, agent payment rails, AI trading agents, broker MCP servers, bots and more, with sources and last-checked dates
+- **167 Safety scores**, one for every tool in the directory: agent wallets, exchanges for bots, on-chain and DeFi agents, agent payment rails, AI trading agents, broker MCP servers, bots and more, with sources and last-checked dates
 - **23 incidents** from official disclosures
 
 Generated 2026-11-09 from the live site. Updated automatically on every site release; do not edit by hand.
@@ -33,6 +33,7 @@ Seven inputs, 100 points: human approval (25), guardrails outside the agent (15)
 | [Lightning Agent Tools](https://tradingagentstack.com/tool/lightning-agent-tools/#safety) | 56% (partial) | withdraw |
 | [Coinbase Agentic Wallet](https://tradingagentstack.com/tool/coinbase-agentic-wallet/#safety) | 55% | none |
 | [Stripe Issuing for agents](https://tradingagentstack.com/tool/stripe-issuing-for-agents/#safety) | 55% | none |
+| [Gloam](https://tradingagentstack.com/tool/gloam/#safety) | 48% | none |
 
 ### AI agent wallets
 
