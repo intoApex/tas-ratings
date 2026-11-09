@@ -5,7 +5,7 @@ Open data from [TradingAgentStack](https://tradingagentstack.com). One question 
 - **166 Safety scores**, one for every tool in the directory: agent wallets, exchanges for bots, on-chain and DeFi agents, agent payment rails, AI trading agents, broker MCP servers, bots and more, with sources and last-checked dates
 - **22 incidents** from official disclosures
 
-Generated 2026-11-08 from the live site. Updated automatically on every site release; do not edit by hand.
+Generated 2026-11-09 from the live site. Updated automatically on every site release; do not edit by hand.
 
 ## Files
 
