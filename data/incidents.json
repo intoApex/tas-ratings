@@ -5,7 +5,7 @@
   "license": "CC BY 4.0",
   "rule": "Only incidents with an official source: the vendor's disclosure, a security advisory, or a named researcher's report marked as such.",
   "generated": "2026-11-09",
-  "count": 22
+  "count": 23
  },
  "incidents": [
   {
@@ -13,6 +13,13 @@
    "title": "Keplr Wallet said a vulnerability in Web3Auth's infrastructure led to a private-key breach for some Keplr users who signed in with Google or Apple; wallets created with a recovery phrase or a hardware wallet are not affected. How many wallets were affected, and how much was taken, has not been stated. No dollar amount is shown unless an official source states one.",
    "tools": [],
    "source": "https://x.com/keplrwallet/status/2119117067500806350",
+   "resolved": false
+  },
+  {
+   "date": "2026-11-05",
+   "title": "Floki said it was investigating an exploit affecting the Floki Trading Bot, its Telegram trading bot, and took the bot's services offline to protect user funds. It told users not to deposit into bot wallets until further notice, said affected users will be moved to new wallets with their remaining funds transferred, and asked anyone who exported a bot wallet's private key and still holds funds there to move them to a wallet they fully control. How the exploit worked, how many users were affected and how much was taken have not been stated. No dollar amount is shown unless an official source states one.",
+   "tools": [],
+   "source": "https://x.com/FLOKI/status/2118381080260608281",
    "resolved": false
   },
   {
