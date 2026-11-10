@@ -6,7 +6,7 @@
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "TradingAgentStack (tradingagentstack.com)",
   "generated": "2026-11-09",
-  "count": 167,
+  "count": 168,
   "safety_formula": "https://tradingagentstack.com/safety-score/",
   "safety_model": "One Safety score since 2026-11-01 (the Agent Risk Score v2 is merged in; risk_v2 is a deprecated alias equal to it)",
   "safety_inputs": [
@@ -6117,6 +6117,71 @@
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/veranta-mcp-formerly-avantis/#safety",
    "last_checked": "2026-11-09"
+  },
+  {
+   "slug": "arcus",
+   "name": "Arcus",
+   "category": "bot_exchange",
+   "category_label": "Exchanges & brokers for bots",
+   "safety_score_pct": 68,
+   "points": 68,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
+   "inputs": {
+    "unattended": {
+     "label": "Human approval",
+     "points": 0,
+     "max": 25,
+     "note": "API orders execute with no per-order approval step",
+     "source": "https://docs.arcus.xyz/api-reference/authentication"
+    },
+    "approval": {
+     "label": "Guardrails outside the agent",
+     "points": 8,
+     "max": 15,
+     "note": "No per-order approval; a scheduled cancel-all (dead-man's switch) limits what is left open if the bot stops (official docs)",
+     "source": "https://docs.arcus.xyz/api-reference/rate-limits"
+    },
+    "paper": {
+     "label": "Test before real money",
+     "points": 15,
+     "max": 15,
+     "note": "Public testnet on Robinhood Chain testnet; the app credits about $1,000 of test collateral (official docs)",
+     "source": "https://docs.arcus.xyz/guides/fund-testnet-account"
+    },
+    "withdraw": {
+     "label": "Sending funds out",
+     "points": 15,
+     "max": 15,
+     "note": "Keys made through the public API are trade-only; a withdrawal needs the wallet's own signature and only pays the owner's own address (official docs)",
+     "source": "https://docs.arcus.xyz/api-reference/exchange/submit-withdrawal"
+    },
+    "keys": {
+     "label": "Who holds the keys",
+     "points": 10,
+     "max": 10,
+     "note": "Revocable keys with an expiry date, each one bound to one of ten subaccounts (official docs)",
+     "source": "https://docs.arcus.xyz/concepts/subaccounts"
+    },
+    "open": {
+     "label": "Open source or audited",
+     "points": 10,
+     "max": 10,
+     "note": "Trail of Bits and OpenZeppelin reviewed the on-chain contracts; the matching engine is run by Arcus and is not open source (official docs)",
+     "source": "https://docs.arcus.xyz/concepts/exchange-architecture"
+    },
+    "record": {
+     "label": "Incident record (last 12 months)",
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
+     "source": null
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/arcus/#safety",
+   "last_checked": "2026-11-10"
   },
   {
    "slug": "gmx",
