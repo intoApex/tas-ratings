@@ -3,9 +3,9 @@
 Open data from [TradingAgentStack](https://tradingagentstack.com). One question drives every score: **if a tool, or an AI agent using it, is wrong, hacked or prompt-injected, how much money can it lose?**
 
 - **168 Safety scores**, one for every tool in the directory: agent wallets, exchanges for bots, on-chain and DeFi agents, agent payment rails, AI trading agents, broker MCP servers, bots and more, with sources and last-checked dates
-- **23 incidents** from official disclosures
+- **24 incidents** from official disclosures
 
-Generated 2026-11-09 from the live site. Updated automatically on every site release; do not edit by hand.
+Generated 2026-11-11 from the live site. Updated automatically on every site release; do not edit by hand.
 
 ## Files
 
@@ -174,11 +174,11 @@ Seven inputs, 100 points: human approval (25), guardrails outside the agent (15)
 | [OKX](https://tradingagentstack.com/tool/okx/#safety) | 85% | none |
 | [Coinbase Advanced](https://tradingagentstack.com/tool/coinbase-advanced/#safety) | 75% | none |
 | [Veranta MCP (formerly Avantis)](https://tradingagentstack.com/tool/veranta-mcp-formerly-avantis/#safety) | 75% | none |
-| [Arcus](https://tradingagentstack.com/tool/arcus/#safety) | 68% | none |
 | [GMX](https://tradingagentstack.com/tool/gmx/#safety) | 68% | none |
 | [Lighter](https://tradingagentstack.com/tool/lighter/#safety) | 68% | none |
 | [Paradex](https://tradingagentstack.com/tool/paradex/#safety) | 68% | none |
 | [dYdX](https://tradingagentstack.com/tool/dydx/#safety) | 68% | none |
+| [Arcus](https://tradingagentstack.com/tool/arcus/#safety) | 63% | none |
 | [Pacifica](https://tradingagentstack.com/tool/pacifica/#safety) | 62% (partial) | withdraw |
 | [Gemini](https://tradingagentstack.com/tool/gemini/#safety) | 60% | none |
 | [Aster](https://tradingagentstack.com/tool/aster/#safety) | 58% | none |

@@ -5,7 +5,7 @@
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "TradingAgentStack (tradingagentstack.com)",
-  "generated": "2026-11-09",
+  "generated": "2026-11-11",
   "count": 49,
   "safety_formula": "https://tradingagentstack.com/safety-score/",
   "safety_model": "One Safety score since 2026-11-01 (the Agent Risk Score v2 is merged in; risk_v2 is a deprecated alias equal to it)",
@@ -1693,64 +1693,6 @@
    "last_checked": "2026-11-09"
   },
   {
-   "slug": "arcus",
-   "name": "Arcus",
-   "category": "bot_exchange",
-   "category_label": "Exchanges & brokers for bots",
-   "agent_risk_score_pct": 68,
-   "points": 68,
-   "max": 100,
-   "partial": false,
-   "missing_inputs": [],
-   "inputs": {
-    "custody": {
-     "points": 10,
-     "max": 10,
-     "note": "Revocable keys with an expiry date, each one bound to one of ten subaccounts (official docs)",
-     "source": "https://docs.arcus.xyz/concepts/subaccounts"
-    },
-    "limits": {
-     "points": 8,
-     "max": 15,
-     "note": "No per-order approval; a scheduled cancel-all (dead-man's switch) limits what is left open if the bot stops (official docs)",
-     "source": "https://docs.arcus.xyz/api-reference/rate-limits"
-    },
-    "approval": {
-     "points": 0,
-     "max": 25,
-     "note": "API orders execute with no per-order approval step",
-     "source": "https://docs.arcus.xyz/api-reference/authentication"
-    },
-    "withdraw": {
-     "points": 15,
-     "max": 15,
-     "note": "Keys made through the public API are trade-only; a withdrawal needs the wallet's own signature and only pays the owner's own address (official docs)",
-     "source": "https://docs.arcus.xyz/api-reference/exchange/submit-withdrawal"
-    },
-    "preview": {
-     "points": 15,
-     "max": 15,
-     "note": "Public testnet on Robinhood Chain testnet; the app credits about $1,000 of test collateral (official docs)",
-     "source": "https://docs.arcus.xyz/guides/fund-testnet-account"
-    },
-    "open": {
-     "points": 10,
-     "max": 10,
-     "note": "Trail of Bits and OpenZeppelin reviewed the on-chain contracts; the matching engine is run by Arcus and is not open source (official docs)",
-     "source": "https://docs.arcus.xyz/concepts/exchange-architecture"
-    },
-    "record": {
-     "points": 10,
-     "max": 10,
-     "note": "No incident naming this tool in our incident tracker in the last 12 months",
-     "source": "https://tradingagentstack.com/incidents/"
-    }
-   },
-   "incidents": [],
-   "page": "https://tradingagentstack.com/tool/arcus/#safety",
-   "last_checked": "2026-11-10"
-  },
-  {
    "slug": "gmx",
    "name": "GMX",
    "category": "bot_exchange",
@@ -1981,6 +1923,71 @@
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/dydx/#safety",
    "last_checked": "2026-11-09"
+  },
+  {
+   "slug": "arcus",
+   "name": "Arcus",
+   "category": "bot_exchange",
+   "category_label": "Exchanges & brokers for bots",
+   "agent_risk_score_pct": 63,
+   "points": 63,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
+   "inputs": {
+    "custody": {
+     "points": 10,
+     "max": 10,
+     "note": "Revocable keys with an expiry date, each one bound to one of ten subaccounts (official docs)",
+     "source": "https://docs.arcus.xyz/concepts/subaccounts"
+    },
+    "limits": {
+     "points": 8,
+     "max": 15,
+     "note": "No per-order approval; a scheduled cancel-all (dead-man's switch) limits what is left open if the bot stops (official docs)",
+     "source": "https://docs.arcus.xyz/api-reference/rate-limits"
+    },
+    "approval": {
+     "points": 0,
+     "max": 25,
+     "note": "API orders execute with no per-order approval step",
+     "source": "https://docs.arcus.xyz/api-reference/authentication"
+    },
+    "withdraw": {
+     "points": 15,
+     "max": 15,
+     "note": "Keys made through the public API are trade-only; a withdrawal needs the wallet's own signature and only pays the owner's own address (official docs)",
+     "source": "https://docs.arcus.xyz/api-reference/exchange/submit-withdrawal"
+    },
+    "preview": {
+     "points": 15,
+     "max": 15,
+     "note": "Public testnet on Robinhood Chain testnet; the app credits about $1,000 of test collateral (official docs)",
+     "source": "https://docs.arcus.xyz/guides/fund-testnet-account"
+    },
+    "open": {
+     "points": 10,
+     "max": 10,
+     "note": "Trail of Bits and OpenZeppelin reviewed the on-chain contracts; the matching engine is run by Arcus and is not open source (official docs)",
+     "source": "https://docs.arcus.xyz/concepts/exchange-architecture"
+    },
+    "record": {
+     "points": 5,
+     "max": 10,
+     "note": "One resolved incident: Arcus said an accounting bug in how the exchange handled transfers between a user's own subaccounts let a single newly created account record a balance far larger than it held and withdraw $2,234,391 USDG on Nov 9 (US Eastern time) before platform-wide withdrawals were paused. Arcus said no user balances were affected, a further $3M of requested withdrawals was held by its bridge rate limit and reversed, the bug has been fixed, and Arcus Labs covered the shortfall from its treasury; withdrawals reopened on Nov 10.",
+     "source": "https://arcus.xyz/blog/arcus-incident-report-november-9-2026"
+    }
+   },
+   "incidents": [
+    {
+     "date": "2026-11-09",
+     "title": "Arcus said an accounting bug in how the exchange handled transfers between a user's own subaccounts let a single newly created account record a balance far larger than it held and withdraw $2,234,391 USDG on Nov 9 (US Eastern time) before platform-wide withdrawals were paused. Arcus said no user balances were affected, a further $3M of requested withdrawals was held by its bridge rate limit and reversed, the bug has been fixed, and Arcus Labs covered the shortfall from its treasury; withdrawals reopened on Nov 10.",
+     "source": "https://arcus.xyz/blog/arcus-incident-report-november-9-2026",
+     "resolved": true
+    }
+   ],
+   "page": "https://tradingagentstack.com/tool/arcus/#safety",
+   "last_checked": "2026-11-10"
   },
   {
    "slug": "pacifica",
