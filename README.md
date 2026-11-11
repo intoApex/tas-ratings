@@ -2,7 +2,7 @@
 
 Open data from [TradingAgentStack](https://tradingagentstack.com). One question drives every score: **if a tool, or an AI agent using it, is wrong, hacked or prompt-injected, how much money can it lose?**
 
-- **168 Safety scores**, one for every tool in the directory: agent wallets, exchanges for bots, on-chain and DeFi agents, agent payment rails, AI trading agents, broker MCP servers, bots and more, with sources and last-checked dates
+- **169 Safety scores**, one for every tool in the directory: agent wallets, exchanges for bots, on-chain and DeFi agents, agent payment rails, AI trading agents, broker MCP servers, bots and more, with sources and last-checked dates
 - **24 incidents** from official disclosures
 
 Generated 2026-11-11 from the live site. Updated automatically on every site release; do not edit by hand.
@@ -285,6 +285,7 @@ Seven inputs, 100 points: human approval (25), guardrails outside the agent (15)
 | [ForexVPS.net](https://tradingagentstack.com/tool/forexvps-net/#safety) | 90% | none |
 | [Hetzner Cloud](https://tradingagentstack.com/tool/hetzner-cloud/#safety) | 90% | none |
 | [QuantVPS](https://tradingagentstack.com/tool/quantvps/#safety) | 90% | none |
+| [Vultr](https://tradingagentstack.com/tool/vultr/#safety) | 90% | none |
 
 ## Use it
 

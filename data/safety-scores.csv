@@ -167,3 +167,4 @@ digitalocean-droplets,DigitalOcean Droplets,bot_vps,90,90,100,False,,25,15,15,15
 forexvps-net,ForexVPS.net,bot_vps,90,90,100,False,,25,15,15,15,10,0,10,,,,,,,
 hetzner-cloud,Hetzner Cloud,bot_vps,90,90,100,False,,25,15,15,15,10,0,10,,,,,,,
 quantvps,QuantVPS,bot_vps,90,90,100,False,,25,15,15,15,10,0,10,,,,,,,
+vultr,Vultr,bot_vps,90,90,100,False,,25,15,15,15,10,0,10,,,,,,,
