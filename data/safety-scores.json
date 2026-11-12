@@ -5,7 +5,7 @@
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "TradingAgentStack (tradingagentstack.com)",
-  "generated": "2026-11-11",
+  "generated": "2026-11-12",
   "count": 170,
   "safety_formula": "https://tradingagentstack.com/safety-score/",
   "safety_model": "One Safety score since 2026-11-01 (the Agent Risk Score v2 is merged in; risk_v2 is a deprecated alias equal to it)",
@@ -1099,7 +1099,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/intellectia/#safety",
-   "last_checked": "2026-10-31"
+   "last_checked": "2026-11-12"
   },
   {
    "slug": "kaito",
@@ -2013,7 +2013,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/traderspost/#safety",
-   "last_checked": "2026-11-03"
+   "last_checked": "2026-11-12"
   },
   {
    "slug": "3commas",
@@ -2212,7 +2212,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/option-alpha/#safety",
-   "last_checked": "2026-11-03"
+   "last_checked": "2026-11-12"
   },
   {
    "slug": "nyria",
@@ -2539,7 +2539,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/surmount/#safety",
-   "last_checked": "2026-11-04"
+   "last_checked": "2026-11-12"
   },
   {
    "slug": "wundertrading",
@@ -2740,7 +2740,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/capitalise-ai/#safety",
-   "last_checked": "2026-11-03"
+   "last_checked": "2026-11-12"
   },
   {
    "slug": "deskbot-for-topstepx",
@@ -2876,7 +2876,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/tickeron/#safety",
-   "last_checked": "2026-11-04"
+   "last_checked": "2026-11-12"
   },
   {
    "slug": "trade-ideas-holly-ai",
@@ -3011,7 +3011,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/composer/#safety",
-   "last_checked": "2026-11-03"
+   "last_checked": "2026-11-12"
   },
   {
    "slug": "pionex",
@@ -3147,7 +3147,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/trendspider/#safety",
-   "last_checked": "2026-11-03"
+   "last_checked": "2026-11-12"
   },
   {
    "slug": "langgraph",
@@ -4270,7 +4270,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/tastytrade-mcp-server/#safety",
-   "last_checked": "2026-11-11"
+   "last_checked": "2026-11-12"
   },
   {
    "slug": "primexbt-mcp",
@@ -4335,7 +4335,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/primexbt-mcp/#safety",
-   "last_checked": "2026-11-11"
+   "last_checked": "2026-11-12"
   },
   {
    "slug": "etoro-mcp-connectors",
@@ -4400,7 +4400,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/etoro-mcp-connectors/#safety",
-   "last_checked": "2026-11-11"
+   "last_checked": "2026-11-12"
   },
   {
    "slug": "webull-cloud-mcp-server",
@@ -4467,7 +4467,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/webull-cloud-mcp-server/#safety",
-   "last_checked": "2026-11-11"
+   "last_checked": "2026-11-12"
   },
   {
    "slug": "tradestation-mcp",
@@ -4535,7 +4535,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/tradestation-mcp/#safety",
-   "last_checked": "2026-11-11"
+   "last_checked": "2026-11-12"
   },
   {
    "slug": "ccxt-mcp-server",
@@ -4600,7 +4600,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/ccxt-mcp-server/#safety",
-   "last_checked": "2026-11-11"
+   "last_checked": "2026-11-12"
   },
   {
    "slug": "axi-mcp-mt5",
@@ -4665,7 +4665,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/axi-mcp-mt5/#safety",
-   "last_checked": "2026-11-11"
+   "last_checked": "2026-11-12"
   },
   {
    "slug": "interactive-brokers-ai-integration-mcp",
@@ -4732,7 +4732,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/interactive-brokers-ai-integration-mcp/#safety",
-   "last_checked": "2026-11-11"
+   "last_checked": "2026-11-12"
   },
   {
    "slug": "robinhood-trading-mcp",
@@ -4799,7 +4799,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/robinhood-trading-mcp/#safety",
-   "last_checked": "2026-11-11"
+   "last_checked": "2026-11-12"
   },
   {
    "slug": "alpaca-mcp-server",
@@ -4864,7 +4864,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/alpaca-mcp-server/#safety",
-   "last_checked": "2026-11-11"
+   "last_checked": "2026-11-12"
   },
   {
    "slug": "longbridge-mcp",
@@ -4929,7 +4929,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/longbridge-mcp/#safety",
-   "last_checked": "2026-11-11"
+   "last_checked": "2026-11-12"
   },
   {
    "slug": "ctrader-ai-agent-connect-mcp",
@@ -4997,7 +4997,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/ctrader-ai-agent-connect-mcp/#safety",
-   "last_checked": "2026-11-11"
+   "last_checked": "2026-11-12"
   },
   {
    "slug": "ninjatrader-mcp",
@@ -5062,7 +5062,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/ninjatrader-mcp/#safety",
-   "last_checked": "2026-11-11"
+   "last_checked": "2026-11-12"
   },
   {
    "slug": "moomoo-mcp",
@@ -5127,7 +5127,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/moomoo-mcp/#safety",
-   "last_checked": "2026-11-11"
+   "last_checked": "2026-11-12"
   },
   {
    "slug": "tradier-mcp-server",
@@ -5192,7 +5192,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/tradier-mcp-server/#safety",
-   "last_checked": "2026-11-11"
+   "last_checked": "2026-11-12"
   },
   {
    "slug": "b2trader-mcp-b2prime",
@@ -5260,7 +5260,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/b2trader-mcp-b2prime/#safety",
-   "last_checked": "2026-11-11"
+   "last_checked": "2026-11-12"
   },
   {
    "slug": "public-hosted-mcp-server",
@@ -5327,7 +5327,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/public-hosted-mcp-server/#safety",
-   "last_checked": "2026-11-11"
+   "last_checked": "2026-11-12"
   },
   {
    "slug": "darwinex-zero",
@@ -5924,7 +5924,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/bybit/#safety",
-   "last_checked": "2026-11-03"
+   "last_checked": "2026-11-12"
   },
   {
    "slug": "kraken",
@@ -5989,7 +5989,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/kraken/#safety",
-   "last_checked": "2026-11-03"
+   "last_checked": "2026-11-12"
   },
   {
    "slug": "okx",
@@ -6054,7 +6054,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/okx/#safety",
-   "last_checked": "2026-11-03"
+   "last_checked": "2026-11-12"
   },
   {
    "slug": "coinbase-advanced",
@@ -6858,7 +6858,7 @@
     }
    ],
    "page": "https://tradingagentstack.com/tool/binance/#safety",
-   "last_checked": "2026-11-03"
+   "last_checked": "2026-11-12"
   },
   {
    "slug": "extended",
@@ -7771,7 +7771,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/alpha-vantage-mcp/#safety",
-   "last_checked": "2026-11-04"
+   "last_checked": "2026-11-12"
   },
   {
    "slug": "databento-mcp-servers-dbn-go",
@@ -9343,7 +9343,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/hummingbot/#safety",
-   "last_checked": "2026-11-03"
+   "last_checked": "2026-11-12"
   },
   {
    "slug": "octobot",
@@ -9473,7 +9473,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/superalgos/#safety",
-   "last_checked": "2026-11-03"
+   "last_checked": "2026-11-12"
   },
   {
    "slug": "jesse",
@@ -9540,7 +9540,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/jesse/#safety",
-   "last_checked": "2026-11-03"
+   "last_checked": "2026-11-12"
   },
   {
    "slug": "lumibot",
@@ -10135,7 +10135,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/deskbot-for-kalshi/#safety",
-   "last_checked": "2026-11-03"
+   "last_checked": "2026-11-12"
   },
   {
    "slug": "polymarket-api",

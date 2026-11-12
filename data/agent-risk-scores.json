@@ -5,7 +5,7 @@
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "TradingAgentStack (tradingagentstack.com)",
-  "generated": "2026-11-11",
+  "generated": "2026-11-12",
   "count": 49,
   "safety_formula": "https://tradingagentstack.com/safety-score/",
   "safety_model": "One Safety score since 2026-11-01 (the Agent Risk Score v2 is merged in; risk_v2 is a deprecated alias equal to it)",
@@ -1458,7 +1458,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/bybit/#safety",
-   "last_checked": "2026-11-03"
+   "last_checked": "2026-11-12"
   },
   {
    "slug": "kraken",
@@ -1516,7 +1516,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/kraken/#safety",
-   "last_checked": "2026-11-03"
+   "last_checked": "2026-11-12"
   },
   {
    "slug": "okx",
@@ -1574,7 +1574,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/okx/#safety",
-   "last_checked": "2026-11-03"
+   "last_checked": "2026-11-12"
   },
   {
    "slug": "coinbase-advanced",
@@ -2286,7 +2286,7 @@
     }
    ],
    "page": "https://tradingagentstack.com/tool/binance/#safety",
-   "last_checked": "2026-11-03"
+   "last_checked": "2026-11-12"
   },
   {
    "slug": "extended",
