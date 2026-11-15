@@ -3410,71 +3410,6 @@
    "last_checked": "2026-11-11"
   },
   {
-   "slug": "siebly-exchange-sdks",
-   "name": "Siebly exchange SDKs",
-   "category": "agent_framework",
-   "category_label": "Agent frameworks",
-   "safety_score_pct": 100,
-   "points": 100,
-   "max": 100,
-   "partial": false,
-   "missing_inputs": [],
-   "inputs": {
-    "unattended": {
-     "label": "Human approval",
-     "points": 25,
-     "max": 25,
-     "note": "Cannot place real-money orders (listing: live, and OKX demo trading through the SDK's demoTrading…)",
-     "source": null
-    },
-    "approval": {
-     "label": "Guardrails outside the agent",
-     "points": 15,
-     "max": 15,
-     "note": "Not applicable: no real-money orders",
-     "source": null
-    },
-    "paper": {
-     "label": "Test before real money",
-     "points": 15,
-     "max": 15,
-     "note": "Not applicable: no real-money orders",
-     "source": null
-    },
-    "withdraw": {
-     "label": "Sending funds out",
-     "points": 15,
-     "max": 15,
-     "note": "Not applicable: no real-money orders",
-     "source": null
-    },
-    "keys": {
-     "label": "Who holds the keys",
-     "points": 10,
-     "max": 10,
-     "note": "Not applicable: no real-money orders",
-     "source": null
-    },
-    "open": {
-     "label": "Open source or audited",
-     "points": 10,
-     "max": 10,
-     "note": "Open source",
-     "source": null
-    },
-    "record": {
-     "label": "Incident record (last 12 months)",
-     "points": 10,
-     "max": 10,
-     "note": "No incident naming this tool in our incident tracker in the last 12 months",
-     "source": null
-    }
-   },
-   "incidents": [],
-   "page": "https://tradingagentstack.com/tool/siebly-exchange-sdks/#safety",
-   "last_checked": "2026-11-15"
-  },
-  {
    "slug": "tradingagents",
    "name": "TradingAgents",
    "category": "agent_framework",
@@ -3537,6 +3472,73 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/tradingagents/#safety",
+   "last_checked": "2026-11-15"
+  },
+  {
+   "slug": "siebly-exchange-sdks",
+   "name": "Siebly exchange SDKs",
+   "category": "agent_framework",
+   "category_label": "Agent frameworks",
+   "safety_score_pct": 53,
+   "points": 45,
+   "max": 85,
+   "partial": true,
+   "missing_inputs": [
+    "withdraw"
+   ],
+   "inputs": {
+    "unattended": {
+     "label": "Human approval",
+     "points": 0,
+     "max": 25,
+     "note": "Can place live orders with no documented approval step",
+     "source": null
+    },
+    "approval": {
+     "label": "Guardrails outside the agent",
+     "points": 0,
+     "max": 15,
+     "note": "No approval or limit option in our listing",
+     "source": null
+    },
+    "paper": {
+     "label": "Test before real money",
+     "points": 15,
+     "max": 15,
+     "note": "Paper, demo or testnet mode available",
+     "source": null
+    },
+    "withdraw": {
+     "label": "Sending funds out",
+     "points": null,
+     "max": 15,
+     "note": "Missing: not documented",
+     "source": null
+    },
+    "keys": {
+     "label": "Who holds the keys",
+     "points": 10,
+     "max": 10,
+     "note": "Your exchange API key stays in your own process: Siebly's terms say it never stores or transmits your keys (official docs)",
+     "source": "https://siebly.io/terms"
+    },
+    "open": {
+     "label": "Open source or audited",
+     "points": 10,
+     "max": 10,
+     "note": "Open source",
+     "source": null
+    },
+    "record": {
+     "label": "Incident record (last 12 months)",
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
+     "source": null
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/siebly-exchange-sdks/#safety",
    "last_checked": "2026-11-15"
   },
   {

@@ -103,8 +103,8 @@ Seven inputs, 100 points: human approval (25), guardrails outside the agent (15)
 | [LlamaIndex](https://tradingagentstack.com/tool/llamaindex/#safety) | 100% | none |
 | [Mastra](https://tradingagentstack.com/tool/mastra/#safety) | 100% | none |
 | [Microsoft Agent Framework](https://tradingagentstack.com/tool/microsoft-agent-framework/#safety) | 100% | none |
-| [Siebly exchange SDKs](https://tradingagentstack.com/tool/siebly-exchange-sdks/#safety) | 100% | none |
 | [TradingAgents](https://tradingagentstack.com/tool/tradingagents/#safety) | 100% | none |
+| [Siebly exchange SDKs](https://tradingagentstack.com/tool/siebly-exchange-sdks/#safety) | 53% (partial) | withdraw |
 
 ### Agent tokens with a product
 
