@@ -2,7 +2,7 @@
 
 Open data from [TradingAgentStack](https://tradingagentstack.com). One question drives every score: **if a tool, or an AI agent using it, is wrong, hacked or prompt-injected, how much money can it lose?**
 
-- **173 Safety scores**, one for every tool in the directory: agent wallets, exchanges for bots, on-chain and DeFi agents, agent payment rails, AI trading agents, broker MCP servers, bots and more, with sources and last-checked dates
+- **174 Safety scores**, one for every tool in the directory: agent wallets, exchanges for bots, on-chain and DeFi agents, agent payment rails, AI trading agents, broker MCP servers, bots and more, with sources and last-checked dates
 - **24 incidents** from official disclosures
 
 Generated 2026-11-15 from the live site. Updated automatically on every site release; do not edit by hand.
@@ -196,6 +196,7 @@ Seven inputs, 100 points: human approval (25), guardrails outside the agent (15)
 | [OpenBB](https://tradingagentstack.com/tool/openbb/#safety) | 100% | none |
 | [yfinance](https://tradingagentstack.com/tool/yfinance/#safety) | 100% | none |
 | [Alpha Vantage API](https://tradingagentstack.com/tool/alpha-vantage-api/#safety) | 90% | none |
+| [Bitpont Developer API](https://tradingagentstack.com/tool/bitpont-developer-api/#safety) | 90% | none |
 | [CoinBoss API](https://tradingagentstack.com/tool/coinboss-api/#safety) | 90% | none |
 | [CrowdWisdomTrading Setups API](https://tradingagentstack.com/tool/crowdwisdomtrading-setups-api/#safety) | 90% | none |
 | [Databento](https://tradingagentstack.com/tool/databento/#safety) | 90% | none |
