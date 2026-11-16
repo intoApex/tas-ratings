@@ -2,7 +2,7 @@
 
 Open data from [TradingAgentStack](https://tradingagentstack.com). One question drives every score: **if a tool, or an AI agent using it, is wrong, hacked or prompt-injected, how much money can it lose?**
 
-- **174 Safety scores**, one for every tool in the directory: agent wallets, exchanges for bots, on-chain and DeFi agents, agent payment rails, AI trading agents, broker MCP servers, bots and more, with sources and last-checked dates
+- **175 Safety scores**, one for every tool in the directory: agent wallets, exchanges for bots, on-chain and DeFi agents, agent payment rails, AI trading agents, broker MCP servers, bots and more, with sources and last-checked dates
 - **24 incidents** from official disclosures
 
 Generated 2026-11-15 from the live site. Updated automatically on every site release; do not edit by hand.
@@ -232,6 +232,7 @@ Seven inputs, 100 points: human approval (25), guardrails outside the agent (15)
 |---|---|---|
 | [Craic Hub Exchange](https://tradingagentstack.com/tool/craic-hub-exchange/#safety) | 80% | none |
 | [1inch Swap API](https://tradingagentstack.com/tool/1inch-swap-api/#safety) | 71% (partial) | paper |
+| [Hashlock Markets](https://tradingagentstack.com/tool/hashlock-markets/#safety) | 70% | none |
 | [0x Swap API](https://tradingagentstack.com/tool/0x-swap-api/#safety) | 41% (partial) | paper |
 | [Jupiter API](https://tradingagentstack.com/tool/jupiter-api/#safety) | 41% (partial) | paper |
 | [Solana Agent Kit](https://tradingagentstack.com/tool/solana-agent-kit/#safety) | 35% | none |

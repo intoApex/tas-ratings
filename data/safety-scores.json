@@ -6,7 +6,7 @@
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "TradingAgentStack (tradingagentstack.com)",
   "generated": "2026-11-15",
-  "count": 174,
+  "count": 175,
   "safety_formula": "https://tradingagentstack.com/safety-score/",
   "safety_model": "One Safety score since 2026-11-01 (the Agent Risk Score v2 is merged in; risk_v2 is a deprecated alias equal to it)",
   "safety_inputs": [
@@ -8946,6 +8946,71 @@
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/1inch-swap-api/#safety",
    "last_checked": "2026-11-14"
+  },
+  {
+   "slug": "hashlock-markets",
+   "name": "Hashlock Markets",
+   "category": "defi_agent",
+   "category_label": "On-chain & DeFi trading agents",
+   "safety_score_pct": 70,
+   "points": 70,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
+   "inputs": {
+    "unattended": {
+     "label": "Human approval",
+     "points": 10,
+     "max": 25,
+     "note": "Approval optional: the hosted MCP server and REST API return every funding and claim transaction for your wallet to sign, but the local MCP server can sign and settle on its own with an agent key, and an agent with its own wallet can trade with no human",
+     "source": "https://docs.hashlock.markets/agents/mcp.md"
+    },
+    "approval": {
+     "label": "Guardrails outside the agent",
+     "points": 15,
+     "max": 15,
+     "note": "Approval/confirmation step documented",
+     "source": null
+    },
+    "paper": {
+     "label": "Test before real money",
+     "points": 0,
+     "max": 15,
+     "note": "Live only: the supported networks are all mainnets, and Hashlock confirmed there is no public sandbox (email to TradingAgentStack, 2026-11-13)",
+     "source": "https://docs.hashlock.markets/concepts/networks.md"
+    },
+    "withdraw": {
+     "label": "Sending funds out",
+     "points": 15,
+     "max": 15,
+     "note": "Each leg can only pay its fixed recipient or refund the funder, and payouts only go to wallets the account has proven, so a leaked API key can't redirect funds (official docs)",
+     "source": "https://docs.hashlock.markets/concepts/non-custodial.md"
+    },
+    "keys": {
+     "label": "Who holds the keys",
+     "points": 10,
+     "max": 10,
+     "note": "Non-custodial: the server holds no keys and builds unsigned transactions you sign with your own key, wallet or HSM (official docs)",
+     "source": "https://docs.hashlock.markets/concepts/non-custodial.md"
+    },
+    "open": {
+     "label": "Open source or audited",
+     "points": 10,
+     "max": 10,
+     "note": "Independent audit published: QuillAudits reviewed the HTLC contracts (HTLCFactory, HTLCImplementation, SharedHTLC) and the Bitcoin settlement logic in Aug to Sep 2026 and marks every critical and high finding resolved; the contracts in use were deployed on Nov 5, 2026, after that review (official docs)",
+     "source": "https://github.com/Quillhash/QuillAudit_smart_contract_audit_Reports/blob/master/HashLock%20Smart%20Contract%20Audit%20Report%20-%20QuillAudits.pdf"
+    },
+    "record": {
+     "label": "Incident record (last 12 months)",
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
+     "source": null
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/hashlock-markets/#safety",
+   "last_checked": "2026-11-16"
   },
   {
    "slug": "0x-swap-api",
