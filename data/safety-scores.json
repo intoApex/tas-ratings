@@ -5,7 +5,7 @@
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "TradingAgentStack (tradingagentstack.com)",
-  "generated": "2026-11-15",
+  "generated": "2026-11-17",
   "count": 176,
   "safety_formula": "https://tradingagentstack.com/safety-score/",
   "safety_model": "One Safety score since 2026-11-01 (the Agent Risk Score v2 is merged in; risk_v2 is a deprecated alias equal to it)",
@@ -6386,71 +6386,6 @@
    "last_checked": "2026-11-09"
   },
   {
-   "slug": "lighter",
-   "name": "Lighter",
-   "category": "bot_exchange",
-   "category_label": "Exchanges & brokers for bots",
-   "safety_score_pct": 68,
-   "points": 68,
-   "max": 100,
-   "partial": false,
-   "missing_inputs": [],
-   "inputs": {
-    "unattended": {
-     "label": "Human approval",
-     "points": 0,
-     "max": 25,
-     "note": "API orders execute with no per-order approval step",
-     "source": "https://docs.lighter.xyz/developers/integration-guides/api-keys"
-    },
-    "approval": {
-     "label": "Guardrails outside the agent",
-     "points": 8,
-     "max": 15,
-     "note": "No per-order approval; maker-only keys (post-only orders and cancels) and read-only tokens limit what a credential can do (official docs)",
-     "source": "https://docs.lighter.xyz/developers/integration-guides/api-keys"
-    },
-    "paper": {
-     "label": "Test before real money",
-     "points": 15,
-     "max": 15,
-     "note": "Public testnet app and API settling to Sepolia (official docs)",
-     "source": "https://docs.lighter.xyz/developers/getting-started/environments"
-    },
-    "withdraw": {
-     "label": "Sending funds out",
-     "points": 15,
-     "max": 15,
-     "note": "A key can make a 'secure withdrawal' only back to the account owner's own Ethereum address; sending to anyone else needs the wallet's signature (official docs)",
-     "source": "https://docs.lighter.xyz/developers/integration-guides/api-keys"
-    },
-    "keys": {
-     "label": "Who holds the keys",
-     "points": 10,
-     "max": 10,
-     "note": "Separate key per account and sub-account, maker-only keys and read-only tokens (5 minutes to 10 years) (official docs)",
-     "source": "https://docs.lighter.xyz/developers/integration-guides/api-keys"
-    },
-    "open": {
-     "label": "Open source or audited",
-     "points": 10,
-     "max": 10,
-     "note": "Circuits and contracts are public on GitHub (contracts under a source-available licence) and the docs link 9 audit reports (official docs)",
-     "source": "https://docs.lighter.xyz/security/security-audits"
-    },
-    "record": {
-     "label": "Incident record (last 12 months)",
-     "points": 10,
-     "max": 10,
-     "note": "No incident naming this tool in our incident tracker in the last 12 months",
-     "source": null
-    }
-   },
-   "incidents": [],
-   "page": "https://tradingagentstack.com/tool/lighter/#safety",
-   "last_checked": "2026-11-10"
-  },
-  {
    "slug": "paradex",
    "name": "Paradex",
    "category": "bot_exchange",
@@ -6650,6 +6585,78 @@
     }
    ],
    "page": "https://tradingagentstack.com/tool/arcus/#safety",
+   "last_checked": "2026-11-10"
+  },
+  {
+   "slug": "lighter",
+   "name": "Lighter",
+   "category": "bot_exchange",
+   "category_label": "Exchanges & brokers for bots",
+   "safety_score_pct": 63,
+   "points": 63,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
+   "inputs": {
+    "unattended": {
+     "label": "Human approval",
+     "points": 0,
+     "max": 25,
+     "note": "API orders execute with no per-order approval step",
+     "source": "https://docs.lighter.xyz/developers/integration-guides/api-keys"
+    },
+    "approval": {
+     "label": "Guardrails outside the agent",
+     "points": 8,
+     "max": 15,
+     "note": "No per-order approval; maker-only keys (post-only orders and cancels) and read-only tokens limit what a credential can do (official docs)",
+     "source": "https://docs.lighter.xyz/developers/integration-guides/api-keys"
+    },
+    "paper": {
+     "label": "Test before real money",
+     "points": 15,
+     "max": 15,
+     "note": "Public testnet app and API settling to Sepolia (official docs)",
+     "source": "https://docs.lighter.xyz/developers/getting-started/environments"
+    },
+    "withdraw": {
+     "label": "Sending funds out",
+     "points": 15,
+     "max": 15,
+     "note": "A key can make a 'secure withdrawal' only back to the account owner's own Ethereum address; sending to anyone else needs the wallet's signature (official docs)",
+     "source": "https://docs.lighter.xyz/developers/integration-guides/api-keys"
+    },
+    "keys": {
+     "label": "Who holds the keys",
+     "points": 10,
+     "max": 10,
+     "note": "Separate key per account and sub-account, maker-only keys and read-only tokens (5 minutes to 10 years) (official docs)",
+     "source": "https://docs.lighter.xyz/developers/integration-guides/api-keys"
+    },
+    "open": {
+     "label": "Open source or audited",
+     "points": 10,
+     "max": 10,
+     "note": "Circuits and contracts are public on GitHub (contracts under a source-available licence) and the docs link 9 audit reports (official docs)",
+     "source": "https://docs.lighter.xyz/security/security-audits"
+    },
+    "record": {
+     "label": "Incident record (last 12 months)",
+     "points": 5,
+     "max": 10,
+     "note": "One resolved incident: Lighter, a perp DEX, said a security incident on Nov 16 came from a leaked API key for a specific trader's account: the affected accounts used their own signing code rather than Lighter's official SDK, and that code reused a nonce, which let the attacker work out the key from public data. Lighter said its protocol, smart contracts and infrastructure were not affected. It suspended all withdrawals and pool creation and enabled Guardian mode on its contract; its Security Council used that pause to return about 5M USDC to the affected trader. It then turned Guardian mode off and resumed withdrawals, and transfers into public pools now need a wallet signature. Lighter has not stated the total taken. No dollar amount for the loss is shown unless an official source states one.",
+     "source": "https://x.com/Lighter_xyz/status/2122394446343946717"
+    }
+   },
+   "incidents": [
+    {
+     "date": "2026-11-16",
+     "title": "Lighter, a perp DEX, said a security incident on Nov 16 came from a leaked API key for a specific trader's account: the affected accounts used their own signing code rather than Lighter's official SDK, and that code reused a nonce, which let the attacker work out the key from public data. Lighter said its protocol, smart contracts and infrastructure were not affected. It suspended all withdrawals and pool creation and enabled Guardian mode on its contract; its Security Council used that pause to return about 5M USDC to the affected trader. It then turned Guardian mode off and resumed withdrawals, and transfers into public pools now need a wallet signature. Lighter has not stated the total taken. No dollar amount for the loss is shown unless an official source states one.",
+     "source": "https://x.com/Lighter_xyz/status/2122394446343946717",
+     "resolved": true
+    }
+   ],
+   "page": "https://tradingagentstack.com/tool/lighter/#safety",
    "last_checked": "2026-11-10"
   },
   {

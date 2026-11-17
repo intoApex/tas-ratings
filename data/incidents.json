@@ -4,10 +4,47 @@
   "tracker": "https://tradingagentstack.com/incidents/",
   "license": "CC BY 4.0",
   "rule": "Only incidents with an official source: the vendor's disclosure, a security advisory, or a named researcher's report marked as such.",
-  "generated": "2026-11-15",
-  "count": 24
+  "generated": "2026-11-17",
+  "count": 29
  },
  "incidents": [
+  {
+   "date": "2026-11-16",
+   "title": "Lighter, a perp DEX, said a security incident on Nov 16 came from a leaked API key for a specific trader's account: the affected accounts used their own signing code rather than Lighter's official SDK, and that code reused a nonce, which let the attacker work out the key from public data. Lighter said its protocol, smart contracts and infrastructure were not affected. It suspended all withdrawals and pool creation and enabled Guardian mode on its contract; its Security Council used that pause to return about 5M USDC to the affected trader. It then turned Guardian mode off and resumed withdrawals, and transfers into public pools now need a wallet signature. Lighter has not stated the total taken. No dollar amount for the loss is shown unless an official source states one.",
+   "tools": [
+    "Lighter"
+   ],
+   "source": "https://x.com/Lighter_xyz/status/2122394446343946717",
+   "resolved": true
+  },
+  {
+   "date": "2026-11-16",
+   "title": "Trezor said its shipping partner Skladon was breached on Nov 7 and an attacker exported customer shipping data for about 27,000 orders placed between Aug 9 and Nov 7, 2026: names, phone numbers, delivery and email addresses, and order details. Trezor learned of it on Nov 15. It says its own systems were not compromised and no wallet backups, PINs or passphrases were involved. It emailed affected customers, informed the data protection authority and says the investigation is ongoing. No funds are reported lost.",
+   "tools": [],
+   "source": "https://trezor.io/blog/news/data-breach-at-trezor-shipping-partner-skladon",
+   "resolved": false
+  },
+  {
+   "date": "2026-11-16",
+   "title": "Report URI said malicious JavaScript served through Optimizely Web reached visitors of 178 organisations' websites on Nov 16, including ledger.com and OANDA's sites. The script swapped cryptocurrency wallet addresses on the page and in the clipboard for the attacker's, and also skimmed card details. Report URI says attacker wallets had received about $7,040 across all sites by 19:25 UTC, that ledger.com was cleaned at about 20:41 UTC, and that by 21:52 UTC every affected snippet but one had been cleaned. It does not say how much was taken through any one site.",
+   "tools": [],
+   "source": "https://blog.report-uri.com/worlds-largest-brands-infected-with-malware-via-optimizely",
+   "resolved": false
+  },
+  {
+   "date": "2026-11-15",
+   "title": "Coinone, a Korean crypto exchange, said an outside attacker got into the servers of Metaem, the subcontractor that runs its customer support, on Nov 12 and viewed or took customer consultation records. Depending on the customer these may include names, phone numbers, emails, dates of birth, bank account numbers, resident registration numbers, home addresses, wallet addresses and transaction IDs; customers who never contacted support are not affected. Coinone says no direct intrusion into its account, trading or wallet systems has been confirmed so far, reported the breach to Korean authorities and says the investigation is ongoing. It has not stated how many customers are affected, and no funds are reported lost.",
+   "tools": [],
+   "source": "https://coinone.co.kr/info/notice/5950",
+   "resolved": false
+  },
+  {
+   "date": "2026-11-14",
+   "title": "Unocoin, an Indian crypto exchange, said three of its more than 20 hot wallets were compromised: the backup keys for its BitGo multisig wallets were used to sign unauthorised transactions, and it says BitGo itself was not compromised. It detected unauthorised activity on Nov 6 and suspended all services on Nov 9; it estimates the loss at about $200,000, says it will cover it from its own resources and has frozen part of the funds. Customer emails, addresses, encrypted passwords, KYC-related information and balances may have been exposed. In its Nov 14 update services were still suspended and the root cause was not yet known.",
+   "tools": [],
+   "source": "https://blog.unocoin.com/security-incident-update/",
+   "resolved": false
+  },
   {
    "date": "2026-11-09",
    "title": "Arcus said an accounting bug in how the exchange handled transfers between a user's own subaccounts let a single newly created account record a balance far larger than it held and withdraw $2,234,391 USDG on Nov 9 (US Eastern time) before platform-wide withdrawals were paused. Arcus said no user balances were affected, a further $3M of requested withdrawals was held by its bridge rate limit and reversed, the bug has been fixed, and Arcus Labs covered the shortfall from its treasury; withdrawals reopened on Nov 10.",
