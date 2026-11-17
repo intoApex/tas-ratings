@@ -6,7 +6,7 @@
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "TradingAgentStack (tradingagentstack.com)",
   "generated": "2026-11-15",
-  "count": 175,
+  "count": 176,
   "safety_formula": "https://tradingagentstack.com/safety-score/",
   "safety_model": "One Safety score since 2026-11-01 (the Agent Risk Score v2 is merged in; risk_v2 is a deprecated alias equal to it)",
   "safety_inputs": [
@@ -2280,6 +2280,73 @@
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/nyria/#safety",
    "last_checked": "2026-11-09"
+  },
+  {
+   "slug": "tritonix",
+   "name": "Tritonix",
+   "category": "ai_bot_platform",
+   "category_label": "AI trading bot platforms",
+   "safety_score_pct": 51,
+   "points": 43,
+   "max": 85,
+   "partial": true,
+   "missing_inputs": [
+    "paper"
+   ],
+   "inputs": {
+    "unattended": {
+     "label": "Human approval",
+     "points": 0,
+     "max": 25,
+     "note": "No per-order approval documented: the Swing Trade Bot is deployed once to your broker account and its daily process handles entries and exits, and Copy Trade keeps the account aligned on scheduled rebalances after you review the starting allocation; Tritonix confirmed by email to TradingAgentStack (2026-11-17) that per-order approval isn't documented",
+     "source": "https://tritonix.ai/help/swing-trade-bot"
+    },
+    "approval": {
+     "label": "Guardrails outside the agent",
+     "points": 8,
+     "max": 15,
+     "note": "Only limits or read-only modes, no per-order approval",
+     "source": null
+    },
+    "paper": {
+     "label": "Test before real money",
+     "points": null,
+     "max": 15,
+     "note": "Missing: not documented",
+     "source": null
+    },
+    "withdraw": {
+     "label": "Sending funds out",
+     "points": 15,
+     "max": 15,
+     "note": "Tritonix is not granted withdrawal permission on connected broker accounts (Tritonix, email to TradingAgentStack, 2026-11-17); its site says it does not hold or control client assets",
+     "source": "https://tritonix.ai/about"
+    },
+    "keys": {
+     "label": "Who holds the keys",
+     "points": 10,
+     "max": 10,
+     "note": "Scoped access (scopes, read-only mode, dedicated or separate account)",
+     "source": null
+    },
+    "open": {
+     "label": "Open source or audited",
+     "points": 0,
+     "max": 10,
+     "note": "No public source code in our listing",
+     "source": null
+    },
+    "record": {
+     "label": "Incident record (last 12 months)",
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
+     "source": null
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/tritonix/#safety",
+   "last_checked": "2026-11-17"
   },
   {
    "slug": "bitsgap",
