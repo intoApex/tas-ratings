@@ -5,7 +5,7 @@ Open data from [TradingAgentStack](https://tradingagentstack.com). One question 
 - **177 Safety scores**, one for every tool in the directory: agent wallets, exchanges for bots, on-chain and DeFi agents, agent payment rails, AI trading agents, broker MCP servers, bots and more, with sources and last-checked dates
 - **29 incidents** from official disclosures
 
-Generated 2026-11-17 from the live site. Updated automatically on every site release; do not edit by hand.
+Generated 2026-11-20 from the live site. Updated automatically on every site release; do not edit by hand.
 
 ## Files
 
@@ -58,9 +58,9 @@ Seven inputs, 100 points: human approval (25), guardrails outside the agent (15)
 | [LevelFields](https://tradingagentstack.com/tool/levelfields/#safety) | 90% | none |
 | [LunarCrush](https://tradingagentstack.com/tool/lunarcrush/#safety) | 90% | none |
 | [Meridian Engine](https://tradingagentstack.com/tool/meridian-engine/#safety) | 90% | none |
-| [Nansen](https://tradingagentstack.com/tool/nansen/#safety) | 90% | none |
 | [Prospero.ai](https://tradingagentstack.com/tool/prospero-ai/#safety) | 90% | none |
 | [Santiment](https://tradingagentstack.com/tool/santiment/#safety) | 90% | none |
+| [Nansen](https://tradingagentstack.com/tool/nansen/#safety) | 70% | none |
 
 ### AI trading agents
 

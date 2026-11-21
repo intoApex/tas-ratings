@@ -5,7 +5,7 @@
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "TradingAgentStack (tradingagentstack.com)",
-  "generated": "2026-11-17",
+  "generated": "2026-11-20",
   "count": 50,
   "safety_formula": "https://tradingagentstack.com/safety-score/",
   "safety_model": "One Safety score since 2026-11-01 (the Agent Risk Score v2 is merged in; risk_v2 is a deprecated alias equal to it)",
@@ -988,7 +988,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/mangrove/#safety",
-   "last_checked": "2026-11-09"
+   "last_checked": "2026-11-18"
   },
   {
    "slug": "heyanon",
@@ -1106,7 +1106,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/bitget-wallet-skill/#safety",
-   "last_checked": "2026-11-10"
+   "last_checked": "2026-11-20"
   },
   {
    "slug": "tria-agentic-trading",
@@ -1164,7 +1164,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/tria-agentic-trading/#safety",
-   "last_checked": "2026-11-09"
+   "last_checked": "2026-11-18"
   },
   {
    "slug": "okx-agentic-wallet",
@@ -1690,7 +1690,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/veranta-mcp-formerly-avantis/#safety",
-   "last_checked": "2026-11-09"
+   "last_checked": "2026-11-18"
   },
   {
    "slug": "gmx",
@@ -1748,7 +1748,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/gmx/#safety",
-   "last_checked": "2026-11-09"
+   "last_checked": "2026-11-18"
   },
   {
    "slug": "paradex",
@@ -1806,7 +1806,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/paradex/#safety",
-   "last_checked": "2026-11-09"
+   "last_checked": "2026-11-18"
   },
   {
    "slug": "dydx",
@@ -1864,7 +1864,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/dydx/#safety",
-   "last_checked": "2026-11-09"
+   "last_checked": "2026-11-18"
   },
   {
    "slug": "arcus",
@@ -1929,7 +1929,7 @@
     }
    ],
    "page": "https://tradingagentstack.com/tool/arcus/#safety",
-   "last_checked": "2026-11-10"
+   "last_checked": "2026-11-20"
   },
   {
    "slug": "lighter",
@@ -1994,7 +1994,7 @@
     }
    ],
    "page": "https://tradingagentstack.com/tool/lighter/#safety",
-   "last_checked": "2026-11-10"
+   "last_checked": "2026-11-20"
   },
   {
    "slug": "pacifica",
@@ -2054,7 +2054,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/pacifica/#safety",
-   "last_checked": "2026-11-09"
+   "last_checked": "2026-11-18"
   },
   {
    "slug": "gemini",
@@ -2170,7 +2170,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/aster/#safety",
-   "last_checked": "2026-11-09"
+   "last_checked": "2026-11-18"
   },
   {
    "slug": "hyperliquid",
@@ -2351,7 +2351,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/extended/#safety",
-   "last_checked": "2026-11-09"
+   "last_checked": "2026-11-18"
   },
   {
    "slug": "edgex",
@@ -2412,7 +2412,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/edgex/#safety",
-   "last_checked": "2026-11-09"
+   "last_checked": "2026-11-18"
   },
   {
    "slug": "craic-hub-exchange",
@@ -2470,7 +2470,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/craic-hub-exchange/#safety",
-   "last_checked": "2026-11-10"
+   "last_checked": "2026-11-20"
   },
   {
    "slug": "1inch-swap-api",
