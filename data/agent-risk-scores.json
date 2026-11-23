@@ -6,7 +6,7 @@
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "TradingAgentStack (tradingagentstack.com)",
   "generated": "2026-11-23",
-  "count": 50,
+  "count": 51,
   "safety_formula": "https://tradingagentstack.com/safety-score/",
   "safety_model": "One Safety score since 2026-11-01 (the Agent Risk Score v2 is merged in; risk_v2 is a deprecated alias equal to it)",
   "safety_inputs": [
@@ -2352,6 +2352,67 @@
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/extended/#safety",
    "last_checked": "2026-11-18"
+  },
+  {
+   "slug": "bydfi",
+   "name": "BYDFi",
+   "category": "bot_exchange",
+   "category_label": "Exchanges & brokers for bots",
+   "agent_risk_score_pct": 33,
+   "points": 25,
+   "max": 75,
+   "partial": true,
+   "missing_inputs": [
+    "custody",
+    "withdraw"
+   ],
+   "inputs": {
+    "custody": {
+     "points": null,
+     "max": 10,
+     "note": "Missing: not documented",
+     "source": null
+    },
+    "limits": {
+     "points": 0,
+     "max": 15,
+     "note": "No approval or limit option in our listing",
+     "source": "https://www.bydfi.com/support/article/transaction-fee-calculation-420626952122912768"
+    },
+    "approval": {
+     "points": 0,
+     "max": 25,
+     "note": "Can place live orders with no documented approval step",
+     "source": "https://www.bydfi.com/support/article/transaction-fee-calculation-420626952122912768"
+    },
+    "withdraw": {
+     "points": null,
+     "max": 15,
+     "note": "Missing: not documented",
+     "source": null
+    },
+    "preview": {
+     "points": 15,
+     "max": 15,
+     "note": "Paper, demo or testnet mode available",
+     "source": "https://www.bydfi.com/support/article/transaction-fee-calculation-420626952122912768"
+    },
+    "open": {
+     "points": 0,
+     "max": 10,
+     "note": "No public source code in our listing",
+     "source": "https://www.bydfi.com/support/article/transaction-fee-calculation-420626952122912768"
+    },
+    "record": {
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
+     "source": "https://tradingagentstack.com/incidents/"
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/bydfi/#safety",
+   "last_checked": "2026-11-23"
   },
   {
    "slug": "edgex",

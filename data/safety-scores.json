@@ -6,7 +6,7 @@
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "TradingAgentStack (tradingagentstack.com)",
   "generated": "2026-11-23",
-  "count": 177,
+  "count": 182,
   "safety_formula": "https://tradingagentstack.com/safety-score/",
   "safety_model": "One Safety score since 2026-11-01 (the Agent Risk Score v2 is merged in; risk_v2 is a deprecated alias equal to it)",
   "safety_inputs": [
@@ -2146,6 +2146,71 @@
    "last_checked": "2026-11-23"
   },
   {
+   "slug": "trend0x",
+   "name": "Trend0x",
+   "category": "ai_bot_platform",
+   "category_label": "AI trading bot platforms",
+   "safety_score_pct": 58,
+   "points": 58,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
+   "inputs": {
+    "unattended": {
+     "label": "Human approval",
+     "points": 0,
+     "max": 25,
+     "note": "Can place live orders with no documented approval step",
+     "source": null
+    },
+    "approval": {
+     "label": "Guardrails outside the agent",
+     "points": 8,
+     "max": 15,
+     "note": "Only limits or read-only modes, no per-order approval",
+     "source": null
+    },
+    "paper": {
+     "label": "Test before real money",
+     "points": 15,
+     "max": 15,
+     "note": "Paper, demo or testnet mode available",
+     "source": null
+    },
+    "withdraw": {
+     "label": "Sending funds out",
+     "points": 15,
+     "max": 15,
+     "note": "Can't withdraw or move your funds (you sign or withdrawals stay off)",
+     "source": null
+    },
+    "keys": {
+     "label": "Who holds the keys",
+     "points": 10,
+     "max": 10,
+     "note": "Scoped access (scopes, read-only mode, dedicated or separate account)",
+     "source": null
+    },
+    "open": {
+     "label": "Open source or audited",
+     "points": 0,
+     "max": 10,
+     "note": "No public source code in our listing",
+     "source": null
+    },
+    "record": {
+     "label": "Incident record (last 12 months)",
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
+     "source": null
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/trend0x/#safety",
+   "last_checked": "2026-11-23"
+  },
+  {
    "slug": "nova-trading-app",
    "name": "Nova Trading App",
    "category": "ai_bot_platform",
@@ -2739,6 +2804,74 @@
    "last_checked": "2026-11-23"
   },
   {
+   "slug": "amaltash",
+   "name": "Amaltash",
+   "category": "ai_bot_platform",
+   "category_label": "AI trading bot platforms",
+   "safety_score_pct": 44,
+   "points": 33,
+   "max": 75,
+   "partial": true,
+   "missing_inputs": [
+    "withdraw",
+    "keys"
+   ],
+   "inputs": {
+    "unattended": {
+     "label": "Human approval",
+     "points": 0,
+     "max": 25,
+     "note": "Can place live orders with no documented approval step",
+     "source": null
+    },
+    "approval": {
+     "label": "Guardrails outside the agent",
+     "points": 8,
+     "max": 15,
+     "note": "Only limits or read-only modes, no per-order approval",
+     "source": null
+    },
+    "paper": {
+     "label": "Test before real money",
+     "points": 15,
+     "max": 15,
+     "note": "Paper, demo or testnet mode available",
+     "source": null
+    },
+    "withdraw": {
+     "label": "Sending funds out",
+     "points": null,
+     "max": 15,
+     "note": "Missing: not documented",
+     "source": null
+    },
+    "keys": {
+     "label": "Who holds the keys",
+     "points": null,
+     "max": 10,
+     "note": "Missing: not documented",
+     "source": null
+    },
+    "open": {
+     "label": "Open source or audited",
+     "points": 0,
+     "max": 10,
+     "note": "No public source code in our listing",
+     "source": null
+    },
+    "record": {
+     "label": "Incident record (last 12 months)",
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
+     "source": null
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/amaltash/#safety",
+   "last_checked": "2026-11-23"
+  },
+  {
    "slug": "tread-fi",
    "name": "tread.fi",
    "category": "ai_bot_platform",
@@ -3076,6 +3209,75 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/trade-ideas-holly-ai/#safety",
+   "last_checked": "2026-11-23"
+  },
+  {
+   "slug": "deskbot-for-robinhood",
+   "name": "DeskBot for Robinhood",
+   "category": "ai_bot_platform",
+   "category_label": "AI trading bot platforms",
+   "safety_score_pct": 30,
+   "points": 18,
+   "max": 60,
+   "partial": true,
+   "missing_inputs": [
+    "paper",
+    "withdraw",
+    "keys"
+   ],
+   "inputs": {
+    "unattended": {
+     "label": "Human approval",
+     "points": 0,
+     "max": 25,
+     "note": "Can place live orders with no documented approval step",
+     "source": null
+    },
+    "approval": {
+     "label": "Guardrails outside the agent",
+     "points": 8,
+     "max": 15,
+     "note": "Only limits or read-only modes, no per-order approval",
+     "source": null
+    },
+    "paper": {
+     "label": "Test before real money",
+     "points": null,
+     "max": 15,
+     "note": "Missing: not documented",
+     "source": null
+    },
+    "withdraw": {
+     "label": "Sending funds out",
+     "points": null,
+     "max": 15,
+     "note": "Missing: not documented",
+     "source": null
+    },
+    "keys": {
+     "label": "Who holds the keys",
+     "points": null,
+     "max": 10,
+     "note": "Missing: not documented",
+     "source": null
+    },
+    "open": {
+     "label": "Open source or audited",
+     "points": 0,
+     "max": 10,
+     "note": "No public source code in our listing",
+     "source": null
+    },
+    "record": {
+     "label": "Incident record (last 12 months)",
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
+     "source": null
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/deskbot-for-robinhood/#safety",
    "last_checked": "2026-11-23"
   },
   {
@@ -7132,6 +7334,74 @@
    "last_checked": "2026-11-18"
   },
   {
+   "slug": "bydfi",
+   "name": "BYDFi",
+   "category": "bot_exchange",
+   "category_label": "Exchanges & brokers for bots",
+   "safety_score_pct": 33,
+   "points": 25,
+   "max": 75,
+   "partial": true,
+   "missing_inputs": [
+    "withdraw",
+    "keys"
+   ],
+   "inputs": {
+    "unattended": {
+     "label": "Human approval",
+     "points": 0,
+     "max": 25,
+     "note": "Can place live orders with no documented approval step",
+     "source": null
+    },
+    "approval": {
+     "label": "Guardrails outside the agent",
+     "points": 0,
+     "max": 15,
+     "note": "No approval or limit option in our listing",
+     "source": null
+    },
+    "paper": {
+     "label": "Test before real money",
+     "points": 15,
+     "max": 15,
+     "note": "Paper, demo or testnet mode available",
+     "source": null
+    },
+    "withdraw": {
+     "label": "Sending funds out",
+     "points": null,
+     "max": 15,
+     "note": "Missing: not documented",
+     "source": null
+    },
+    "keys": {
+     "label": "Who holds the keys",
+     "points": null,
+     "max": 10,
+     "note": "Missing: not documented",
+     "source": null
+    },
+    "open": {
+     "label": "Open source or audited",
+     "points": 0,
+     "max": 10,
+     "note": "No public source code in our listing",
+     "source": null
+    },
+    "record": {
+     "label": "Incident record (last 12 months)",
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
+     "source": null
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/bydfi/#safety",
+   "last_checked": "2026-11-23"
+  },
+  {
    "slug": "edgex",
    "name": "edgeX",
    "category": "bot_exchange",
@@ -8953,6 +9223,71 @@
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/tradingview-mcp-server/#safety",
    "last_checked": "2026-11-18"
+  },
+  {
+   "slug": "xrpl-to-api-and-mcp",
+   "name": "XRPL.to API and MCP",
+   "category": "data_mcp",
+   "category_label": "Market data MCP servers",
+   "safety_score_pct": 90,
+   "points": 90,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
+   "inputs": {
+    "unattended": {
+     "label": "Human approval",
+     "points": 25,
+     "max": 25,
+     "note": "Cannot place real-money orders (listing: data only)",
+     "source": null
+    },
+    "approval": {
+     "label": "Guardrails outside the agent",
+     "points": 15,
+     "max": 15,
+     "note": "Not applicable: no real-money orders",
+     "source": null
+    },
+    "paper": {
+     "label": "Test before real money",
+     "points": 15,
+     "max": 15,
+     "note": "Not applicable: no real-money orders",
+     "source": null
+    },
+    "withdraw": {
+     "label": "Sending funds out",
+     "points": 15,
+     "max": 15,
+     "note": "Not applicable: no real-money orders",
+     "source": null
+    },
+    "keys": {
+     "label": "Who holds the keys",
+     "points": 10,
+     "max": 10,
+     "note": "Not applicable: no real-money orders",
+     "source": null
+    },
+    "open": {
+     "label": "Open source or audited",
+     "points": 0,
+     "max": 10,
+     "note": "No public source code in our listing",
+     "source": null
+    },
+    "record": {
+     "label": "Incident record (last 12 months)",
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
+     "source": null
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/xrpl-to-api-and-mcp/#safety",
+   "last_checked": "2026-11-23"
   },
   {
    "slug": "craic-hub-exchange",

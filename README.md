@@ -2,7 +2,7 @@
 
 Open data from [TradingAgentStack](https://tradingagentstack.com). One question drives every score: **if a tool, or an AI agent using it, is wrong, hacked or prompt-injected, how much money can it lose?**
 
-- **177 Safety scores**, one for every tool in the directory: agent wallets, exchanges for bots, on-chain and DeFi agents, agent payment rails, AI trading agents, broker MCP servers, bots and more, with sources and last-checked dates
+- **182 Safety scores**, one for every tool in the directory: agent wallets, exchanges for bots, on-chain and DeFi agents, agent payment rails, AI trading agents, broker MCP servers, bots and more, with sources and last-checked dates
 - **29 incidents** from official disclosures
 
 Generated 2026-11-23 from the live site. Updated automatically on every site release; do not edit by hand.
@@ -79,6 +79,7 @@ Seven inputs, 100 points: human approval (25), guardrails outside the agent (15)
 |---|---|---|
 | [TradersPost](https://tradingagentstack.com/tool/traderspost/#safety) | 72% (partial) | keys |
 | [3Commas](https://tradingagentstack.com/tool/3commas/#safety) | 58% | none |
+| [Trend0x](https://tradingagentstack.com/tool/trend0x/#safety) | 58% | none |
 | [Nova Trading App](https://tradingagentstack.com/tool/nova-trading-app/#safety) | 53% (partial) | keys |
 | [Option Alpha](https://tradingagentstack.com/tool/option-alpha/#safety) | 53% (partial) | keys |
 | [Nyria](https://tradingagentstack.com/tool/nyria/#safety) | 51% (partial) | withdraw |
@@ -88,11 +89,13 @@ Seven inputs, 100 points: human approval (25), guardrails outside the agent (15)
 | [Cryptohopper](https://tradingagentstack.com/tool/cryptohopper/#safety) | 50% | none |
 | [Surmount](https://tradingagentstack.com/tool/surmount/#safety) | 50% | none |
 | [WunderTrading](https://tradingagentstack.com/tool/wundertrading/#safety) | 50% | none |
+| [Amaltash](https://tradingagentstack.com/tool/amaltash/#safety) | 44% (partial) | withdraw, keys |
 | [tread.fi](https://tradingagentstack.com/tool/tread-fi/#safety) | 40% (partial) | paper, withdraw |
 | [Capitalise.ai](https://tradingagentstack.com/tool/capitalise-ai/#safety) | 33% (partial) | withdraw, keys |
 | [DeskBot for TopstepX](https://tradingagentstack.com/tool/deskbot-for-topstepx/#safety) | 33% (partial) | withdraw, keys |
 | [Tickeron](https://tradingagentstack.com/tool/tickeron/#safety) | 33% (partial) | withdraw, keys |
 | [Trade Ideas (Holly AI)](https://tradingagentstack.com/tool/trade-ideas-holly-ai/#safety) | 33% (partial) | withdraw, keys |
+| [DeskBot for Robinhood](https://tradingagentstack.com/tool/deskbot-for-robinhood/#safety) | 30% (partial) | paper, withdraw, keys |
 | [Composer](https://tradingagentstack.com/tool/composer/#safety) | 29% (partial) | paper |
 | [Pionex](https://tradingagentstack.com/tool/pionex/#safety) | 24% (partial) | paper |
 | [TrendSpider](https://tradingagentstack.com/tool/trendspider/#safety) | 17% (partial) | paper, withdraw, keys |
@@ -189,6 +192,7 @@ Seven inputs, 100 points: human approval (25), guardrails outside the agent (15)
 | [Hyperliquid](https://tradingagentstack.com/tool/hyperliquid/#safety) | 50% | none |
 | [Binance](https://tradingagentstack.com/tool/binance/#safety) | 49% | none |
 | [Extended](https://tradingagentstack.com/tool/extended/#safety) | 43% | none |
+| [BYDFi](https://tradingagentstack.com/tool/bydfi/#safety) | 33% (partial) | withdraw, keys |
 | [edgeX](https://tradingagentstack.com/tool/edgex/#safety) | 29% (partial) | paper, withdraw |
 
 ### Market data APIs
@@ -227,6 +231,7 @@ Seven inputs, 100 points: human approval (25), guardrails outside the agent (15)
 | [Reslyce Flow MCP](https://tradingagentstack.com/tool/reslyce-flow-mcp/#safety) | 90% | none |
 | [TickerLayer](https://tradingagentstack.com/tool/tickerlayer/#safety) | 90% | none |
 | [TradingView MCP Server](https://tradingagentstack.com/tool/tradingview-mcp-server/#safety) | 90% | none |
+| [XRPL.to API and MCP](https://tradingagentstack.com/tool/xrpl-to-api-and-mcp/#safety) | 90% | none |
 
 ### On-chain & DeFi trading agents
 
