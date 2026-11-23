@@ -5,7 +5,7 @@
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "TradingAgentStack (tradingagentstack.com)",
-  "generated": "2026-11-20",
+  "generated": "2026-11-23",
   "count": 50,
   "safety_formula": "https://tradingagentstack.com/safety-score/",
   "safety_model": "One Safety score since 2026-11-01 (the Agent Risk Score v2 is merged in; risk_v2 is a deprecated alias equal to it)",
@@ -640,7 +640,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/coinbase-agentkit/#safety",
-   "last_checked": "2026-11-14"
+   "last_checked": "2026-11-23"
   },
   {
    "slug": "privy-server-wallets",
@@ -1400,7 +1400,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/bitget/#safety",
-   "last_checked": "2026-11-13"
+   "last_checked": "2026-11-23"
   },
   {
    "slug": "bybit",
@@ -1458,7 +1458,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/bybit/#safety",
-   "last_checked": "2026-11-12"
+   "last_checked": "2026-11-23"
   },
   {
    "slug": "kraken",
@@ -1516,7 +1516,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/kraken/#safety",
-   "last_checked": "2026-11-12"
+   "last_checked": "2026-11-23"
   },
   {
    "slug": "okx",
@@ -1574,7 +1574,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/okx/#safety",
-   "last_checked": "2026-11-12"
+   "last_checked": "2026-11-23"
   },
   {
    "slug": "coinbase-advanced",
@@ -1632,7 +1632,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/coinbase-advanced/#safety",
-   "last_checked": "2026-11-13"
+   "last_checked": "2026-11-23"
   },
   {
    "slug": "veranta-mcp-formerly-avantis",
@@ -2112,7 +2112,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/gemini/#safety",
-   "last_checked": "2026-11-13"
+   "last_checked": "2026-11-23"
   },
   {
    "slug": "aster",
@@ -2228,7 +2228,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/hyperliquid/#safety",
-   "last_checked": "2026-11-13"
+   "last_checked": "2026-11-23"
   },
   {
    "slug": "binance",
@@ -2530,7 +2530,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/1inch-swap-api/#safety",
-   "last_checked": "2026-11-14"
+   "last_checked": "2026-11-23"
   },
   {
    "slug": "hashlock-markets",
@@ -2648,7 +2648,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/0x-swap-api/#safety",
-   "last_checked": "2026-11-14"
+   "last_checked": "2026-11-23"
   },
   {
    "slug": "jupiter-api",
@@ -2708,7 +2708,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/jupiter-api/#safety",
-   "last_checked": "2026-11-14"
+   "last_checked": "2026-11-23"
   },
   {
    "slug": "solana-agent-kit",
@@ -2766,7 +2766,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/solana-agent-kit/#safety",
-   "last_checked": "2026-11-15"
+   "last_checked": "2026-11-23"
   },
   {
    "slug": "bonkbot",
@@ -2826,7 +2826,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/bonkbot/#safety",
-   "last_checked": "2026-11-14"
+   "last_checked": "2026-11-23"
   },
   {
    "slug": "banana-gun",
@@ -2886,7 +2886,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/banana-gun/#safety",
-   "last_checked": "2026-11-14"
+   "last_checked": "2026-11-23"
   },
   {
    "slug": "maestro",
@@ -2944,7 +2944,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/maestro/#safety",
-   "last_checked": "2026-11-14"
+   "last_checked": "2026-11-23"
   },
   {
    "slug": "trojan",
@@ -3002,7 +3002,7 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/trojan/#safety",
-   "last_checked": "2026-11-14"
+   "last_checked": "2026-11-23"
   }
  ]
 }
