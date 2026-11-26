@@ -182,9 +182,9 @@ Seven inputs, 100 points: human approval (25), guardrails outside the agent (15)
 | [Kraken](https://tradingagentstack.com/tool/kraken/#safety) | 85% | none |
 | [OKX](https://tradingagentstack.com/tool/okx/#safety) | 85% | none |
 | [Coinbase Advanced](https://tradingagentstack.com/tool/coinbase-advanced/#safety) | 75% | none |
-| [Veranta MCP (formerly Avantis)](https://tradingagentstack.com/tool/veranta-mcp-formerly-avantis/#safety) | 75% | none |
 | [GMX](https://tradingagentstack.com/tool/gmx/#safety) | 68% | none |
 | [Paradex](https://tradingagentstack.com/tool/paradex/#safety) | 68% | none |
+| [Veranta MCP (formerly Avantis)](https://tradingagentstack.com/tool/veranta-mcp-formerly-avantis/#safety) | 68% | none |
 | [dYdX](https://tradingagentstack.com/tool/dydx/#safety) | 68% | none |
 | [Arcus](https://tradingagentstack.com/tool/arcus/#safety) | 63% | none |
 | [Lighter](https://tradingagentstack.com/tool/lighter/#safety) | 63% | none |

@@ -1635,64 +1635,6 @@
    "last_checked": "2026-11-25"
   },
   {
-   "slug": "veranta-mcp-formerly-avantis",
-   "name": "Veranta MCP (formerly Avantis)",
-   "category": "bot_exchange",
-   "category_label": "Exchanges & brokers for bots",
-   "agent_risk_score_pct": 75,
-   "points": 75,
-   "max": 100,
-   "partial": false,
-   "missing_inputs": [],
-   "inputs": {
-    "custody": {
-     "points": 10,
-     "max": 10,
-     "note": "The agent trades with a session key your wallet registers as a delegate; it can open, close and modify positions but can't withdraw USDC from your account, grant allowances or add delegates, and you can revoke it any time (official docs)",
-     "source": "https://sdk.veranta.xyz/ai/session-keys"
-    },
-    "limits": {
-     "points": 15,
-     "max": 15,
-     "note": "A policy enforced inside every trading tool caps leverage, collateral and size per trade, daily notional, open positions and daily loss; the AI can't edit it, and on the hosted connector you set it by signing with your wallet (a new hosted account starts on the standard preset: full leverage, $2,000 collateral per trade, a $5,000 daily loss stop) (official docs)",
-     "source": "https://sdk.veranta.xyz/ai/safety"
-    },
-    "approval": {
-     "points": 10,
-     "max": 25,
-     "note": "Every trade is quoted first, but a confirmation is required only above a notional you set (off by default) and for vault moves; otherwise whether you approve each fill depends on your AI client's tool prompts and the conversation",
-     "source": "https://sdk.veranta.xyz/ai/safety"
-    },
-    "withdraw": {
-     "points": 15,
-     "max": 15,
-     "note": "The session key can't send USDC out of your account; margin withdrawals always pay your own wallet (official docs)",
-     "source": "https://sdk.veranta.xyz/ai/safety"
-    },
-    "preview": {
-     "points": 15,
-     "max": 15,
-     "note": "Testnet mode (--network=testnet) trades test USDC from a faucet, so nothing is real money (official docs)",
-     "source": "https://sdk.veranta.xyz/ai/session-keys"
-    },
-    "open": {
-     "points": 0,
-     "max": 10,
-     "note": "No public source code in our listing",
-     "source": "https://sdk.veranta.xyz/ai/overview"
-    },
-    "record": {
-     "points": 10,
-     "max": 10,
-     "note": "No incident naming this tool in our incident tracker in the last 12 months",
-     "source": "https://tradingagentstack.com/incidents/"
-    }
-   },
-   "incidents": [],
-   "page": "https://tradingagentstack.com/tool/veranta-mcp-formerly-avantis/#safety",
-   "last_checked": "2026-11-25"
-  },
-  {
    "slug": "gmx",
    "name": "GMX",
    "category": "bot_exchange",
@@ -1806,6 +1748,64 @@
    },
    "incidents": [],
    "page": "https://tradingagentstack.com/tool/paradex/#safety",
+   "last_checked": "2026-11-25"
+  },
+  {
+   "slug": "veranta-mcp-formerly-avantis",
+   "name": "Veranta MCP (formerly Avantis)",
+   "category": "bot_exchange",
+   "category_label": "Exchanges & brokers for bots",
+   "agent_risk_score_pct": 68,
+   "points": 68,
+   "max": 100,
+   "partial": false,
+   "missing_inputs": [],
+   "inputs": {
+    "custody": {
+     "points": 10,
+     "max": 10,
+     "note": "The agent trades with a session key your wallet registers as a delegate; it can open, close and modify positions but can't withdraw USDC from your account, grant allowances or add delegates, and you can revoke it any time (official docs)",
+     "source": "https://sdk.veranta.xyz/ai/session-keys"
+    },
+    "limits": {
+     "points": 8,
+     "max": 15,
+     "note": "Partial (owner decision 2026-11-26): a policy enforced inside every trading tool caps collateral and size per trade, daily notional, open positions and daily loss, and the AI can't edit it, but a new hosted account starts on the standard preset with no leverage cap (every market at full leverage), $2,000 collateral per trade and a $5,000 daily loss stop; tighter caps (conservative: 50x, $500 a trade, a $1,000 daily loss stop) are something you have to choose (official docs)",
+     "source": "https://sdk.veranta.xyz/ai/hosted"
+    },
+    "approval": {
+     "points": 10,
+     "max": 25,
+     "note": "Every trade is quoted first, but a confirmation is required only above a notional you set (off by default) and for vault moves; otherwise whether you approve each fill depends on your AI client's tool prompts and the conversation",
+     "source": "https://sdk.veranta.xyz/ai/safety"
+    },
+    "withdraw": {
+     "points": 15,
+     "max": 15,
+     "note": "The session key can't send USDC out of your account; margin withdrawals always pay your own wallet (official docs)",
+     "source": "https://sdk.veranta.xyz/ai/safety"
+    },
+    "preview": {
+     "points": 15,
+     "max": 15,
+     "note": "Testnet mode (--network=testnet) trades test USDC from a faucet, so nothing is real money (official docs)",
+     "source": "https://sdk.veranta.xyz/ai/session-keys"
+    },
+    "open": {
+     "points": 0,
+     "max": 10,
+     "note": "No public source code in our listing",
+     "source": "https://sdk.veranta.xyz/ai/overview"
+    },
+    "record": {
+     "points": 10,
+     "max": 10,
+     "note": "No incident naming this tool in our incident tracker in the last 12 months",
+     "source": "https://tradingagentstack.com/incidents/"
+    }
+   },
+   "incidents": [],
+   "page": "https://tradingagentstack.com/tool/veranta-mcp-formerly-avantis/#safety",
    "last_checked": "2026-11-25"
   },
   {
