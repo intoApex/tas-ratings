@@ -2,10 +2,10 @@
 
 Open data from [TradingAgentStack](https://tradingagentstack.com). One question drives every score: **if a tool, or an AI agent using it, is wrong, hacked or prompt-injected, how much money can it lose?**
 
-- **182 Safety scores**, one for every tool in the directory: agent wallets, exchanges for bots, on-chain and DeFi agents, agent payment rails, AI trading agents, broker MCP servers, bots and more, with sources and last-checked dates
+- **185 Safety scores**, one for every tool in the directory: agent wallets, exchanges for bots, on-chain and DeFi agents, agent payment rails, AI trading agents, broker MCP servers, bots and more, with sources and last-checked dates
 - **29 incidents** from official disclosures
 
-Generated 2026-11-23 from the live site. Updated automatically on every site release; do not edit by hand.
+Generated 2026-11-25 from the live site. Updated automatically on every site release; do not edit by hand.
 
 ## Files
 
@@ -79,6 +79,7 @@ Seven inputs, 100 points: human approval (25), guardrails outside the agent (15)
 |---|---|---|
 | [TradersPost](https://tradingagentstack.com/tool/traderspost/#safety) | 72% (partial) | keys |
 | [3Commas](https://tradingagentstack.com/tool/3commas/#safety) | 58% | none |
+| [Tradeture](https://tradingagentstack.com/tool/tradeture/#safety) | 58% | none |
 | [Trend0x](https://tradingagentstack.com/tool/trend0x/#safety) | 58% | none |
 | [Nova Trading App](https://tradingagentstack.com/tool/nova-trading-app/#safety) | 53% (partial) | keys |
 | [Option Alpha](https://tradingagentstack.com/tool/option-alpha/#safety) | 53% (partial) | keys |
@@ -124,6 +125,7 @@ Seven inputs, 100 points: human approval (25), guardrails outside the agent (15)
 |---|---|---|
 | [Backtesting.py](https://tradingagentstack.com/tool/backtesting-py/#safety) | 100% | none |
 | [VectorBT](https://tradingagentstack.com/tool/vectorbt/#safety) | 90% | none |
+| [Vesper](https://tradingagentstack.com/tool/vesper/#safety) | 90% | none |
 | [QuantConnect / LEAN](https://tradingagentstack.com/tool/quantconnect-lean/#safety) | 60% | none |
 | [NautilusTrader](https://tradingagentstack.com/tool/nautilustrader/#safety) | 47% (partial) | withdraw, keys |
 | [Tactfolio](https://tradingagentstack.com/tool/tactfolio/#safety) | 33% (partial) | withdraw, keys |
@@ -191,6 +193,7 @@ Seven inputs, 100 points: human approval (25), guardrails outside the agent (15)
 | [Aster](https://tradingagentstack.com/tool/aster/#safety) | 58% | none |
 | [Hyperliquid](https://tradingagentstack.com/tool/hyperliquid/#safety) | 50% | none |
 | [Binance](https://tradingagentstack.com/tool/binance/#safety) | 49% | none |
+| [Markets.xyz](https://tradingagentstack.com/tool/markets-xyz/#safety) | 48% | none |
 | [Extended](https://tradingagentstack.com/tool/extended/#safety) | 43% | none |
 | [BYDFi](https://tradingagentstack.com/tool/bydfi/#safety) | 33% (partial) | withdraw, keys |
 | [edgeX](https://tradingagentstack.com/tool/edgex/#safety) | 29% (partial) | paper, withdraw |
